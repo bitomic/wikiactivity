@@ -9,6 +9,7 @@
 !.yarn/sdks
 !.yarn/versions
 database
+!src/database
 demo
 dist
 node_modules
