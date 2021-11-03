@@ -1,0 +1,15 @@
+.env
+.eslintcache
+.eslintignore
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+database
+demo
+dist
+node_modules
+tsconfig.tsbuildinfo
