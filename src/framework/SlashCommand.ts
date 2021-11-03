@@ -2,6 +2,7 @@ import type { AliasPieceJSON, PieceContext, PieceOptions } from '@sapphire/piece
 import type {
 	ApplicationCommandOptionData,
 	ApplicationCommandPermissionData,
+	CacheType,
 	CommandInteraction,
 	CommandInteractionOptionResolver,
 	PermissionResolvable
@@ -9,7 +10,7 @@ import type {
 import { AliasPiece } from '@sapphire/pieces'
 import type { Awaitable } from '@sapphire/utilities'
 
-export abstract class SlashCommand<T = CommandInteractionOptionResolver> extends AliasPiece {
+export abstract class SlashCommand<T = Omit<CommandInteractionOptionResolver<CacheType>, 'getMessage' | 'getFocused'>> extends AliasPiece {
 	public description: string
 	public arguments: ApplicationCommandOptionData[]
 	public guildCommand: boolean
