@@ -11,6 +11,9 @@
     "lint": "eslint src/ --ext .ts --cache",
     "lint:fix": "eslint src/ --fix --ext .ts --cache"
   },
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
