@@ -6,6 +6,8 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky install .github/husky",
+    "build": "rimraf tsconfig.tsbuildinfo dist && yarn tsc --listEmittedFiles --incremental",
+    "build:watch": "yarn tsc -w --incremental",
     "lint": "eslint src/ --ext .ts --cache",
     "lint:fix": "eslint src/ --fix --ext .ts --cache"
   },
