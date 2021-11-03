@@ -350,6 +350,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sapphire/decorators@npm:^3.1.3":
+  version: 3.1.3
+  resolution: "@sapphire/decorators@npm:3.1.3"
+  dependencies:
+    tslib: ^2.3.1
+  checksum: 0af0054deffabdfd4d1166419c740756d883589430c88d9172237a533f6e3323cf7ecdfab029f464ed0156e43e040740b6916624ff852bea564191c9fa62aedd
+  languageName: node
+  linkType: hard
+
 "@sapphire/discord-utilities@npm:^2.2.2":
   version: 2.2.2
   resolution: "@sapphire/discord-utilities@npm:2.2.2"
@@ -2625,6 +2634,7 @@ __metadata:
     "@commitlint/cli": ^14.1.0
     "@commitlint/config-conventional": ^14.1.0
     "@discordjs/rest": ^0.1.0-canary.0
+    "@sapphire/decorators": ^3.1.3
     "@sapphire/framework": ^2.1.3
     "@sapphire/pieces": ^3.1.0
     "@sapphire/plugin-logger": ^2.0.1
