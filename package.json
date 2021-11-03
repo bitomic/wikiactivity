@@ -5,7 +5,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "prepare": "husky install .github/husky"
+    "prepare": "husky install .github/husky",
+    "lint": "eslint src/ --ext .ts --cache",
+    "lint:fix": "eslint src/ --fix --ext .ts --cache"
   },
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",
