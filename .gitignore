@@ -8,8 +8,7 @@
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-database
-!src/database
+databases
 demo
 dist
 node_modules
