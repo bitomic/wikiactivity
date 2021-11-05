@@ -7,10 +7,7 @@ export class Client extends SapphireClient {
 	public constructor() {
 		super( {
 			defaultPrefix: env.DISCORD_PREFIX,
-			intents: [
-				Intents.FLAGS.GUILDS,
-				Intents.FLAGS.GUILD_MESSAGES
-			],
+			intents: [ Intents.FLAGS.GUILDS ],
 			loadDefaultErrorListeners: true
 		} )
 		this.stores.register( new SlashCommandStore() )
