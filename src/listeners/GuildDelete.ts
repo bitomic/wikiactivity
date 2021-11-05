@@ -1,12 +1,12 @@
 import { Guild, Wiki }  from '../database'
 import { ApplyOptions } from '@sapphire/decorators'
-import { Constants } from 'discord.js'
+import { GatewayDispatchEvents } from 'discord-api-types/v9'
 import type { GatewayGuildDeleteDispatch } from 'discord-api-types/v9'
 import { Listener } from '@sapphire/framework'
 import type { ListenerOptions } from '@sapphire/framework'
 
 @ApplyOptions<ListenerOptions>( {
-	event: Constants.Events.GUILD_DELETE
+	event: GatewayDispatchEvents.GuildDelete
 } )
 export class UserEvent extends Listener {
 	public async run( guild: GatewayGuildDeleteDispatch[ 'd' ] ): Promise<void> {
