@@ -1,61 +1,32 @@
-import type { AliasPieceJSON, PieceContext, PieceOptions } from '@sapphire/pieces'
-import type {
-	ApplicationCommandOptionData,
-	ApplicationCommandPermissionData,
-	CacheType,
-	CommandInteraction,
-	CommandInteractionOptionResolver,
-	PermissionResolvable
-} from 'discord.js'
-import { AliasPiece } from '@sapphire/pieces'
+import type { ApplicationCommandData, ApplicationCommandOptionData, CommandInteraction } from 'discord.js'
 import type { Awaitable } from '@sapphire/utilities'
+import { Piece } from '@sapphire/framework'
+import type { PieceContext } from '@sapphire/framework'
 
-export abstract class SlashCommand<T = Omit<CommandInteractionOptionResolver<CacheType>, 'getMessage' | 'getFocused'>> extends AliasPiece {
-	public description: string
-	public arguments: ApplicationCommandOptionData[]
-	public guildCommand: boolean
-	public defaultPermission: boolean
-	public permissions: ApplicationCommandPermissionData[]
+export abstract class SlashCommand extends Piece {
+	public readonly commandData: SlashCommandOptions
+	public readonly guildOnly: boolean
 
-	protected constructor( context: PieceContext, options: SlashCommandOptions = {} ) {
-		super( context, {
-			...options,
-			name: ( options.name ?? context.name ).toLowerCase()
-		} )
-		this.arguments = options.arguments ?? []
-		this.defaultPermission = options.defaultPermission ?? true
-		this.description = options.description ?? ''
-		this.guildCommand = options.guildCommand ?? false
-		this.permissions = options.permisisons ?? []
-	}
+	public constructor( context: PieceContext, options: SlashCommandOptions ) {
+		super( context, options )
 
-	public abstract run( interaction: CommandInteraction, args: T, context: SlashCommandContext ): Awaitable<unknown>
-
-	public override toJSON(): SlashCommandPieceJSON {
-		return {
-			...super.toJSON(),
-			arguments: this.arguments,
-			defaultPermission: this.defaultPermission,
-			description: this.description,
-			guildCommand: this.guildCommand,
-			permissions: this.permissions
+		this.commandData = {
+			defaultPermission: options.defaultPermission ?? true,
+			description: options.description ?? 'No description provided',
+			name: this.name,
+			options: options.options ?? []
 		}
+
+		this.guildOnly = options.guildOnly ?? false
 	}
+
+	public abstract run( interaction: CommandInteraction ): Awaitable<unknown>
 }
 
-export interface SlashCommandOptions extends PieceOptions {
-	arguments?: ApplicationCommandOptionData[]
-	description?: string
-	guildCommand?: boolean
+export type SlashCommandOptions = ApplicationCommandData & {
 	defaultPermission?: boolean
-	permisisons?: ApplicationCommandPermissionData[]
-	requiredClientPermissions?: PermissionResolvable
-}
-
-export interface SlashCommandContext extends Record<PropertyKey, unknown> {
-	commandName: string
-}
-
-export interface SlashCommandPieceJSON extends AliasPieceJSON {
-	[ key: string ]: unknown
+	description?: string
+	enabled?: boolean
+	guildOnly?: boolean
+	options?: ApplicationCommandOptionData[]
 }

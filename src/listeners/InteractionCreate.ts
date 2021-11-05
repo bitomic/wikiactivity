@@ -1,35 +1,49 @@
-import type { CommandInteraction, Interaction } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
-import type { Client } from '../lib'
 import { Constants } from 'discord.js'
+import { env } from '../lib'
+import type { Interaction } from 'discord.js'
 import { Listener } from '@sapphire/framework'
 import type { ListenerOptions } from '@sapphire/framework'
-import type { SlashCommandStore } from '../framework'
 
 @ApplyOptions<ListenerOptions>( {
 	event: Constants.Events.INTERACTION_CREATE
 } )
 export class UserEvent extends Listener<typeof Constants.Events.INTERACTION_CREATE> {
-	public run( interaction: Interaction ): void {
-		if ( interaction.isCommand() ) void this.handleCommandInteraction( interaction )
-	}
+	public async run( interaction: Interaction ) {
+		if ( !interaction.isCommand() ) return
 
-	private async handleCommandInteraction( interaction: CommandInteraction ): Promise<void> {
-		const args = interaction.options
-		const { commandName } = interaction
-		const store = this.container.stores.get( 'slash-commands' ) as unknown as SlashCommandStore
-		const command = store.get( commandName )
-
+		const command = this.container.stores.get( 'slash-commands' ).get( interaction.commandName )
 		if ( !command ) return
 
-		const context = {
-			client: this.container.client as Client,
-			commandName
-		}
 		try {
-			await command.run( interaction, args, context )
+			await command.run( interaction )
+			if ( env.NODE_ENV === 'development' ) {
+				this.container.logger.info( `${ interaction.user.id } ran slash command ${ command.commandData.name }` )
+			}
 		} catch ( e ) {
 			this.container.logger.error( e )
+
+			if ( interaction.replied ) {
+				interaction
+					.followUp( {
+						content: 'There was a problem with your request.',
+						ephemeral: true
+					} )
+					.catch( e => this.container.logger.fatal( 'An error occurred following up on an error', e ) )
+			} else if ( interaction.deferred ) {
+				interaction
+					.editReply( {
+						content: 'There was a problem with your request.'
+					} )
+					.catch( e => this.container.logger.fatal( 'An error occurred following up on an error', e ) )
+			} else {
+				interaction
+					.reply( {
+						content: 'There was a problem with your request.',
+						ephemeral: true
+					} )
+					.catch( e => this.container.logger.fatal( 'An error occurred replying on an error', e ) )
+			}
 		}
 	}
 }

@@ -5,8 +5,8 @@ import type { SlashCommandOptions } from '../framework'
 
 @ApplyOptions<SlashCommandOptions>( {
 	description: 'Pong!',
-	enabled: false,
-	guildCommand: true,
+	enabled: true,
+	guildOnly: true,
 	name: 'ping'
 } )
 export class UserSlash extends SlashCommand {
