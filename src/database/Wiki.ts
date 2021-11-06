@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize'
 import type { Model } from 'sequelize'
 import { sequelize } from '../lib'
 
-interface IWiki {
+export interface IWiki {
 	id: number
 	interwiki: string
 	name: string

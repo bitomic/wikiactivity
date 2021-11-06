@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize'
 import type { Model } from 'sequelize'
 import { sequelize } from '../lib'
 
-interface IConfiguration {
+export interface IConfiguration {
 	avatar?: string
 	channel: string
 	color?: number
