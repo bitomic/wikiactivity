@@ -1,7 +1,9 @@
-import { Guild, Wiki } from '../database'
+import { Configuration, Guild, Wiki } from '../database'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { CommandInteraction } from 'discord.js'
 import { Fandom } from 'mw.js'
+import { QueryTypes } from 'sequelize'
+import { sequelize } from '../lib'
 import { SlashCommand } from '../framework'
 import type { SlashCommandOptions } from '../framework'
 
@@ -27,32 +29,19 @@ export class UserSlash extends SlashCommand {
 
 		const interwiki = interaction.options.getString( 'interwiki', true )
 
-		const fandom = new Fandom()
-		const wiki = fandom.getWiki( interwiki )
-		const exists = await wiki.exists()
-		if ( !exists ) {
-			void interaction.editReply( {
-				content: `I couldn't find a wiki for \`${ interwiki }\`.`
-			} )
-			return
-		}
-
 		const guild = await Guild.findByPk( interaction.guildId ) ?? await Guild.create( {
 			snowflake: interaction.guildId
 		} )
-		const guildWikis = await Wiki.findAll( {
-			where: {
-				guild: guild.snowflake
-			}
-		} )
-		if ( guildWikis.length >= guild.limit ) {
+		const interwikis = ( await sequelize.query<{ interwiki: string }>( '', {
+			type: QueryTypes.SELECT
+		} ) ).map( i => i.interwiki )
+		if ( interwikis.length >= guild.limit ) {
 			void interaction.editReply( {
 				content: `Sorry, but your server isn't allowed to have more than ${ guild.limit } wikis registered.`
 			} )
 			return
 		}
 
-		const interwikis = guildWikis.map( i => i.interwiki )
 		if ( interwikis.includes( interwiki ) ) {
 			void interaction.editReply( {
 				content: `It seems like you already have configured \`${ interwiki }\`'s activity to be shown in this server.`
@@ -60,11 +49,35 @@ export class UserSlash extends SlashCommand {
 			return
 		}
 
-		await Wiki.create( {
+		let storedWiki = await Wiki.findOne( {
+			where: {
+				interwiki
+			}
+		} )
+		if ( !storedWiki ) {
+			const fandom = new Fandom()
+			const wiki = await fandom.getWiki( interwiki ).load()
+				.catch( () => null )
+			const exists = await wiki?.exists()
+			if ( !wiki || !exists ) {
+				void interaction.editReply( {
+					content: `I couldn't find a wiki for \`${ interwiki }\`.`
+				} )
+				return
+			}
+			storedWiki = await Wiki.create( {
+				id: wiki.id,
+				interwiki,
+				name: wiki.sitename
+			} )
+		}
+
+		await Configuration.create( {
 			channel: interaction.channelId,
 			guild: interaction.guildId,
-			interwiki
+			wiki: storedWiki.id
 		} )
+
 		void interaction.editReply( {
 			content: `I have successfully registered \`${ interwiki }\` and its activity will show up on <#${ interaction.channelId }>!`
 		} )
