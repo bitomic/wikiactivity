@@ -3,18 +3,21 @@ import type { Model } from 'sequelize'
 import { sequelize } from '../lib'
 
 interface IConfiguration {
-	avatar: string
+	avatar?: string
 	channel: string
 	color?: number
 	guild: string
-	wiki: string
+	wiki: number
 }
 
 interface IConfigurationInterface extends Model<IConfiguration, IConfiguration>, Required<IConfiguration> {
 }
 
 export const Configuration = sequelize.define<IConfigurationInterface>( 'Configuration', {
-	avatar: DataTypes.STRING,
+	avatar: {
+		allowNull: true,
+		type: DataTypes.STRING
+	},
 	channel: DataTypes.STRING,
 	color: {
 		defaultValue: 0x00acc1,
