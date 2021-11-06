@@ -32,7 +32,7 @@ export class UserSlash extends SlashCommand {
 		const guild = await Guild.findByPk( interaction.guildId ) ?? await Guild.create( {
 			snowflake: interaction.guildId
 		} )
-		const interwikis = ( await sequelize.query<{ interwiki: string }>( '', {
+		const interwikis = ( await sequelize.query<{ interwiki: string }>( `SELECT interwiki FROM Configuration AS c INNER JOIN Wikis AS w ON c.wiki = w.id WHERE c.guild = '${ interaction.guildId }'`, {
 			type: QueryTypes.SELECT
 		} ) ).map( i => i.interwiki )
 		if ( interwikis.length >= guild.limit ) {
