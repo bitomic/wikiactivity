@@ -14,8 +14,9 @@ interface IGuildWikiActivity extends Omit<IActivity, 'wiki'>, Omit<IConfiguratio
 }
 
 @ApplyOptions<TaskOptions>( {
-	enabled: false,
+	enabled: true,
 	fireOnStart: true,
+	name: 'wikiactivity',
 	schedule: '*/5 * * * *'
 } )
 export class UserTask extends Task {
@@ -107,7 +108,7 @@ export class UserTask extends Task {
 		} ) )
 	}
 
-	public static async* paginateActivities(): AsyncGenerator<IGuildWikiActivity, number, unknown> {
+	public static async* paginateActivities(): AsyncGenerator<IGuildWikiActivity, void, unknown> {
 		const getQuery = ( limit: number, offset: number ): Promise<IGuildWikiActivity[]> => {
 			const sql = `SELECT c.avatar, c.channel, c.color, c.guild, w.interwiki, w.name, a.oldRevid, a.redirect, a.revid, a.sizediff, a.summary, a.timestamp, a.title, a.type, a.user FROM Configurations AS c INNER JOIN Wikis AS w ON w.id = c.wiki INNER JOIN Activities AS a ON a.wiki = w.id ORDER BY timestamp LIMIT ${ limit } OFFSET ${ offset }`
 			return sequelize.query<IGuildWikiActivity>( sql, {
@@ -123,6 +124,6 @@ export class UserTask extends Task {
 			offset += 100
 			query = await getQuery( 100, offset )
 		}
-		return Activity.destroy()
+		await Activity.sync( { force: true } )
 	}
 }
