@@ -40,7 +40,8 @@ export class WebhookManager {
 		return queue
 	}
 
-	public static async getWebhook( { avatar, channelId, guildId }: { avatar: string, channelId: string, guildId: string } ): Promise<Webhook | null> {
+	public static async getWebhook( { avatar, channelId, guildId, id }: { avatar: string, channelId: string, guildId: string, id: 1 | 2 } ): Promise<Webhook | null> {
+		const webhookName = `Wiki Activity ${ id }`
 		let webhook = this.webhooks.get( channelId ) ?? null
 
 		if ( !webhook ) {
@@ -51,7 +52,7 @@ export class WebhookManager {
 			if ( !channel || channel.type !== 'GUILD_TEXT' ) return null
 			const webhooks = await channel.fetchWebhooks()
 				.catch( () => null )
-			webhook = webhooks?.find( w => w.name === 'Wiki Activity' ) ?? await channel.createWebhook( 'Wiki Activity', {
+			webhook = webhooks?.find( w => w.name === webhookName ) ?? await channel.createWebhook( webhookName, {
 				avatar
 			} ).catch( () => null )
 			if ( !webhook ) return null
@@ -59,13 +60,14 @@ export class WebhookManager {
 		return webhook
 	}
 
-	public static async send( { avatar, channelId, color, guildId, item, wiki }: { avatar: string, channelId: string, color: number, guildId: string, item: IRecentChangesItem, wiki: Required<FandomWiki> } ) {
+	public static async send( { avatar, channelId, color, guildId, item, webhookId, wiki }: { avatar: string, channelId: string, color: number, guildId: string, item: IRecentChangesItem, webhookId: 1 | 2, wiki: Required<FandomWiki> } ) {
 		const queue = this.getQueue( channelId )
 		await queue.wait()
 		const webhook = await this.getWebhook( {
 			avatar,
 			channelId,
-			guildId
+			guildId,
+			id: webhookId
 		} )
 		if ( webhook ) {
 			const embed = new MessageEmbed( {
