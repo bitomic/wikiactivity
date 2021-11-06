@@ -1,30 +1,10 @@
 import { AsyncQueue } from '@sapphire/async-queue'
 import { container } from '@sapphire/framework'
 import type { FandomWiki } from 'mw.js'
+import type { IActivity } from '../database'
 import { MessageEmbed } from 'discord.js'
 import { sleep } from '../lib'
 import type { Webhook } from 'discord.js'
-
-export interface IWikiData {
-	avatar: string
-	channel: string
-	guild: string
-	color: number
-	interwiki: string
-	wikiname: string
-}
-
-export interface IRecentChangesItem {
-	oldRevid: number
-	redirect: boolean
-	revid: number
-	sizediff: number
-	summary: string
-	timestamp: string
-	title: string
-	type: 'edit' | 'log' | 'new'
-	user: string
-}
 
 export class WebhookManager {
 	private static readonly queues = new Map<string, AsyncQueue>()
@@ -60,7 +40,7 @@ export class WebhookManager {
 		return webhook
 	}
 
-	public static async send( { avatar, channelId, color, guildId, item, webhookId, wiki }: { avatar: string, channelId: string, color: number, guildId: string, item: IRecentChangesItem, webhookId: 1 | 2, wiki: Required<FandomWiki> } ) {
+	public static async send( { avatar, channelId, color, guildId, item, webhookId, wiki }: { avatar: string, channelId: string, color: number, guildId: string, item: IActivity, webhookId: 1 | 2, wiki: Required<FandomWiki> } ) {
 		const queue = this.getQueue( channelId )
 		await queue.wait()
 		const webhook = await this.getWebhook( {
