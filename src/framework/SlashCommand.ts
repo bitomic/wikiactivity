@@ -35,7 +35,7 @@ export abstract class SlashCommand extends Piece {
 		const hasPermission = permissions.has( 'MANAGE_GUILD' )
 		if ( !hasPermission ) {
 			this.reply( interaction, {
-				content: `You need the \`Manage server\` permission to use this command.`
+				content: 'You need the `Manage server` permission to use this command.'
 			} )
 		}
 		return hasPermission
@@ -45,7 +45,7 @@ export abstract class SlashCommand extends Piece {
 		const inGuild = interaction.inGuild()
 		if ( !inGuild ) {
 			this.reply( interaction, {
-				content: `This command can only be used in guilds.`
+				content: 'This command can only be used in guilds.'
 			} )
 		}
 		return inGuild
