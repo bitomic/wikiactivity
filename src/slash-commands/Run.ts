@@ -5,7 +5,6 @@ import { SlashCommand } from '../framework'
 import type { SlashCommandOptions } from '../framework'
 
 @ApplyOptions<SlashCommandOptions>( {
-	defaultPermission: false,
 	description: 'No description.',
 	enabled: true,
 	guildOnly: true,

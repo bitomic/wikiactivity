@@ -14,6 +14,7 @@ interface IGuildWikiActivity extends Omit<IActivity, 'wiki'>, Omit<IConfiguratio
 }
 
 @ApplyOptions<TaskOptions>( {
+	development: true,
 	enabled: true,
 	fireOnStart: true,
 	name: 'wikiactivity',
