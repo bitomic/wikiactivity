@@ -1,4 +1,4 @@
-import { Guild, Wiki }  from '../database'
+import { Configuration, Guild }  from '../database'
 import { ApplyOptions } from '@sapphire/decorators'
 import { GatewayDispatchEvents } from 'discord-api-types/v9'
 import type { GatewayGuildDeleteDispatch } from 'discord-api-types/v9'
@@ -11,7 +11,7 @@ import type { ListenerOptions } from '@sapphire/framework'
 export class UserEvent extends Listener {
 	public async run( guild: GatewayGuildDeleteDispatch[ 'd' ] ): Promise<void> {
 		if ( guild.unavailable ) return
-		await Wiki.destroy( {
+		await Configuration.destroy( {
 			where: {
 				guild: guild.id
 			}
