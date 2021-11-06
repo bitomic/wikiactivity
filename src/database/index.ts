@@ -1,3 +1,4 @@
+export * from './Activity'
 export * from './Configuration'
 export * from './Guild'
 export * from './KeyV'
