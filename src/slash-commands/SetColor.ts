@@ -9,7 +9,7 @@ import type { SlashCommandOptions } from '../framework'
 @ApplyOptions<SlashCommandOptions>( {
 	description: 'Configure the embed\'s color for a wiki.',
 	enabled: true,
-	guildOnly: true,
+	guildOnly: false,
 	name: 'set-color',
 	options: [
 		{

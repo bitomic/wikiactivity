@@ -10,7 +10,7 @@ import type { SlashCommandOptions } from '../framework'
 @ApplyOptions<SlashCommandOptions>( {
 	description: 'Setup a wiki for its activity to be shown in a channel.',
 	enabled: true,
-	guildOnly: true,
+	guildOnly: false,
 	name: 'register',
 	options: [
 		{
