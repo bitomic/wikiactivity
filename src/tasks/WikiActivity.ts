@@ -41,9 +41,10 @@ export class UserTask extends Task {
 			await Activity.bulkCreate( activity )
 		}
 
+		const webhookManager = new WebhookManager()
 		for await ( const item of UserTask.paginateActivities() ) {
 			const wiki = wikis.get( item.interwiki ) ?? await fandom.getWiki( item.interwiki ).load()
-			await WebhookManager.send( {
+			await webhookManager.send( {
 				avatar: item.avatar ?? this.container.client.user?.avatarURL( { format: 'png' } ) ?? '',
 				channelId: item.channel,
 				color: item.color,
