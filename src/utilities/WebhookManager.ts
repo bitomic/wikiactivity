@@ -1,4 +1,3 @@
-//import { AsyncQueue } from '@sapphire/async-queue'
 import { MessageAttachment, MessageEmbed } from 'discord.js'
 import { container } from '@sapphire/framework'
 import { Fandom } from 'mw.js'
@@ -15,7 +14,6 @@ const getUrl = ( wiki: Required<FandomWiki>, target: string ): string => {
 }
 
 export class WebhookManager {
-	//private readonly queues = new Map<string, AsyncQueue>()
 	private readonly favicons = new Map<string, Buffer>()
 	private readonly webhooks = new Map<string, Webhook>()
 
@@ -36,18 +34,6 @@ export class WebhookManager {
 		}
 		return favicon
 	}
-
-	/*
-	public getQueue( channelId: string ): AsyncQueue {
-		let queue = this.queues.get( channelId )
-
-		if ( !queue ) {
-			queue = new AsyncQueue()
-			this.queues.set( channelId, queue )
-		}
-		return queue
-	}
-	*/
 
 	public async getWebhook( { avatar, channelId, guildId, id }: { avatar: string, channelId: string, guildId: string, id: 1 | 2 } ): Promise<Webhook | null> {
 		const webhookName = `Wiki Activity ${ id }`
@@ -70,10 +56,6 @@ export class WebhookManager {
 	}
 
 	public async send( { avatar, channelId, color, guildId, item, webhookId, wiki }: { avatar: string, channelId: string, color: number, guildId: string, item: IActivity, webhookId: 1 | 2, wiki: Required<FandomWiki> } ) {
-		/*
-		const queue = this.getQueue( channelId )
-		await queue.wait()
-		*/
 		const webhook = await this.getWebhook( {
 			avatar,
 			channelId,
@@ -115,6 +97,5 @@ export class WebhookManager {
 			} )
 			await sleep( 2000 )
 		}
-		//queue.shift()
 	}
 }
