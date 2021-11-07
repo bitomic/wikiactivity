@@ -93,7 +93,11 @@ export class WebhookManager {
 			}
 			await webhook.send( {
 				embeds: [ embed ],
-				files: [ attachment ]
+				files: [ attachment ],
+				options: {
+					avatarURL: avatar,
+					username: wiki.sitename
+				}
 			} )
 			await sleep( 2000 )
 		}
