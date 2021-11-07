@@ -529,7 +529,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node-fetch@npm:^2.5.12":
+"@types/node-fetch@npm:2.5.12, @types/node-fetch@npm:^2.5.12":
   version: 2.5.12
   resolution: "@types/node-fetch@npm:2.5.12"
   dependencies:
@@ -4825,6 +4825,7 @@ __metadata:
     "@sapphire/utilities": ^3.0.6
     "@types/node": ^16.11.6
     "@types/node-cron": ^3.0.0
+    "@types/node-fetch": 2.5.12
     "@typescript-eslint/eslint-plugin": ^5.3.0
     "@typescript-eslint/parser": ^5.3.0
     discord-api-types: ^0.24.0
@@ -4836,6 +4837,7 @@ __metadata:
     lint-staged: ^11.2.6
     mw.js: ^1.5.2
     node-cron: ^3.0.0
+    node-fetch: ^2.6.1
     rimraf: ^3.0.2
     sequelize: ^6.9.0
     sqlite3: ^5.0.2
