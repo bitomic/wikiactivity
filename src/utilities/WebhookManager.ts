@@ -9,21 +9,29 @@ import ico2png from 'ico-to-png'
 import { sleep } from '../lib'
 import type { Webhook } from 'discord.js'
 
+const getUrl = ( wiki: Required<FandomWiki>, target: string ): string => {
+	const base = `${ wiki.server }${ wiki.articlepath }`
+	return base.replace( '$1', encodeURI( target ) )
+}
+
 export class WebhookManager {
 	//private readonly queues = new Map<string, AsyncQueue>()
 	private readonly favicons = new Map<string, Buffer>()
 	private readonly webhooks = new Map<string, Webhook>()
 
-	public async getFavicon( wiki: FandomWiki ): Promise<Buffer> {
+	public async getFavicon( wiki: Required<FandomWiki> ): Promise<Buffer> {
 		let favicon = this.favicons.get( wiki.interwiki )
 		if ( !favicon ) {
-			const req = await fetch( wiki.getURL( 'Special:Filepath/Site-favicon.ico' ) )
+			const url = getUrl( wiki, 'Special:Filepath/Site-favicon.ico' )
+			const req = await fetch( url )
 			if ( req.status !== 200 ) {
-				const community = new Fandom().getWiki( 'community' )
-				return this.getFavicon( community )
+				const community = await new Fandom().getWiki( 'community' )
+					.load()
+				favicon = await this.getFavicon( community )
+			} else {
+				const res = await req.buffer()
+				favicon = await ico2png( res, 32 )
 			}
-			const res = await req.buffer()
-			favicon = await ico2png( res, 32 )
 			this.favicons.set( wiki.interwiki, favicon )
 		}
 		return favicon
@@ -75,16 +83,16 @@ export class WebhookManager {
 		if ( webhook ) {
 			const emoji = item.type === 'new' ? '☑' : '📝'
 
-			const userUrl = wiki.getURL( `User:${ item.user }` )
+			const userUrl = getUrl( wiki, `User:${ item.user }` )
 			const user = `[${ item.user }](<${ userUrl }>)`
 
 			const action = item.type === 'new' ? 'created' : 'edited'
 
-			const titleUrl = wiki.getURL( item.title )
+			const titleUrl = getUrl( wiki, item.title )
 			const title = `[${ item.title }](<${ titleUrl }>)`
 
 			const diffSign = item.sizediff < 0 ? '-' : '+'
-			const diffUrl = `${ wiki.getURL( '' ) }?diff=${ item.revid }`
+			const diffUrl = `${ getUrl( wiki, '' ) }?diff=${ item.revid }`
 			const diff = `[${ diffSign } ${ Math.abs( item.sizediff ) }](<${ diffUrl }>)`
 
 			const description = `${ emoji } **${ user }** ${ action } **${ title }** (${ diff }).`
