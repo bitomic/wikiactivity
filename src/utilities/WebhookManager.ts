@@ -92,12 +92,10 @@ export class WebhookManager {
 				embed.addField( 'Summary', item.summary )
 			}
 			await webhook.send( {
+				avatarURL: avatar,
 				embeds: [ embed ],
 				files: [ attachment ],
-				options: {
-					avatarURL: avatar,
-					username: wiki.sitename
-				}
+				username: wiki.sitename
 			} )
 			await sleep( 2000 )
 		}
