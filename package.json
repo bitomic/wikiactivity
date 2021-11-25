@@ -31,7 +31,7 @@
     "sqlite3": "^5.0.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^14.1.0",
+    "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@types/node": "^16.11.10",
     "@types/node-cron": "^3.0.0",
