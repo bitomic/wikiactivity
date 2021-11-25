@@ -273,12 +273,12 @@
     lexure "^0.17.0"
     tslib "^2.3.1"
 
-"@sapphire/pieces@^3.1.0", "@sapphire/pieces@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@sapphire/pieces/-/pieces-3.1.1.tgz#9bbdce977b04480c0a76946b593968d4e7fba054"
+"@sapphire/pieces@^3.1.1", "@sapphire/pieces@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@sapphire/pieces/-/pieces-3.2.0.tgz#6ce871222d2686b95c12e04b62961897a29bf803"
   dependencies:
     "@discordjs/collection" "^0.3.2"
-    "@sapphire/utilities" "^3.0.6"
+    "@sapphire/utilities" "^3.1.0"
     tslib "^2.3.1"
 
 "@sapphire/plugin-logger@^2.0.2":
