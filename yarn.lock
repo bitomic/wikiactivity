@@ -469,7 +469,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/utilities@npm:^3.0.6, @sapphire/utilities@npm:^3.1.0":
+"@sapphire/utilities@npm:^3.1.0":
   version: 3.1.0
   resolution: "@sapphire/utilities@npm:3.1.0"
   checksum: aa0628352faf8c52774740c53a26ca7154b133ffbe86efaf9684de67c9d8d913732f99108d15babf4e4f9c2bc6e71070466bc8585be9a7add1659533aa2b5716
@@ -4864,7 +4864,7 @@ __metadata:
     "@sapphire/framework": ^2.2.0
     "@sapphire/pieces": ^3.2.0
     "@sapphire/plugin-logger": ^2.1.0
-    "@sapphire/utilities": ^3.0.6
+    "@sapphire/utilities": ^3.1.0
     "@types/node": ^16.11.10
     "@types/node-cron": ^3.0.0
     "@types/node-fetch": 2.5.12
