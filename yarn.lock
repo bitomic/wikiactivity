@@ -370,7 +370,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/async-queue@npm:^1.1.4, @sapphire/async-queue@npm:^1.1.8":
+"@sapphire/async-queue@npm:^1.1.4, @sapphire/async-queue@npm:^1.1.8, @sapphire/async-queue@npm:^1.1.9":
   version: 1.1.9
   resolution: "@sapphire/async-queue@npm:1.1.9"
   checksum: 8a4cb79e01948ee9f99f47e9fdfdfd509353d267f9e18bb8fe8e813b5d45f1fb6de08297b4557eb9a76b95bea59abaab67819175238068cc4cbc808d1d183e9d
@@ -4859,7 +4859,7 @@ __metadata:
     "@commitlint/cli": ^15.0.0
     "@commitlint/config-conventional": ^15.0.0
     "@discordjs/rest": ^0.1.0-canary.0
-    "@sapphire/async-queue": ^1.1.8
+    "@sapphire/async-queue": ^1.1.9
     "@sapphire/decorators": ^3.1.3
     "@sapphire/framework": ^2.2.0
     "@sapphire/pieces": ^3.2.0
