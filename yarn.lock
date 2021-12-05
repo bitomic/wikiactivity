@@ -3142,7 +3142,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.1":
+"node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.6":
   version: 2.6.6
   resolution: "node-fetch@npm:2.6.6"
   dependencies:
@@ -4879,7 +4879,7 @@ __metadata:
     lint-staged: ^12.1.2
     mw.js: ^1.5.2
     node-cron: ^3.0.0
-    node-fetch: ^2.6.1
+    node-fetch: ^2.6.6
     rimraf: ^3.0.2
     sequelize: ^6.11.0
     sqlite3: ^5.0.2
