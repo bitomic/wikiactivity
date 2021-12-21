@@ -27,7 +27,7 @@
     "mw.js": "^1.5.2",
     "node-cron": "^3.0.0",
     "node-fetch": "^2.6.6",
-    "sequelize": "^6.12.0",
+    "sequelize": "^6.12.1",
     "sqlite3": "^5.0.2"
   },
   "devDependencies": {
