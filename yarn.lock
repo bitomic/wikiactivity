@@ -839,13 +839,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"any-promise@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "any-promise@npm:1.3.0"
-  checksum: 0ee8a9bdbe882c90464d75d1f55cf027f5458650c4bd1f0467e65aec38ccccda07ca5844969ee77ed46d04e7dded3eaceb027e8d32f385688523fe305fa7e1de
-  languageName: node
-  linkType: hard
-
 "aproba@npm:^1.0.3":
   version: 1.2.0
   resolution: "aproba@npm:1.2.0"
@@ -3918,12 +3911,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"retry-as-promised@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "retry-as-promised@npm:4.0.0"
-  dependencies:
-    any-promise: ^1.3.0
-  checksum: bb7080575bdca4dab267cfd0e35a2ad096dbf4fe7e878864adf3ab24794ba1f9f29f52a1c5503117a5bd72abb6ea0d81a55659bbf735d2a8f2192c9e230d0990
+"retry-as-promised@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "retry-as-promised@npm:5.0.0"
+  checksum: 4d17e0597f967db0516714f0f2b085e2d1e8ea592450b013a1e0cd41dad74a9c3d1eb3c45351887de4bca1c3ac5f74dd07ef9942a3fb0e4db996a83bb28cb46e
   languageName: node
   linkType: hard
 
@@ -4052,9 +4043,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sequelize@npm:^6.12.0":
-  version: 6.12.0
-  resolution: "sequelize@npm:6.12.0"
+"sequelize@npm:^6.12.1":
+  version: 6.12.1
+  resolution: "sequelize@npm:6.12.1"
   dependencies:
     "@types/debug": ^4.1.7
     debug: ^4.3.3
@@ -4064,7 +4055,7 @@ __metadata:
     moment: ^2.29.1
     moment-timezone: ^0.5.34
     pg-connection-string: ^2.5.0
-    retry-as-promised: ^4.0.0
+    retry-as-promised: ^5.0.0
     semver: ^7.3.5
     sequelize-pool: ^7.1.0
     toposort-class: ^1.0.1
@@ -4088,7 +4079,7 @@ __metadata:
       optional: true
     tedious:
       optional: true
-  checksum: aab37aec893f238ac5a54e74522b67034892ad225d5424f0bf93c0662a7d39d4c7424647d2a1d75c7d72ae1ed0fc0fd983c205da3e138e8f9972bb5c92bca921
+  checksum: a4dbbc1f1516cb12c2098fe645fe8304d5bc73bb7ee306f0771351d6d9a8dbeaf72cc4db2af83c599d6122594d83d66378b9a215b8c1a7592e1124914037674f
   languageName: node
   linkType: hard
 
@@ -4943,7 +4934,7 @@ __metadata:
     node-cron: ^3.0.0
     node-fetch: ^2.6.6
     rimraf: ^3.0.2
-    sequelize: ^6.12.0
+    sequelize: ^6.12.1
     sqlite3: ^5.0.2
     typescript: ^4.5.4
   languageName: unknown
