@@ -570,7 +570,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.8.0":
+"@typescript-eslint/eslint-plugin@npm:^5.8.1":
   version: 5.8.1
   resolution: "@typescript-eslint/eslint-plugin@npm:5.8.1"
   dependencies:
@@ -608,7 +608,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.8.0":
+"@typescript-eslint/parser@npm:^5.8.1":
   version: 5.8.1
   resolution: "@typescript-eslint/parser@npm:5.8.1"
   dependencies:
@@ -4831,8 +4831,8 @@ __metadata:
     "@types/node": ^16.11.17
     "@types/node-cron": ^3.0.0
     "@types/node-fetch": 2.5.12
-    "@typescript-eslint/eslint-plugin": ^5.8.0
-    "@typescript-eslint/parser": ^5.8.0
+    "@typescript-eslint/eslint-plugin": ^5.8.1
+    "@typescript-eslint/parser": ^5.8.1
     discord-api-types: ^0.25.2
     discord.js: ^13.4.0
     dotenv: ^10.0.0
