@@ -24,7 +24,11 @@ export abstract class SlashCommand extends Piece {
 
 	protected async canManage( interaction: CommandInteraction ): Promise<boolean> {
 		if ( !this.isGuild( interaction ) ) return false
-		const { permissions } = member.permissions
+
+		const guild = interaction.guild ?? await this.container.client.guilds.fetch( interaction.guildId )
+		const member = await guild.members.fetch( interaction.user.id )
+		// eslint-disable-next-line prefer-destructuring
+		const { permissions } = member
 
 		const hasPermission = permissions.has( 'MANAGE_GUILD' )
 		if ( !hasPermission ) {
