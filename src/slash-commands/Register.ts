@@ -22,7 +22,7 @@ import type { SlashCommandOptions } from '../framework'
 	]
 } )
 export class UserSlash extends SlashCommand {
-	public async run( interaction: CommandInteraction ): Promise<void> {
+	public async run( interaction: CommandInteraction<'cached'> ): Promise<void> {
 		await interaction.deferReply()
 		const canManage = await this.canManage( interaction )
 		if ( !canManage ) return
