@@ -39,7 +39,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:^16.0.1":
+"@commitlint/cli@npm:^16.0.2":
   version: 16.0.2
   resolution: "@commitlint/cli@npm:16.0.2"
   dependencies:
@@ -4897,7 +4897,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "wikiactivity@workspace:."
   dependencies:
-    "@commitlint/cli": ^16.0.1
+    "@commitlint/cli": ^16.0.2
     "@commitlint/config-conventional": ^16.0.0
     "@discordjs/rest": ^0.1.0-canary.0
     "@sapphire/async-queue": ^1.1.9
