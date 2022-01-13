@@ -1540,7 +1540,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord.js@npm:*, discord.js@npm:^13.5.1":
+"discord.js@npm:*":
   version: 13.5.1
   resolution: "discord.js@npm:13.5.1"
   dependencies:
@@ -1554,6 +1554,23 @@ __metadata:
     node-fetch: ^2.6.1
     ws: ^8.4.0
   checksum: bb38d2675688838b183ce7f273ac322b10b8eec9d38b44397334b5a9277efcfd25b04ef9393dcd805b00945690abc1960bc849181c53f40580729f7542df10b5
+  languageName: node
+  linkType: hard
+
+"discord.js@npm:^13.6.0":
+  version: 13.6.0
+  resolution: "discord.js@npm:13.6.0"
+  dependencies:
+    "@discordjs/builders": ^0.11.0
+    "@discordjs/collection": ^0.4.0
+    "@sapphire/async-queue": ^1.1.9
+    "@types/node-fetch": ^2.5.12
+    "@types/ws": ^8.2.2
+    discord-api-types: ^0.26.0
+    form-data: ^4.0.0
+    node-fetch: ^2.6.1
+    ws: ^8.4.0
+  checksum: 59c1297fbebf9b25c90ea125808bc9177c134fd7c481f82ace636ab88cfdc90bc6ec777c844d375d26231fc1664a67e80a1aad2aed484b808e4cd7d55cc1d9e3
   languageName: node
   linkType: hard
 
@@ -4928,7 +4945,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.9.1
     "@typescript-eslint/parser": ^5.9.1
     discord-api-types: ^0.26.1
-    discord.js: ^13.5.1
+    discord.js: ^13.6.0
     dotenv: ^11.0.0
     eslint: ^8.6.0
     husky: ^7.0.4
