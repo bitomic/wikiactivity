@@ -26,7 +26,7 @@
     "ico-to-png": "^0.2.1",
     "mw.js": "^1.5.2",
     "node-cron": "^3.0.0",
-    "node-fetch": "^2.6.6",
+    "node-fetch": "^2.6.7",
     "sequelize": "^6.13.0",
     "sqlite3": "^5.0.2"
   },
