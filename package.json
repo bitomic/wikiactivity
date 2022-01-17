@@ -15,7 +15,7 @@
   "dependencies": {
     "@discordjs/rest": "^0.1.0-canary.0",
     "@sapphire/async-queue": "^1.1.9",
-    "@sapphire/decorators": "^3.1.6",
+    "@sapphire/decorators": "^4.0.0",
     "@sapphire/framework": "^2.3.0",
     "@sapphire/pieces": "^3.2.0",
     "@sapphire/plugin-logger": "^2.1.2",
