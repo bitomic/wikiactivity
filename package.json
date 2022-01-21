@@ -19,7 +19,7 @@
     "@sapphire/framework": "^2.3.0",
     "@sapphire/pieces": "^3.2.0",
     "@sapphire/plugin-logger": "^2.1.2",
-    "@sapphire/utilities": "^3.2.0",
+    "@sapphire/utilities": "^3.2.1",
     "discord-api-types": "^0.26.1",
     "discord.js": "^13.6.0",
     "dotenv": "^14.2.0",
