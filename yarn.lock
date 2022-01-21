@@ -487,6 +487,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sapphire/utilities@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "@sapphire/utilities@npm:3.2.1"
+  checksum: 08b4220f0bfde901aae4877e072046aeb1c10232858eda6103c52b2b52a812185220ee2bec739104078c58a6d6ee2b95f53b8cb5b745c1be589ecd663bdb94ae
+  languageName: node
+  linkType: hard
+
 "@sindresorhus/is@npm:^4.2.0":
   version: 4.3.0
   resolution: "@sindresorhus/is@npm:4.3.0"
@@ -4904,7 +4911,7 @@ __metadata:
     "@sapphire/framework": ^2.3.0
     "@sapphire/pieces": ^3.2.0
     "@sapphire/plugin-logger": ^2.1.2
-    "@sapphire/utilities": ^3.2.0
+    "@sapphire/utilities": ^3.2.1
     "@types/node": ^16.11.21
     "@types/node-cron": ^3.0.1
     "@types/node-fetch": 2.5.12
