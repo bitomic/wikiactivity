@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@discordjs/rest": "^0.3.0",
-    "@sapphire/async-queue": "^1.1.9",
+    "@sapphire/async-queue": "^1.2.0",
     "@sapphire/decorators": "^4.0.2",
     "@sapphire/framework": "^2.3.0",
     "@sapphire/pieces": "^3.2.0",
