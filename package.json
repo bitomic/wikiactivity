@@ -22,7 +22,7 @@
     "@sapphire/utilities": "^3.3.0",
     "discord-api-types": "^0.26.1",
     "discord.js": "^13.6.0",
-    "dotenv": "^14.3.2",
+    "dotenv": "^15.0.1",
     "ico-to-png": "^0.2.1",
     "mw.js": "^1.5.2",
     "node-cron": "^3.0.0",
