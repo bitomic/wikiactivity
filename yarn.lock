@@ -643,7 +643,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node-fetch@npm:2.5.12, @types/node-fetch@npm:^2.5.12":
+"@types/node-fetch@npm:2.6.0":
+  version: 2.6.0
+  resolution: "@types/node-fetch@npm:2.6.0"
+  dependencies:
+    "@types/node": "*"
+    form-data: ^2.3.3
+  checksum: 25fff9aa151e59fa6f66461fa5599e5d2a9a99e03a80dbbe8e991b2362b223d1635fc61e75128a1de91112ffc13c371212ea644cbc888d4b54662ea48ff3ff16
+  languageName: node
+  linkType: hard
+
+"@types/node-fetch@npm:^2.5.12":
   version: 2.5.12
   resolution: "@types/node-fetch@npm:2.5.12"
   dependencies:
@@ -2016,6 +2026,17 @@ __metadata:
   version: 0.6.1
   resolution: "forever-agent@npm:0.6.1"
   checksum: 766ae6e220f5fe23676bb4c6a99387cec5b7b62ceb99e10923376e27bfea72f3c3aeec2ba5f45f3f7ba65d6616965aa7c20b15002b6860833bb6e394dea546a8
+  languageName: node
+  linkType: hard
+
+"form-data@npm:^2.3.3":
+  version: 2.5.1
+  resolution: "form-data@npm:2.5.1"
+  dependencies:
+    asynckit: ^0.4.0
+    combined-stream: ^1.0.6
+    mime-types: ^2.1.12
+  checksum: 5134ada56cc246b293a1ac7678dba6830000603a3979cf83ff7b2f21f2e3725202237cfb89e32bcb38a1d35727efbd3c3a22e65b42321e8ade8eec01ce755d08
   languageName: node
   linkType: hard
 
@@ -4968,7 +4989,7 @@ __metadata:
     "@sapphire/utilities": ^3.3.0
     "@types/node": ^16.11.25
     "@types/node-cron": ^3.0.1
-    "@types/node-fetch": 2.5.12
+    "@types/node-fetch": 2.6.0
     "@typescript-eslint/eslint-plugin": ^5.10.1
     "@typescript-eslint/parser": ^5.10.1
     discord-api-types: ^0.26.1
