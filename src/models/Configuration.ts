@@ -8,7 +8,7 @@ interface IConfiguration {
 	channel: string
 	color?: number
 	guild: string
-	wiki: number
+	wiki: string
 }
 
 interface IConfigurationInterface extends SequelizeModel<IConfiguration, IConfiguration>, IConfiguration {
@@ -51,6 +51,13 @@ export class ConfigurationModel extends Model<IConfigurationInterface> {
 				timestamps: false
 			}
 		)
+	}
+
+	public async *iter(): AsyncGenerator<IConfiguration, void, unknown> {
+		const items = await this.model.findAll()
+		for ( const item of items ) {
+			yield item.toJSON()
+		}
 	}
 }
 
