@@ -2,6 +2,7 @@ import { container, LogLevel, SapphireClient } from '@sapphire/framework'
 import { env } from './environment'
 import { Intents } from 'discord.js'
 import { ModelStore } from '../framework'
+import { ScheduledTaskRedisStrategy } from '@sapphire/plugin-scheduled-tasks/register-redis'
 import type { Sequelize } from 'sequelize'
 import { sequelize } from './Sequelize'
 
@@ -19,6 +20,18 @@ export class UserClient extends SapphireClient {
 			loadDefaultErrorListeners: true,
 			logger: {
 				level: LogLevel.Debug
+			},
+			tasks: {
+				strategy: new ScheduledTaskRedisStrategy( {
+					bull: {
+						redis: {
+							db: env.REDIS_DB,
+							host: env.REDIS_HOST,
+							password: env.REDIS_PASSWORD,
+							port: env.REDIS_PORT
+						}
+					}
+				} ),
 			}
 		} )
 		container.sequelize = sequelize
