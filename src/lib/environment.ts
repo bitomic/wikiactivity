@@ -1,18 +1,18 @@
-import 'dotenv/config'
-import { MissingEnvError } from '../errors'
+import { load } from 'ts-dotenv'
 
-const environmentVariables = [
-	'DISCORD_DEVELOPMENT_SERVER',
-	'DISCORD_OWNER',
-	'DISCORD_PREFIX',
-	'DISCORD_TOKEN',
-	'NODE_ENV'
-] as const
-type Env = typeof environmentVariables[ number ]
-
-export const env = {} as Record<Env, string>
-for ( const key of environmentVariables ) {
-	const value = process.env[ key ]
-	if ( !value ) throw new MissingEnvError( key )
-	env[ key ] = value
-}
+export const env = load( {
+	DISCORD_DEVELOPMENT_SERVER: {
+		optional: true,
+		type: String
+	},
+	DISCORD_OWNER: String,
+	DISCORD_PREFIX: {
+		optional: true,
+		type: String
+	},
+	DISCORD_TOKEN: String,
+	NODE_ENV: [
+		'development' as const,
+		'production' as const
+	]
+} )

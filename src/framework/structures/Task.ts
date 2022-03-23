@@ -1,7 +1,6 @@
 import type { PieceContext, PieceOptions } from '@sapphire/pieces'
 import { AliasPiece } from '@sapphire/pieces'
 import type { Awaitable } from '@sapphire/framework'
-import type { Client } from '../lib'
 import cron from 'node-cron'
 import type { ScheduledTask } from 'node-cron'
 
@@ -52,8 +51,3 @@ export interface TaskOptions extends PieceOptions {
 	schedule: string
 }
 
-export interface Task {
-	get container(): {
-		client: Client
-	} & AliasPiece[ 'container' ]
-}

@@ -3,7 +3,7 @@ import type { Model } from 'sequelize'
 import { sequelize } from '../lib'
 
 interface IKeyV {
-	key: 'last-activity-check'
+	key: string
 	value: string
 }
 

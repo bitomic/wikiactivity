@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  bot:
+    env_file:
+      - .env
+    image: wikiactivity
+
+    # The following bind mount is for this template's sqlite setup
+    volumes:
+      - type: bind
+        source: ./databases
+        target: /home/node/app/databases

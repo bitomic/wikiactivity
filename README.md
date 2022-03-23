@@ -5,4 +5,4 @@ Base repository to create Discord bots using Sapphire.
 - Yarn
 
 # Credits
-- [Slash commands implementation](https://github.com/YorkAARGH/Sapphire-slashies-example) by YorkAARGH.
+- Dockerfile and Docker-related workflows based on [ConfeBot](https://github.com/ConfederacionHispana/ConfeBot) (authored by @TheNozomi).

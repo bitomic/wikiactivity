@@ -12,4 +12,5 @@ databases
 demo
 dist
 node_modules
+slash-settings.json
 tsconfig.tsbuildinfo

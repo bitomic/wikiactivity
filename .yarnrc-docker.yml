@@ -1,5 +1,3 @@
-enableGlobalCache: true
-
 packageExtensions:
   "@sapphire/decorators@*":
     dependencies:

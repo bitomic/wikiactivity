@@ -1,3 +1,4 @@
+/*
 import { ApplyOptions } from '@sapphire/decorators'
 import type { CommandInteraction } from 'discord.js'
 import { SlashCommand } from '../framework'
@@ -5,8 +6,7 @@ import type { SlashCommandOptions } from '../framework'
 
 @ApplyOptions<SlashCommandOptions>( {
 	description: 'Pong!',
-	enabled: true,
-	guildOnly: true,
+	enabled: false,
 	name: 'ping'
 } )
 export class UserSlash extends SlashCommand {
@@ -17,3 +17,4 @@ export class UserSlash extends SlashCommand {
 		} )
 	}
 }
+*/
