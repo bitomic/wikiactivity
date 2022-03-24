@@ -52,6 +52,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@bitomic/utilities@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@bitomic/utilities@npm:1.0.0"
+  checksum: 43855f56bf88e0dcec6c31f3beffe2903301c2512eb14d84a607a203b61687efbf96304ef04860889d5031289ff783d182d300fd3b9620588a6c9046b514999b
+  languageName: node
+  linkType: hard
+
+"@canvas/image-data@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@canvas/image-data@npm:1.0.0"
+  checksum: 371d7342190b06c4528d900abbe84e19704ee23c8d6a48927ce10a65e2958a3161e1d08104d10acaf39072799a8a2815ec3403940901cdb3561baa8b4a238e99
+  languageName: node
+  linkType: hard
+
 "@commitlint/cli@npm:^16.2.3":
   version: 16.2.3
   resolution: "@commitlint/cli@npm:16.2.3"
@@ -651,6 +665,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/bull@npm:^3.15.8":
+  version: 3.15.8
+  resolution: "@types/bull@npm:3.15.8"
+  dependencies:
+    "@types/ioredis": "*"
+    "@types/redis": ^2.8.0
+  checksum: 9a081a67d563545269dd2467419d43e833d3511afa5ef16ffa97f18ed178199088b810c8e5951dfad15929fccb712d67351f7c6d0640aee6b66fd726615ba01b
+  languageName: node
+  linkType: hard
+
 "@types/debug@npm:^4.1.7":
   version: 4.1.7
   resolution: "@types/debug@npm:4.1.7"
@@ -666,6 +690,15 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: add79e212acd5ac76b97b9045834e03a7996aef60a814185e0459088fd290519a3c1620865d588fa36c4498bf614210d2a703af5cf80aa1dbc125db78f6edac3
+  languageName: node
+  linkType: hard
+
+"@types/ioredis@npm:*":
+  version: 4.28.10
+  resolution: "@types/ioredis@npm:4.28.10"
+  dependencies:
+    "@types/node": "*"
+  checksum: 0f2788cf25f490d3b345db8c5f8b8ce3f6c92cc99abcf744c8f974f02b9b3875233b3d22098614c462a0d6c41c523bd655509418ea88eb6249db6652290ce7cf
   languageName: node
   linkType: hard
 
@@ -739,6 +772,15 @@ __metadata:
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
   checksum: fd6bce2b674b6efc3db4c7c3d336bd70c90838e8439de639b909ce22f3720d21344f52427f1d9e57b265fcb7f6c018699b99e5e0c208a1a4823014269a6bf35b
+  languageName: node
+  linkType: hard
+
+"@types/redis@npm:^2.8.0":
+  version: 2.8.32
+  resolution: "@types/redis@npm:2.8.32"
+  dependencies:
+    "@types/node": "*"
+  checksum: 2b12103e05977941870c9a248f6ea51f4b7ad7e0f16a7403799c2ed1b3e63b60f693c39f9186be0ea02776934c4595ddcd2a5bde41e530aaad42d26449f6a669
   languageName: node
   linkType: hard
 
@@ -1595,6 +1637,27 @@ __metadata:
   version: 1.2.0
   resolution: "decamelize@npm:1.2.0"
   checksum: ad8c51a7e7e0720c70ec2eeb1163b66da03e7616d7b98c9ef43cce2416395e84c1e9548dd94f5f6ffecfee9f8b94251fc57121a8b021f2ff2469b2bae247b8aa
+  languageName: node
+  linkType: hard
+
+"decode-bmp@npm:^0.2.0":
+  version: 0.2.1
+  resolution: "decode-bmp@npm:0.2.1"
+  dependencies:
+    "@canvas/image-data": ^1.0.0
+    to-data-view: ^1.1.0
+  checksum: 9b72ce1e9bfbc3a2a8aeea36cba845b0180335094481c016999910e74b593f9d7d85414ac355d73b2a478ffabbd4c6a89e49360aaba33e2248165fd1a500db29
+  languageName: node
+  linkType: hard
+
+"decode-ico@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "decode-ico@npm:0.4.0"
+  dependencies:
+    "@canvas/image-data": ^1.0.0
+    decode-bmp: ^0.2.0
+    to-data-view: ^1.1.0
+  checksum: 5734b8448ecebe49fca3f2a599927970b35f1a6065d956f573d8ab1d48268460afc3c3949d8ba6782953234d7f26ce479849602a755041297ff2deaeab19067c
   languageName: node
   linkType: hard
 
@@ -2484,6 +2547,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ico-to-png@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "ico-to-png@npm:0.2.1"
+  dependencies:
+    decode-ico: ^0.4.0
+    lodepng: ^2.0.0
+    resize-image-data: ^0.3.0
+  checksum: 4886448aea5f4ca9a510dfe299af8b0e665cb68115d6b0f19f0beab059cb85cfe87787fbcfec955fbc1bc456b77c90b45386fba66420eba1bf3f67801863911b
+  languageName: node
+  linkType: hard
+
 "iconv-lite@npm:^0.4.4":
   version: 0.4.24
   resolution: "iconv-lite@npm:0.4.24"
@@ -2958,6 +3032,16 @@ __metadata:
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
+  languageName: node
+  linkType: hard
+
+"lodepng@npm:^2.0.0":
+  version: 2.1.0
+  resolution: "lodepng@npm:2.1.0"
+  dependencies:
+    "@canvas/image-data": ^1.0.0
+    node-gyp: latest
+  checksum: 6de54cbc817c3d099d28e9b0ef32f6ed3c5be3d97ad86e69605e54dcee7ee52f5f78691c0a047d2c9bb4689b9757ae5478908a40c7715db8b29db8b7dded2d5f
   languageName: node
   linkType: hard
 
@@ -4031,6 +4115,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"resize-image-data@npm:^0.3.0":
+  version: 0.3.1
+  resolution: "resize-image-data@npm:0.3.1"
+  dependencies:
+    "@canvas/image-data": ^1.0.0
+  checksum: 7d2e4a650a5a3ff4903a421976fe7f04fe72e0aaaa30eca790f0ca46c000ec617cbf3de1db6b8944a65b9f3832d548ee33a483ecf7ca8845ad7d128f33d9ee60
+  languageName: node
+  linkType: hard
+
 "resolve-from@npm:5.0.0, resolve-from@npm:^5.0.0":
   version: 5.0.0
   resolution: "resolve-from@npm:5.0.0"
@@ -4694,6 +4787,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"to-data-view@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "to-data-view@npm:1.1.0"
+  checksum: 53bf818cf7ed4b481568085cfed5528b268efe1e95d0b90c2a45031de9cf40de91600771c046924348fdedbedb54f655f98e7bf1c51041ba06f0ec3f2fd53dc6
+  languageName: node
+  linkType: hard
+
 "to-regex-range@npm:^5.0.1":
   version: 5.0.1
   resolution: "to-regex-range@npm:5.0.1"
@@ -5089,6 +5189,7 @@ __metadata:
   dependencies:
     "@bitomic/eslint-config": ^1.0.0
     "@bitomic/plugin-application-commands": 1.1.3
+    "@bitomic/utilities": ^1.0.0
     "@commitlint/cli": ^16.2.3
     "@commitlint/config-conventional": ^16.2.1
     "@discordjs/rest": ^0.3.0
@@ -5099,6 +5200,7 @@ __metadata:
     "@sapphire/plugin-scheduled-tasks": ^2.3.0
     "@sapphire/stopwatch": ^1.4.0
     "@sapphire/utilities": ^3.6.1
+    "@types/bull": ^3.15.8
     "@types/fs-extra": ^9.0.13
     "@types/node": ^16.11.26
     "@types/node-cron": ^3.0.1
@@ -5110,6 +5212,7 @@ __metadata:
     eslint: ^8.11.0
     fs-extra: ^10.0.1
     husky: ^7.0.4
+    ico-to-png: ^0.2.1
     lint-staged: ^12.3.7
     mw.js: ^2.4.1
     node-cron: ^3.0.0
