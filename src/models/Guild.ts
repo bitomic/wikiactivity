@@ -41,7 +41,7 @@ export class GuildModel extends Model<IGuildInterface> {
 
 	public async setLimit( snowflake: string, limit: number ): Promise<void> {
 		await this.model.upsert(
-			{ snowflake, limit },
+			{ limit, snowflake },
 		)
 	}
 
