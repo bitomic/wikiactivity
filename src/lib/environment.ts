@@ -17,6 +17,9 @@ export const env = load( {
 	],
 	REDIS_DB: Number,
 	REDIS_HOST: String,
-	REDIS_PASSWORD: String,
+	REDIS_PASSWORD: {
+		optional: true,
+		type: String
+	},
 	REDIS_PORT: Number
 } )
