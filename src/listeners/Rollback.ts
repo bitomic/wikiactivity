@@ -34,13 +34,13 @@ export class UserEvent extends Listener {
 				const bot = await this.container.client.getFandomBot()
 				if ( bot ) {
 					const token = await this.container.client.wiki.getToken( 'rollback' ) as unknown as string
-					await this.container.client.wiki.post( {
+					console.log( await this.container.client.wiki.post( {
 						action: 'rollback',
 						markbot: true,
 						title,
 						token,
 						user
-					} )
+					} ) )
 					fields.push( { name: 'Reversión', value: `Se ha revertido la edición a petición de <@!${ interaction.user.id }>.` } )
 				} else {
 					fields.push( { name: 'Error', value: 'No he podido iniciar sesión para revertir la edición.' } )
