@@ -526,13 +526,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-scheduled-tasks@npm:^2.3.2":
-  version: 2.3.2
-  resolution: "@sapphire/plugin-scheduled-tasks@npm:2.3.2"
+"@sapphire/plugin-scheduled-tasks@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@sapphire/plugin-scheduled-tasks@npm:2.3.0"
   dependencies:
-    "@sapphire/time-utilities": ^1.7.3
+    "@sapphire/time-utilities": ^1.6.0
     tslib: ^2.3.1
-  checksum: af641a210ca7856a0678e3de8ea3a79bb32da46bd8763cfcb4a2a2b3b93b7d119fb205a7c374e964a2e375994267cd00796272c483a02c29e7993c17dd84e168
+  checksum: 797323adff19384a7e961e35b2d6efc29f5c7df5a04b1e9aebd3b56822903199b4b3131ce432ba37cffd8e18c1b86ec0ff2dd012cb695ed6513872a6257af28e
   languageName: node
   linkType: hard
 
@@ -5141,7 +5141,7 @@ __metadata:
     "@sapphire/framework": 2.4.1
     "@sapphire/pieces": ^3.2.0
     "@sapphire/plugin-logger": ^2.2.1
-    "@sapphire/plugin-scheduled-tasks": ^2.3.2
+    "@sapphire/plugin-scheduled-tasks": ^2.3.0
     "@sapphire/stopwatch": ^1.4.1
     "@sapphire/utilities": ^3.6.2
     "@types/bull": ^3.15.8
