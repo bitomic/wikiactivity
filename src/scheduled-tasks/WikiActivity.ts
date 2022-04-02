@@ -1,8 +1,8 @@
+import { Canvas, loadImage } from 'skia-canvas'
 import type { MessageEmbedOptions, Webhook } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Fandom } from 'mw.js'
 import type { FandomWiki } from 'mw.js'
-import ico2png from 'ico-to-png'
 import { MessageAttachment } from 'discord.js'
 import type { PieceOptions } from '@sapphire/pieces'
 import { request } from 'undici'
@@ -148,16 +148,18 @@ export class ManualTask extends ScheduledTask {
 	protected async getFavicon( wiki: Required<FandomWiki> ): Promise<Buffer | null> {
 		try {
 			const url = this.getUrl( wiki, 'Special:Filepath/Site-favicon.ico' )
-			const { body, headers, statusCode } = await request( url )
+			const { statusCode } = await request( url, { method: 'HEAD' } )
 			if ( statusCode !== 200 && wiki.interwiki !== 'community' ) {
 				const community = await Fandom.getWiki( 'community' ).load()
 				return this.getFavicon( community )
 			}
-			const buffer = Buffer.from( await body.text() )
-			if ( headers[ 'content-type' ] === 'image/x-icon' ) {
-				return ico2png( buffer, 32 )
-			}
-			return buffer
+
+			const canvas = new Canvas( 16, 16 )
+			const image = await loadImage( url )
+			const ctx = canvas.getContext( '2d' )
+			ctx.drawImage( image, 0, 0, 16, 16 )
+
+			return canvas.toBuffer( 'png' )
 		} catch {
 			return null
 		}
