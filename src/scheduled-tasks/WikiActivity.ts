@@ -77,7 +77,7 @@ const getEmbedTime = ( embed: MessageEmbedOptions ): number => {
 } )
 export class ManualTask extends ScheduledTask {
 	public async run( payload: number ): Promise<void> {
-		this.container.logger.debug( 'Running task with the following payload:', new Date( payload * 1000 ) )
+		this.container.logger.debug( new Date(), 'Running task with the following payload:', new Date( payload * 1000 ) )
 
 		const fandom = new Fandom()
 		const configurations = this.container.stores.get( 'models' ).get( 'configurations' )
@@ -112,6 +112,7 @@ export class ManualTask extends ScheduledTask {
 		}
 
 		this.container.tasks.create( 'wikiactivity', now, 1000 * 60 * 5 )
+		this.container.logger.debug( new Date(), `Scheduled next task at:`, new Date( 1000 * ( now + 60 * 5 ) ) )
 	}
 
 	protected async getActivity( wiki: Required<FandomWiki>, from: number, to: number ): Promise<MessageEmbedOptions[]> {
