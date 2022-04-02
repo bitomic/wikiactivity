@@ -1,5 +1,5 @@
-import type { MessageEmbedOptions, Webhook } from 'discord.js'
 import { MessageActionRow, MessageButton } from 'discord.js'
+import type { MessageEmbedOptions, Webhook } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Fandom } from 'mw.js'
 import type { FandomWiki } from 'mw.js'
