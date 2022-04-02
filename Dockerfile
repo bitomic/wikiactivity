@@ -9,8 +9,7 @@ RUN apk add -u --no-cache \
 	dumb-init \
 	fontconfig \
 	jq \
-	nodejs \
-	g++
+	nodejs
 
 COPY --chown=node:node yarn.lock .
 COPY --chown=node:node package.json .

@@ -1,9 +1,7 @@
-import { Canvas, loadImage } from 'skia-canvas'
 import type { MessageEmbedOptions, Webhook } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Fandom } from 'mw.js'
 import type { FandomWiki } from 'mw.js'
-import { MessageAttachment } from 'discord.js'
 import type { PieceOptions } from '@sapphire/pieces'
 import { request } from 'undici'
 import { ScheduledTask } from '@sapphire/plugin-scheduled-tasks'
@@ -98,8 +96,6 @@ export class ManualTask extends ScheduledTask {
 			const webhooks = await this.getWebhooks( config.guild, config.channel )
 			if ( !webhooks ) continue
 
-			const favicon = await this.getFavicon( wiki )
-			const attachment = favicon ? [ new MessageAttachment( favicon, 'favicon.png' ) ] : []
 			let switcher: 0 | 1 = 0
 			for ( const embed of activity ) {
 				const webhook = webhooks[ switcher ]
@@ -108,7 +104,6 @@ export class ManualTask extends ScheduledTask {
 				await webhook.send( {
 					avatarURL: config.avatar ?? '',
 					embeds: [ embed ],
-					files: attachment,
 					username: wiki.sitename
 				} )
 				await sleep( 1000 )
@@ -143,26 +138,6 @@ export class ManualTask extends ScheduledTask {
 		const pagesByIds = await this.loadDiscussionsPagesByIds( posts, path )
 
 		return posts.map( post => this.formatDiscussionsActivityItem( post, wiki, pagesByIds ) )
-	}
-
-	protected async getFavicon( wiki: Required<FandomWiki> ): Promise<Buffer | null> {
-		try {
-			const url = this.getUrl( wiki, 'Special:Filepath/Site-favicon.ico' )
-			const { statusCode } = await request( url, { method: 'HEAD' } )
-			if ( statusCode !== 200 && wiki.interwiki !== 'community' ) {
-				const community = await Fandom.getWiki( 'community' ).load()
-				return this.getFavicon( community )
-			}
-
-			const canvas = new Canvas( 16, 16 )
-			const image = await loadImage( url )
-			const ctx = canvas.getContext( '2d' )
-			ctx.drawImage( image, 0, 0, 16, 16 )
-
-			return canvas.toBuffer( 'png' )
-		} catch {
-			return null
-		}
 	}
 
 	protected async getWebhooks( guildId: string, channelId: string ): Promise<[ Webhook, Webhook ] | null> {
