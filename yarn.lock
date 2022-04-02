@@ -611,13 +611,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/utilities@npm:^3.6.1":
-  version: 3.6.1
-  resolution: "@sapphire/utilities@npm:3.6.1"
-  checksum: 0a1479c7cb3f10455906d91a43e9457aec97155f5821d00d572920c0ee25e7842310e8af3ed0e2c967b8adc256016f38b4c3bf8f17843613bcb6754dbe5d9599
-  languageName: node
-  linkType: hard
-
 "@sapphire/utilities@npm:^3.6.2":
   version: 3.6.2
   resolution: "@sapphire/utilities@npm:3.6.2"
@@ -5150,7 +5143,7 @@ __metadata:
     "@sapphire/plugin-logger": ^2.2.1
     "@sapphire/plugin-scheduled-tasks": ^2.3.0
     "@sapphire/stopwatch": ^1.4.1
-    "@sapphire/utilities": ^3.6.1
+    "@sapphire/utilities": ^3.6.2
     "@types/bull": ^3.15.8
     "@types/fs-extra": ^9.0.13
     "@types/node": ^16.11.26
