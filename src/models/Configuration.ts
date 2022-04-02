@@ -36,10 +36,6 @@ export class ConfigurationModel extends Model<IConfigurationInterface> {
 					type: DataTypes.INTEGER
 				},
 				guild: {
-					references: {
-						key: 'snowflake',
-						model: 'Guilds'
-					},
 					type: DataTypes.STRING
 				},
 				wiki: {
@@ -51,6 +47,15 @@ export class ConfigurationModel extends Model<IConfigurationInterface> {
 				timestamps: false
 			}
 		)
+	}
+
+	public async countGuildConfigurations( guild: string ): Promise<number> {
+		const items = await this.getGuildConfigurations( guild )
+		return items.length
+	}
+
+	public getGuildConfigurations( guild: string ): Promise<IConfiguration[]> {
+		return this.model.findAll( { where: { guild } } )
 	}
 
 	public async *iter(): AsyncGenerator<IConfiguration, void, unknown> {
