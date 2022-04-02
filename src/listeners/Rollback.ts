@@ -47,7 +47,8 @@ export class UserEvent extends Listener {
 					fields.push( { name: 'Error', value: 'No he podido iniciar sesión para revertir la edición.' } )
 				}
 			}
-		} catch {
+		} catch ( e ) {
+			this.container.logger.error( e )
 			fields.push( { name: 'Error', value: 'Ocurrió un error al intentar revertir esta edición.' } )
 		}
 
