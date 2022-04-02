@@ -69,7 +69,6 @@ export class UserCommand extends Command {
 		void interaction.editReply( `Se ha creado exitosamente una configuración para ${ interwiki }.` )
 	}
 
-	public override messageRun(): void {
-
+	public override messageRun(): void { // eslint-disable-line @typescript-eslint/no-empty-function
 	}
 }
