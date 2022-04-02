@@ -4,10 +4,17 @@ services:
   bot:
     env_file:
       - .env
-    image: wikiactivity
+    image: ghcr.io/bitomic/wikiactivity
+
+    environment:
+      - REDIS_URI=redis://redis:6379
 
     # The following bind mount is for this template's sqlite setup
     volumes:
       - type: bind
         source: ./databases
         target: /home/node/app/databases
+  redis:
+    image: 'redis:alpine'
+    ports:
+      - 8080:6379
