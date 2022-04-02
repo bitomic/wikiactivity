@@ -47,7 +47,7 @@ export class GuildModel extends Model<IGuildInterface> {
 
 	public async getLimit( snowflake: string ): Promise<number> {
 		const result = await this.model.findOne( { where: { snowflake } } )
-		return result?.getDataValue( 'limit' ) ?? 0
+		return result?.getDataValue( 'limit' ) ?? 1
 	}
 }
 
