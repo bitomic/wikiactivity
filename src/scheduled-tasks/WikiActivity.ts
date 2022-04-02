@@ -1,7 +1,6 @@
 import type { MessageEmbedOptions, Webhook } from 'discord.js'
 import { MessageActionRow, MessageButton } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
-import { deflateSync } from 'zlib'
 import { Fandom } from 'mw.js'
 import type { FandomWiki } from 'mw.js'
 import type { PieceOptions } from '@sapphire/pieces'
@@ -124,10 +123,11 @@ export class ManualTask extends ScheduledTask {
 		const [ , user, title ] = embed.description.match( /\[(.*?)\].*?\[(.*?)\]/ ) ?? []
 		if ( !user || !title ) return []
 
-		const encoded = deflateSync( `${ user }#${ title }` ).toString()
+		const label = `r-${ user }#${ title }`
+		if ( label.length > 100 ) return []
 		const row = new MessageActionRow()
 		const button = new MessageButton()
-			.setCustomId( `r-${ encoded }` )
+			.setCustomId( `r-${ user }#${ title }` )
 			.setLabel( 'Revertir' )
 			.setStyle( 'DANGER' )
 		row.addComponents( button )

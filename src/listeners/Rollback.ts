@@ -4,7 +4,6 @@ import type { Interaction } from 'discord.js'
 import { Listener } from '@sapphire/framework'
 import type { ListenerOptions } from '@sapphire/framework'
 import { MessageActionRow } from 'discord.js'
-import { unzipSync } from 'zlib'
 
 @ApplyOptions<ListenerOptions>( {
 	event: Constants.Events.INTERACTION_CREATE
@@ -27,7 +26,7 @@ export class UserEvent extends Listener {
 
 		try {
 			const data = interaction.customId.substring( 2 )
-			const [ user, title ] = unzipSync( data ).toString()
+			const [ user, title ] = data
 				.split( '#' )
 			if ( !user || !title ) {
 				fields.push( { name: 'Error', value: 'Ocurrió un error al intentar recuperar la información de la edición.' } )
