@@ -7,7 +7,9 @@ services:
     image: ghcr.io/bitomic/wikiactivity
 
     environment:
-      - REDIS_URI=redis://redis:6379
+      - REDIS_DB=0
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
 
     # The following bind mount is for this template's sqlite setup
     volumes:
