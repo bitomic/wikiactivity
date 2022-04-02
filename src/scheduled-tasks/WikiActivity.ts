@@ -1,5 +1,7 @@
 import type { MessageEmbedOptions, Webhook } from 'discord.js'
+import { MessageActionRow, MessageButton } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
+import { deflateSync } from 'zlib'
 import { Fandom } from 'mw.js'
 import type { FandomWiki } from 'mw.js'
 import type { PieceOptions } from '@sapphire/pieces'
@@ -103,6 +105,7 @@ export class ManualTask extends ScheduledTask {
 
 				await webhook.send( {
 					avatarURL: config.avatar ?? '',
+					components: this.getComponents( webhook, embed ),
 					embeds: [ embed ],
 					username: wiki.sitename
 				} )
@@ -112,7 +115,23 @@ export class ManualTask extends ScheduledTask {
 		}
 
 		this.container.tasks.create( 'wikiactivity', now, 1000 * 60 * 5 )
-		this.container.logger.debug( new Date(), `Scheduled next task at:`, new Date( 1000 * ( now + 60 * 5 ) ) )
+		this.container.logger.debug( new Date(), 'Scheduled next task at:', new Date( 1000 * ( now + 60 * 5 ) ) )
+	}
+
+	protected getComponents( webhook: Webhook, embed: MessageEmbedOptions ): MessageActionRow[] {
+		if ( webhook.guildId !== '768261477345525781' ) return []
+		if ( !embed.description || !embed.description.includes( 'editó' ) ) return []
+		const [ , user, title ] = embed.description.match( /\[(.*?)\].*?\[(.*?)\]/ ) ?? []
+		if ( !user || !title ) return []
+
+		const encoded = deflateSync( `${ user }#${ title }` ).toString()
+		const row = new MessageActionRow()
+		const button = new MessageButton()
+			.setCustomId( `r-${ encoded }` )
+			.setLabel( 'Revertir' )
+			.setStyle( 'DANGER' )
+		row.addComponents( button )
+		return [ row ]
 	}
 
 	protected async getActivity( wiki: Required<FandomWiki>, from: number, to: number ): Promise<MessageEmbedOptions[]> {

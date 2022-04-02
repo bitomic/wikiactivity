@@ -11,6 +11,8 @@ export const env = load( {
 		type: String
 	},
 	DISCORD_TOKEN: String,
+	FANDOM_PASSWORD: String,
+	FANDOM_USERNAME: String,
 	NODE_ENV: [
 		'development' as const,
 		'production' as const
