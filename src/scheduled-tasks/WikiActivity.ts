@@ -129,7 +129,9 @@ export class ManualTask extends ScheduledTask {
 	protected async getDiscussionsActivity( wiki: Required<FandomWiki>, from: number, to: number ): Promise<MessageEmbedOptions[]> {
 		const path = Fandom.interwiki2path( wiki.interwiki )
 		const url = `${ path }/wikia.php?controller=DiscussionPost&method=getPosts&sortDirection=descending&sortKey=creation_date&limit=100&includeCounters=false`
-		const { body } = await request( url )
+		const { body, statusCode } = await request( url )
+		if ( statusCode !== 200  ) return []
+
 		const response = await body.json() as DiscussionsResponse
 		const posts = response._embedded[ 'doc:posts' ].filter( post => {
 			const created = post.creationDate.epochSecond
