@@ -15,7 +15,7 @@
   "dependencies": {
     "@bitomic/plugin-application-commands": "1.1.3",
     "@bitomic/utilities": "^1.0.0",
-    "@discordjs/rest": "^0.3.0",
+    "@discordjs/rest": "^0.4.1",
     "@sapphire/decorators": "^4.3.4",
     "@sapphire/framework": "2.4.1",
     "@sapphire/pieces": "^3.2.0",
