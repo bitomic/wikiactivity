@@ -1189,9 +1189,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bull@npm:^4.8.1":
-  version: 4.8.1
-  resolution: "bull@npm:4.8.1"
+"bull@npm:^4.8.2":
+  version: 4.8.2
+  resolution: "bull@npm:4.8.2"
   dependencies:
     cron-parser: ^4.2.1
     debuglog: ^1.0.0
@@ -1202,7 +1202,7 @@ __metadata:
     p-timeout: ^3.2.0
     semver: ^7.3.2
     uuid: ^8.3.0
-  checksum: dd8147c9ace168e33cf12e710fecfd7ed5e4f9c05c4006f993fbfcdee8de45efcac8a0427cdf6f1cd5cb347cc7c2049f7fa8c936f3abf40404cd0c1bbd70a7b3
+  checksum: 6f49cce1d8d03a8cb480bcdd7e52f96df000ba79bb0f0a70d48fb5efaadf3f608c1ae129c949d09f454c959789cd459cfc70bf8425739c7f2feeb9d3f2e7c9d7
   languageName: node
   linkType: hard
 
@@ -4467,7 +4467,7 @@ __metadata:
     "@types/node-cron": ^3.0.1
     "@typescript-eslint/eslint-plugin": ^5.20.0
     "@typescript-eslint/parser": ^5.20.0
-    bull: ^4.8.1
+    bull: ^4.8.2
     discord-api-types: ^0.31.2
     discord.js: ^13.6.0
     eslint: ^8.13.0
