@@ -30,7 +30,7 @@
     "mw.js": "^2.4.1",
     "node-cron": "^3.0.0",
     "sequelize": "^6.19.0",
-    "sqlite3": "^5.0.5",
+    "sqlite3": "^5.0.6",
     "ts-dotenv": "^0.8.3",
     "undici": "^5.0.0"
   },
