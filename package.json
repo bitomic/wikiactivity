@@ -32,7 +32,7 @@
     "sequelize": "^6.19.0",
     "sqlite3": "^5.0.6",
     "ts-dotenv": "^0.8.3",
-    "undici": "^5.0.0"
+    "undici": "^5.1.0"
   },
   "devDependencies": {
     "@bitomic/eslint-config": "^1.0.0",
