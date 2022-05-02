@@ -1,6 +1,7 @@
 import { MessageActionRow, MessageButton } from 'discord.js'
 import type { MessageEmbedOptions, Webhook } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
+import type { BullClient } from '@sapphire/plugin-scheduled-tasks/register-redis'
 import { Fandom } from 'mw.js'
 import type { FandomWiki } from 'mw.js'
 import type { PieceOptions } from '@sapphire/pieces'
@@ -78,6 +79,7 @@ const getEmbedTime = ( embed: MessageEmbedOptions ): number => {
 } )
 export class ManualTask extends ScheduledTask {
 	public async run( payload: number ): Promise<void> {
+		( this.container.tasks.client as BullClient ).obliterate( { force: true } )
 		this.container.logger.debug( new Date(), 'Running task with the following payload:', new Date( payload * 1000 ) )
 
 		const fandom = new Fandom()
