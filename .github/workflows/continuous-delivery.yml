@@ -50,18 +50,14 @@ jobs:
             type=raw,value=${{ steps.package_version.outputs.version }}
             type=raw,value=${{ steps.package_version.outputs.version }}.${{ github.run_number }}
             type=raw,value=latest,enable=${{ endsWith(github.ref, github.event.repository.default_branch) }}
-
+      
       - name: Build and push Docker image
-        uses: docker/build-push-action@7f9d37fa544684fb73bfe4835ed7214c255ce02b # renovate: tag=v2.9.0
+        uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a # tag=v2.10.0
         with:
-          push: true
           context: .
-          build-args: |
-            BUILD_NUMBER=${{ github.run_number }}
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
 
       - name: Save image tag for use in deploy job
         id: save_tag
