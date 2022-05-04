@@ -12,16 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Checkout Project
+        uses: actions/checkout@f25a3a9f25bd5f4c5d77189cab02ff357b5aedeb # tag=v2
+        with:
+          submodules: true
       - name: Login to GitHub Container Registry
         uses: docker/login-action@6af3c118c8376c675363897acf1757f7a9be6583 # tag=v1.13.0
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.DELETE_PACKAGES_TOKEN }}
-
-      - name: Checkout Project
-        uses: actions/checkout@f25a3a9f25bd5f4c5d77189cab02ff357b5aedeb # tag=v2
-        with:
-          submodules: true
       - name: Deploy image to production server
         run: docker run -t caprover/cli-caprover:2.2.3 caprover deploy --caproverUrl ${{ secrets.CAPROVER_URL }} --caproverPassword ${{ secrets.CAPROVER_PASSWORD }} --caproverApp ${{ secrets.CAPROVER_APP }} --imageName ghcr.io/bitomic/wikiactivity:latest
