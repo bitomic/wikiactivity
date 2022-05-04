@@ -1,0 +1,20 @@
+on:
+  workflow_dispatch:
+  
+env:
+  # Uses docker.io for Docker Hub if empty
+  REGISTRY: ghcr.io
+  # github.repository as <account>/<repo>
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  Deploy:
+    name: Deploy image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@f25a3a9f25bd5f4c5d77189cab02ff357b5aedeb # tag=v2
+        with:
+          submodules: true
+      - name: Deploy image to production server
+        run: docker run -t caprover/cli-caprover:2.2.3 caprover deploy --caproverUrl ${{ secrets.CAPROVER_URL }} --caproverPassword ${{ secrets.CAPROVER_PASSWORD }} --caproverApp ${{ secrets.CAPROVER_APP }} --imageName ghcr.io/confederacionhispana/confebot:${{ needs.Publish.outputs.deploy_tag }}
