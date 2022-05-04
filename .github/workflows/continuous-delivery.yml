@@ -1,5 +1,12 @@
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'Dockerfile'
+      - '.github/workflows/continuous-delivery.yml'
   
 env:
   # Uses docker.io for Docker Hub if empty
