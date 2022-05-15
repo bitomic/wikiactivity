@@ -17,7 +17,7 @@
     "@bitomic/utilities": "^1.0.0",
     "@discordjs/rest": "^0.4.1",
     "@sapphire/decorators": "^4.3.4",
-    "@sapphire/framework": "2.4.1",
+    "@sapphire/framework": "2.5.0",
     "@sapphire/pieces": "^3.2.0",
     "@sapphire/plugin-logger": "^2.2.1",
     "@sapphire/plugin-scheduled-tasks": "^2.3.0",
