@@ -79,41 +79,46 @@ const getEmbedTime = ( embed: MessageEmbedOptions ): number => {
 } )
 export class ManualTask extends ScheduledTask {
 	public async run( payload: number ): Promise<void> {
-		const bullClient = this.container.tasks.client as BullClient
-		await bullClient.obliterate( { force: true } )
-		this.container.logger.debug( new Date(), 'Running task with the following payload:', new Date( payload * 1000 ) )
-
-		const fandom = new Fandom()
-		const configurations = this.container.stores.get( 'models' ).get( 'configurations' )
-		const from = typeof payload === 'number' ? payload : Math.floor(  Date.now() / 1000  - 60 * 5 )
 		const now = Math.floor( Date.now() / 1000 )
 
-		for await ( const config of configurations.iter() ) {
-			const wiki = await fandom.getWiki( config.wiki ).load()
-				.catch( () => null )
-			if ( !wiki ) {
-				this.container.logger.warn( `Couldn't load wiki: ${ config.wiki }` )
-				continue
-			}
-			const activity = await this.getActivity( wiki, from, now )
-			if ( activity.length === 0 ) continue
-			const webhooks = await this.getWebhooks( config.guild, config.channel )
-			if ( !webhooks ) continue
+		try {
+			const bullClient = this.container.tasks.client as BullClient
+			await bullClient.obliterate( { force: true } )
+			this.container.logger.debug( new Date(), 'Running task with the following payload:', new Date( payload * 1000 ) )
 
-			let switcher: 0 | 1 = 0
-			for ( const embed of activity ) {
-				const webhook = webhooks[ switcher ]
-				if ( config.color ) embed.color = config.color
+			const fandom = new Fandom()
+			const configurations = this.container.stores.get( 'models' ).get( 'configurations' )
+			const from = typeof payload === 'number' ? payload : Math.floor(  Date.now() / 1000  - 60 * 5 )
 
-				await webhook.send( {
-					avatarURL: config.avatar ?? '',
-					components: this.getComponents( webhook, embed ),
-					embeds: [ embed ],
-					username: wiki.sitename
-				} )
-				await sleep( 1000 )
-				switcher = Math.abs( switcher - 1 ) as 0 | 1
+			for await ( const config of configurations.iter() ) {
+				const wiki = await fandom.getWiki( config.wiki ).load()
+					.catch( () => null )
+				if ( !wiki ) {
+					this.container.logger.warn( `Couldn't load wiki: ${ config.wiki }` )
+					continue
+				}
+				const activity = await this.getActivity( wiki, from, now )
+				if ( activity.length === 0 ) continue
+				const webhooks = await this.getWebhooks( config.guild, config.channel )
+				if ( !webhooks ) continue
+
+				let switcher: 0 | 1 = 0
+				for ( const embed of activity ) {
+					const webhook = webhooks[ switcher ]
+					if ( config.color ) embed.color = config.color
+
+					await webhook.send( {
+						avatarURL: config.avatar ?? '',
+						components: this.getComponents( webhook, embed ),
+						embeds: [ embed ],
+						username: wiki.sitename
+					} )
+					await sleep( 1000 )
+					switcher = Math.abs( switcher - 1 ) as 0 | 1
+				}
 			}
+		} catch {
+			this.container.logger.warn( 'An unexpected error had occurred while running the task.' )
 		}
 
 		this.container.tasks.create( 'wikiactivity', now, 1000 * 60 * 5 )
