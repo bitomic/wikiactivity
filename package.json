@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@bitomic/eslint-config": "^1.0.0",
-    "@commitlint/cli": "^16.2.4",
+    "@commitlint/cli": "^16.3.0",
     "@commitlint/config-conventional": "^16.2.4",
     "@types/bull": "^3.15.8",
     "@types/fs-extra": "^9.0.13",
