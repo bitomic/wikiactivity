@@ -1,42 +1,39 @@
+import type { ApplicationCommandRegistry, CommandOptions } from '@sapphire/framework'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Command } from '@sapphire/framework'
 import type { CommandInteraction } from 'discord.js'
-import type { CommandOptions } from '@sapphire/framework'
 import { request } from 'undici'
 
 @ApplyOptions<CommandOptions>( {
-	chatInputApplicationOptions: {
-		options: [
-			{
-				description: 'Interwiki del wiki a modificar',
-				name: 'interwiki',
-				required: true,
-				type: 'STRING'
-			},
-			{
-				choices: [
-					{ name: 'Avatar', value: 'Avatar' },
-					{ name: 'Color', value: 'Color' }
-				],
-				description: 'Configuración a realizar',
-				name: 'ajuste',
-				required: true,
-				type: 'STRING'
-			},
-			{
-				description: 'URL de la imagen o color a asignar',
-				name: 'valor',
-				required: true,
-				type: 'STRING'
-			}
-		]
-	},
 	description: 'Configura los mensajes de actividad de un wiki.',
 	enabled: true,
 	name: 'configurar'
 } )
 export class UserCommand extends Command {
-	public override async chatInputApplicationRun( interaction: CommandInteraction ): Promise<void> {
+	public override registerApplicationCommands( registry: ApplicationCommandRegistry ): void {
+		registry.registerChatInputCommand( builder => builder
+			.setName( this.name )
+			.setDescription( this.description )
+			.setDefaultPermission( false )
+			.addStringOption( input => input
+				.setName( 'interwiki' )
+				.setDescription( 'Interwiki del wiki a modificar' )
+				.setRequired( true ) )
+			.addStringOption( input => input
+				.setName( 'ajuste' )
+				.setDescription( 'Configuración a realizar' )
+				.setRequired( true )
+				.addChoices( [
+					[ 'Avatar', 'Avatar' ],
+					[ 'Color', 'Color' ]
+				] ) )
+			.addStringOption( input => input
+				.setName( 'valor' )
+				.setDescription( 'URL de la imagen o color a asignar' )
+				.setRequired( true ) ) )
+	}
+
+	public override async chatInputRun( interaction: CommandInteraction ): Promise<void> {
 		if ( !interaction.inGuild() ) return
 
 		if ( !interaction.memberPermissions.has( 'MANAGE_GUILD' ) ) {

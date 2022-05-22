@@ -1,4 +1,4 @@
-import { container, LogLevel, SapphireClient } from '@sapphire/framework'
+import { container, SapphireClient } from '@sapphire/framework'
 import type { FandomBot, FandomWiki } from 'mw.js'
 import { env } from './environment'
 import { Fandom } from 'mw.js'
@@ -15,17 +15,13 @@ export class UserClient extends SapphireClient {
 
 	public constructor() {
 		super( {
-			applicationCommandsHintProvider: () => env.DISCORD_DEVELOPMENT_SERVER
-				? { guildIds: [ env.DISCORD_DEVELOPMENT_SERVER ] }
-				: null,
 			defaultPrefix: env.DISCORD_PREFIX ?? '!',
 			intents: [
-				Intents.FLAGS.GUILDS,
-				Intents.FLAGS.GUILD_MESSAGES
+				Intents.FLAGS.GUILDS
 			],
 			loadDefaultErrorListeners: true,
 			logger: {
-				level: LogLevel.Debug
+				level: 20 // debug
 			},
 			tasks: {
 				strategy: new ScheduledTaskRedisStrategy( {

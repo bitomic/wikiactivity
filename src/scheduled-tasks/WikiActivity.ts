@@ -79,7 +79,8 @@ const getEmbedTime = ( embed: MessageEmbedOptions ): number => {
 } )
 export class ManualTask extends ScheduledTask {
 	public async run( payload: number ): Promise<void> {
-		( this.container.tasks.client as BullClient ).obliterate( { force: true } )
+		const bullClient = this.container.tasks.client as BullClient
+		await bullClient.obliterate( { force: true } )
 		this.container.logger.debug( new Date(), 'Running task with the following payload:', new Date( payload * 1000 ) )
 
 		const fandom = new Fandom()

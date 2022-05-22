@@ -1,26 +1,27 @@
+import type { ApplicationCommandRegistry, CommandOptions } from '@sapphire/framework'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Command } from '@sapphire/framework'
 import type { CommandInteraction } from 'discord.js'
-import type { CommandOptions } from '@sapphire/framework'
 import { Fandom } from 'mw.js'
 
 @ApplyOptions<CommandOptions>( {
-	chatInputApplicationOptions: {
-		options: [
-			{
-				description: 'Interwiki del wiki',
-				name: 'interwiki',
-				required: true,
-				type: 'STRING'
-			}
-		]
-	},
 	description: 'Configura la actividad de un wiki para mostrarse en este servidor.',
 	enabled: true,
 	name: 'registrar'
 } )
 export class UserCommand extends Command {
-	public override async chatInputApplicationRun( interaction: CommandInteraction ): Promise<void> {
+	public override registerApplicationCommands( registry: ApplicationCommandRegistry ): void {
+		registry.registerChatInputCommand( builder => builder
+			.setName( this.name )
+			.setDescription( this.description )
+			.setDefaultPermission( false )
+			.addStringOption( input => input
+				.setName( 'interwiki' )
+				.setDescription( 'Interwiki del wiki' )
+				.setRequired( true ) ) )
+	}
+
+	public override async chatInputRun( interaction: CommandInteraction ): Promise<void> {
 		if ( !interaction.inGuild() ) return
 
 		if ( !interaction.memberPermissions.has( 'MANAGE_GUILD' ) ) {
@@ -67,8 +68,5 @@ export class UserCommand extends Command {
 		} )
 
 		void interaction.editReply( `Se ha creado exitosamente una configuración para ${ interwiki }.` )
-	}
-
-	public override messageRun(): void { // eslint-disable-line @typescript-eslint/no-empty-function
 	}
 }
