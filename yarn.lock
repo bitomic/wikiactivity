@@ -4427,10 +4427,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^5.1.1":
-  version: 5.1.1
-  resolution: "undici@npm:5.1.1"
-  checksum: 59494ccc130f3cbb35dfa14037b9dfdd37170ae8b6360b1e39b03e04e2adfd8b55bae6026be994ab51b1688025a3a2f43c3b9ad572424cb0635052e47f87680a
+"undici@npm:^5.5.1":
+  version: 5.5.1
+  resolution: "undici@npm:5.5.1"
+  checksum: c041c9093df7ec683479a9555581206a7c7bebfc1ed6e8669920e55618461fc4ce08938e2fbf8ef7d692c2813c44392b5ed25c58396ee4a72ffd1f1f953712c9
   languageName: node
   linkType: hard
 
@@ -4595,7 +4595,7 @@ __metadata:
     sqlite3: ^5.0.8
     ts-dotenv: ^0.8.3
     typescript: ^4.6.4
-    undici: ^5.1.1
+    undici: ^5.5.1
   languageName: unknown
   linkType: soft
 
