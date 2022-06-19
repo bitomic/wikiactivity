@@ -19,8 +19,8 @@ export const env = load( {
 	PG_HOST: String,
 	PG_PASSWORD: String,
 	PG_PORT: {
-			default: 5432,
-			type: Number
+		default: 5432,
+		type: Number
 	},
 	PG_USERNAME: String,
 	WIKIACTIVITY_HOST: String,
