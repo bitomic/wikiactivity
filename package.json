@@ -13,6 +13,16 @@
     "start": "yarn node --enable-source-maps dist/main.js"
   },
   "dependencies": {
+    "@sapphire/framework": "3.0.0-next.e669f2b.0",
+    "@sapphire/pieces": "^3.3.4",
+    "colorette": "^2.0.19",
+    "discord.js": "^13.8.0",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "pino": "^8.0.0",
+    "pino-pretty": "^8.0.0",
+    "sequelize": "^6.21.0",
+    "socket.io-client": "^4.5.1",
     "ts-dotenv": "^0.8.3"
   },
   "devDependencies": {
