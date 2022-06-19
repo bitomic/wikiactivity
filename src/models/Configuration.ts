@@ -61,6 +61,15 @@ export class ConfigurationModel extends Model<IConfigurationInterface> {
 	public getWikiGuild( wiki: string ): Promise<IConfiguration[]> {
 		return this.model.findAll( { where: { wiki } } )
 	}
+
+	public getWikis(): Promise<Set<string>> {
+		return this.model.findAll( {
+			attributes: [ 'wiki' ],
+			group: [ 'wiki' ]
+		} )
+			.then( res => res.map( i => i.wiki ) )
+			.then( wikis => new Set( wikis ) )
+	}
 }
 
 declare global {

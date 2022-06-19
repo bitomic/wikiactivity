@@ -1,9 +1,9 @@
 import { container, SapphireClient } from '@sapphire/framework'
+import { EventStore, ModelStore } from '../framework'
 import { env } from './environment'
 import { Intents } from 'discord.js'
 import { io } from './io'
 import type { Logger } from 'pino'
-import { ModelStore } from '../framework'
 import { pino } from './pino'
 import type { Sequelize } from 'sequelize'
 import { sequelize } from './sequelize'
@@ -22,6 +22,7 @@ export class UserClient extends SapphireClient {
 		container.pino = pino
 		container.sequelize = sequelize
 		container.stores.register( new ModelStore() )
+		container.stores.register( new EventStore() )
 	}
 
 	public async start(): Promise<void> {
