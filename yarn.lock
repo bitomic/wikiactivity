@@ -304,6 +304,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@discordjs/collection@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "@discordjs/collection@npm:0.7.0"
+  checksum: 141aa35a5433bacba3617b533557b4948388c7b59cdaecee51ccd721c1b9242e50d95bdef53ee2491535a017095f5072ace3c3e9e594193f67a1c5a8a4b7db93
+  languageName: node
+  linkType: hard
+
 "@discordjs/collection@npm:^0.7.0-dev":
   version: 0.7.0-dev.1650197026-b94a876
   resolution: "@discordjs/collection@npm:0.7.0-dev.1650197026-b94a876"
@@ -575,6 +582,17 @@ __metadata:
     "@sapphire/utilities": ^3.6.2
     tslib: ^2.4.0
   checksum: 468f71bb52ba8314e4d1ce0c4cb31ac268b51b15294ac9e500d2bd2cf76611d6f2d5b90b8cfd2d77a0c671b3c5f94b41068cd29a4fca115609f01bc64b51a4af
+  languageName: node
+  linkType: hard
+
+"@sapphire/pieces@npm:^3.3.4":
+  version: 3.3.4
+  resolution: "@sapphire/pieces@npm:3.3.4"
+  dependencies:
+    "@discordjs/collection": ^0.7.0
+    "@sapphire/utilities": ^3.6.2
+    tslib: ^2.4.0
+  checksum: 64f1c8248f3d08db39654bf8aee8560ccf21b15fd508e8bcb97215702dd9e8bf08d6e4720dbd9a4b3c4196b8db34d214172ada8f210b119a51bc0eae4eec36e4
   languageName: node
   linkType: hard
 
@@ -4570,7 +4588,7 @@ __metadata:
     "@discordjs/rest": ^0.4.1
     "@sapphire/decorators": ^4.3.4
     "@sapphire/framework": next
-    "@sapphire/pieces": ^3.3.3
+    "@sapphire/pieces": ^3.3.4
     "@sapphire/plugin-logger": ^2.2.1
     "@sapphire/plugin-scheduled-tasks": ^2.3.3
     "@sapphire/stopwatch": ^1.4.1
