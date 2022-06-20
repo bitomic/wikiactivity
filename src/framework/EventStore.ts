@@ -1,5 +1,5 @@
+import { container } from '@sapphire/framework'
 import { Event } from './Event'
-import { io } from '../lib'
 import type { Socket } from 'socket.io-client'
 import { Store } from '@sapphire/pieces'
 
@@ -10,7 +10,7 @@ export class EventStore extends Store<Event> {
 	}
 
 	public override set( key: string, value: Event ): this {
-		io.on( value.options.event, ( socket: Socket ) => value.run( socket ) )
+		container.io.on( value.options.event, ( socket: Socket ) => value.run( socket ) )
 		return super.set( key, value )
 	}
 }

@@ -33,3 +33,26 @@
 {"level":30,"time":"2022-06-20T00:23:11.832Z","pid":9644,"hostname":"user-PC","msg":"WebSocket connected successfully!"}
 {"level":30,"time":"2022-06-20T00:23:14.400Z","pid":9644,"hostname":"user-PC","msg":"Client is ready and running."}
 {"level":30,"time":"2022-06-20T00:23:14.506Z","pid":9644,"hostname":"user-PC","msg":"No wikis are registered. The socket won't join any room."}
+{"level":30,"time":"2022-06-20T00:58:40.895Z","pid":11884,"hostname":"user-PC","msg":"WebSocket connected successfully!"}
+{"level":30,"time":"2022-06-20T00:59:33.395Z","pid":6548,"hostname":"user-PC","msg":"WebSocket connected successfully!"}
+{"level":30,"time":"2022-06-20T01:00:14.056Z","pid":7176,"hostname":"user-PC","msg":"Client is ready and running."}
+{"level":30,"time":"2022-06-20T01:01:38.291Z","pid":6688,"hostname":"user-PC","msg":"Client is ready and running."}
+{"level":30,"time":"2022-06-20T01:02:15.079Z","pid":2996,"hostname":"user-PC","msg":"Client is ready and running."}
+{"level":30,"time":"2022-06-20T01:03:33.333Z","pid":12796,"hostname":"user-PC","msg":"Client is ready and running."}
+{"level":30,"time":"2022-06-20T01:04:08.667Z","pid":11628,"hostname":"user-PC","msg":"Client is ready and running."}
+{"level":30,"time":"2022-06-20T01:05:27.128Z","pid":12268,"hostname":"user-PC","msg":"Client is ready and running."}
+{"level":30,"time":"2022-06-20T01:06:30.516Z","pid":11744,"hostname":"user-PC","msg":"Client is ready and running."}
+{"level":30,"time":"2022-06-20T01:06:46.281Z","pid":1232,"hostname":"user-PC","msg":"Client is ready and running."}
+{"level":30,"time":"2022-06-20T01:09:15.344Z","pid":3816,"hostname":"user-PC","msg":"Client is ready and running."}
+{"level":30,"time":"2022-06-20T01:09:49.916Z","pid":5332,"hostname":"user-PC","msg":"Client is ready and running."}
+{"level":30,"time":"2022-06-20T01:09:50.672Z","pid":5332,"hostname":"user-PC","msg":"WebSocket connected successfully!"}
+{"level":30,"time":"2022-06-20T01:09:50.761Z","pid":5332,"hostname":"user-PC","msg":"No wikis are registered. The socket won't join any room."}
+{"level":30,"time":"2022-06-20T01:10:56.102Z","pid":11884,"hostname":"user-PC","msg":"Client is ready and running."}
+{"level":30,"time":"2022-06-20T01:10:56.565Z","pid":11884,"hostname":"user-PC","msg":"WebSocket connected successfully!"}
+{"level":30,"time":"2022-06-20T01:10:56.675Z","pid":11884,"hostname":"user-PC","msg":"No wikis are registered. The socket won't join any room."}
+{"level":30,"time":"2022-06-20T01:13:02.975Z","pid":6336,"hostname":"user-PC","msg":"Client is ready and running."}
+{"level":30,"time":"2022-06-20T01:13:03.396Z","pid":6336,"hostname":"user-PC","msg":"WebSocket connected successfully!"}
+{"level":30,"time":"2022-06-20T01:13:03.485Z","pid":6336,"hostname":"user-PC","msg":"No wikis are registered. The socket won't join any room."}
+{"level":30,"time":"2022-06-20T01:13:28.860Z","pid":11008,"hostname":"user-PC","msg":"Client is ready and running."}
+{"level":30,"time":"2022-06-20T01:13:29.614Z","pid":11008,"hostname":"user-PC","msg":"WebSocket connected successfully!"}
+{"level":30,"time":"2022-06-20T01:13:29.737Z","pid":11008,"hostname":"user-PC","msg":"Joined the following rooms: bitomic"}
