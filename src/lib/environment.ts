@@ -11,17 +11,18 @@ export const env = load( {
 		type: String
 	},
 	DISCORD_TOKEN: String,
-	FANDOM_PASSWORD: String,
-	FANDOM_USERNAME: String,
 	NODE_ENV: [
 		'development' as const,
 		'production' as const
 	],
-	REDIS_DB: Number,
-	REDIS_HOST: String,
-	REDIS_PASSWORD: {
-		optional: true,
-		type: String
+	PG_DATABASE: String,
+	PG_HOST: String,
+	PG_PASSWORD: String,
+	PG_PORT: {
+		default: 5432,
+		type: Number
 	},
-	REDIS_PORT: Number
+	PG_USERNAME: String,
+	WIKIACTIVITY_HOST: String,
+	WIKIACTIVITY_PORT: Number
 } )
