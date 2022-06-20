@@ -14,3 +14,15 @@ export class EventStore extends Store<Event> {
 		return super.set( key, value )
 	}
 }
+
+declare module '@sapphire/pieces' {
+	interface StoreRegistryEntries {
+		'events': EventStore
+	}
+}
+
+declare global {
+	// eslint-disable-next-line @typescript-eslint/no-empty-interface
+    interface EventRegistryEntries {
+    }
+}

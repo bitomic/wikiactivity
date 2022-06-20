@@ -8,6 +8,7 @@ interface IConfiguration {
 	channel: string
 	color?: number
 	guild: string
+	name?: string
 	wiki: string
 }
 
@@ -36,6 +37,9 @@ export class ConfigurationModel extends Model<IConfigurationInterface> {
 					type: DataTypes.INTEGER
 				},
 				guild: {
+					type: DataTypes.STRING
+				},
+				name: {
 					type: DataTypes.STRING
 				},
 				wiki: {
@@ -75,7 +79,7 @@ export class ConfigurationModel extends Model<IConfigurationInterface> {
 		return this.model.findAll( { where: { guild } } )
 	}
 
-	public getWikiGuild( wiki: string ): Promise<IConfiguration[]> {
+	public getWikiGuilds( wiki: string ): Promise<IConfiguration[]> {
 		return this.model.findAll( { where: { wiki } } )
 	}
 
