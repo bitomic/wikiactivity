@@ -91,6 +91,13 @@ export class ConfigurationModel extends Model<IConfigurationInterface> {
 			.then( res => res.map( i => i.wiki ) )
 			.then( wikis => new Set( wikis ) )
 	}
+
+	public setProperty( guild: string, wiki: string, property: 'avatar' | 'color' | 'name', value: string | number ): Promise<[ number ]> {
+		return this.model.update(
+			{ [ property ]: value },
+			{ where: { guild, wiki } }
+		)
+	}
 }
 
 declare global {

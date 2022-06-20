@@ -91,6 +91,7 @@ export class ActivityEvent extends Event {
 						embeds: [
 							{
 								...embed,
+								color: configuration.color ?? 0x0088ff,
 								footer: {
 									text: fandomwiki?.sitename ?? 'Wiki desconocido'
 								}

@@ -3754,6 +3754,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici@npm:^5.5.1":
+  version: 5.5.1
+  resolution: "undici@npm:5.5.1"
+  checksum: c041c9093df7ec683479a9555581206a7c7bebfc1ed6e8669920e55618461fc4ce08938e2fbf8ef7d692c2813c44392b5ed25c58396ee4a72ffd1f1f953712c9
+  languageName: node
+  linkType: hard
+
 "universalify@npm:^0.1.2":
   version: 0.1.2
   resolution: "universalify@npm:0.1.2"
@@ -3880,6 +3887,7 @@ __metadata:
     socket.io-client: ^4.5.1
     ts-dotenv: ^0.8.3
     typescript: ^4.6.4
+    undici: ^5.5.1
   languageName: unknown
   linkType: soft
 
