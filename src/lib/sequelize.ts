@@ -1,9 +1,9 @@
 import { env } from './environment'
 import { Sequelize } from 'sequelize'
 
-export const sequelize = new Sequelize( env.PG_DATABASE, env.PG_USERNAME, env.PG_PASSWORD, {
-	dialect: 'postgres',
-	host: env.PG_HOST,
+export const sequelize = new Sequelize( env.MYSQL_DATABASE, env.MYSQL_USERNAME, env.MYSQL_PASSWORD, {
+	dialect: 'mysql',
+	host: env.MYSQL_HOST,
 	logging: false,
-	port: env.PG_PORT
+	port: env.MYSQL_PORT
 } )

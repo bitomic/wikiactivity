@@ -15,14 +15,14 @@ export const env = load( {
 		'development' as const,
 		'production' as const
 	],
-	PG_DATABASE: String,
-	PG_HOST: String,
-	PG_PASSWORD: String,
-	PG_PORT: {
+	MYSQL_DATABASE: String,
+	MYSQL_HOST: String,
+	MYSQL_PASSWORD: String,
+	MYSQL_PORT: {
 		default: 5432,
 		type: Number
 	},
-	PG_USERNAME: String,
+	MYSQL_USERNAME: String,
 	WIKIACTIVITY_HOST: String,
 	WIKIACTIVITY_PORT: Number
 } )
