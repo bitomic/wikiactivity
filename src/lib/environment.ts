@@ -11,10 +11,6 @@ export const env = load( {
 		type: String
 	},
 	DISCORD_TOKEN: String,
-	NODE_ENV: [
-		'development' as const,
-		'production' as const
-	],
 	MYSQL_DATABASE: String,
 	MYSQL_HOST: String,
 	MYSQL_PASSWORD: String,
@@ -23,6 +19,10 @@ export const env = load( {
 		type: Number
 	},
 	MYSQL_USERNAME: String,
+	NODE_ENV: [
+		'development' as const,
+		'production' as const
+	],
 	WIKIACTIVITY_HOST: String,
 	WIKIACTIVITY_PORT: Number
 } )

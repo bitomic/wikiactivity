@@ -1,7 +1,7 @@
 import { Precondition, type PreconditionOptions, type PreconditionResult } from '@sapphire/framework'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { CommandInteraction } from 'discord.js'
-import { env } from '../lib';
+import { env } from '../lib'
 
 @ApplyOptions<PreconditionOptions>( {
 	name: 'ManageServer'
