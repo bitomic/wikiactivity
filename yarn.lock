@@ -364,12 +364,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/decorators@npm:^4.3.6":
-  version: 4.3.6
-  resolution: "@sapphire/decorators@npm:4.3.6"
+"@sapphire/decorators@npm:^4.3.8":
+  version: 4.3.8
+  resolution: "@sapphire/decorators@npm:4.3.8"
   dependencies:
     tslib: ^2.4.0
-  checksum: 4a9b273e1dc2a86895df07c7ef169db293b15f331ecda10a9c15f96c2f50be94adb2896564944eacb0a99128fbe30c2e126128518b788df2c49bcc8e95617388
+  checksum: 1642d102959fe81313c30a180d4bbbdc8ace51c6fb41710e03c5ec971b889aa0e845660c4bdaae4a2f16611bfefd09966c30e6d46fe39c59a0deaaa493f3a54d
   languageName: node
   linkType: hard
 
@@ -3865,7 +3865,7 @@ __metadata:
     "@bitomic/eslint-config": ^1.0.0
     "@commitlint/cli": ^16.3.0
     "@commitlint/config-conventional": ^16.2.4
-    "@sapphire/decorators": ^4.3.6
+    "@sapphire/decorators": ^4.3.8
     "@sapphire/framework": 3.0.0-next.fd7be0b.0
     "@sapphire/pieces": ^3.3.4
     "@types/node": ^16.11.43

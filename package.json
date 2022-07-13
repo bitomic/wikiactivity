@@ -13,7 +13,7 @@
     "start": "yarn node --enable-source-maps dist/main.js"
   },
   "dependencies": {
-    "@sapphire/decorators": "^4.3.6",
+    "@sapphire/decorators": "^4.3.8",
     "@sapphire/framework": "3.0.0-next.fd7be0b.0",
     "@sapphire/pieces": "^3.3.4",
     "colorette": "^2.0.19",
