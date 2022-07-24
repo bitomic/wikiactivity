@@ -15,7 +15,7 @@
   "dependencies": {
     "@sapphire/decorators": "^4.3.6",
     "@sapphire/framework": "3.0.0-next.fd7be0b.0",
-    "@sapphire/pieces": "^3.3.4",
+    "@sapphire/pieces": "^3.3.5",
     "colorette": "^2.0.19",
     "discord.js": "^13.8.1",
     "mw.js": "^2.4.1",
