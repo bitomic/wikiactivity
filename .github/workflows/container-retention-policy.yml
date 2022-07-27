@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Delete images older than a week
-        uses: snok/container-retention-policy@46881d5f6ddd0509d9646f4565ddcdfdca520707 # tag=v1
+        uses: snok/container-retention-policy@eeb1249ebb557c2f7ff1de16f46282a82791017f # tag=v1
         with:
           image-names: ${{ github.event.repository.name }}
           cut-off: One second ago UTC
