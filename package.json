@@ -17,7 +17,7 @@
     "@sapphire/framework": "3.0.0-next.fd7be0b.0",
     "@sapphire/pieces": "^3.3.4",
     "colorette": "^2.0.19",
-    "discord.js": "^13.8.1",
+    "discord.js": "^14.1.2",
     "mw.js": "^2.4.1",
     "mysql2": "^2.3.3",
     "pino": "^8.0.0",
