@@ -15,6 +15,7 @@ env:
   REGISTRY: ghcr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository }}
+  REPOSITORY_NAME: ${{ github.event.repository.name }}
 
 jobs:
   Publish:
@@ -33,7 +34,7 @@ jobs:
         uses: saionaro/extract-package-version@de8268c348d3a9ed3514c86a9ad8d4568ab8b49e # tag=v1.1.1
         
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@6af3c118c8376c675363897acf1757f7a9be6583 # tag=v1.13.0
+        uses: docker/login-action@dd4fa0671be5250ee6f50aedf4cb05514abda2c7 # tag=v1.14.1
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
@@ -73,4 +74,4 @@ jobs:
           submodules: true
           
       - name: Deploy image to production server
-        run: docker run -t caprover/cli-caprover:2.2.3 caprover deploy --caproverUrl ${{ secrets.CAPROVER_URL }} --caproverPassword ${{ secrets.CAPROVER_PASSWORD }} --caproverApp ${{ secrets.CAPROVER_APP }} --imageName ghcr.io/bitomic/wikiactivity:${{ needs.Publish.outputs.deploy_tag }}
+        run: docker run -t caprover/cli-caprover:2.2.3 caprover deploy --caproverUrl ${{ secrets.CAPROVER_URL }} --caproverPassword ${{ secrets.CAPROVER_PASSWORD }} --caproverApp ${{ env.REPOSITORY_NAME }} --imageName ghcr.io/bitomic/${{ env.REPOSITORY_NAME }}:${{ needs.Publish.outputs.deploy_tag }}
