@@ -13,7 +13,7 @@
     "start": "yarn node --enable-source-maps dist/main.js"
   },
   "dependencies": {
-    "@bitomic/wikiactivity-api": "1.1.2",
+    "@bitomic/wikiactivity-api": "1.1.3",
     "@sapphire/decorators": "^4.3.6",
     "@sapphire/framework": "3.0.0-next.fd7be0b.0",
     "@sapphire/pieces": "^3.3.4",

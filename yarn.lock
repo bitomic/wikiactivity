@@ -39,14 +39,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bitomic/wikiactivity-api@npm:1.1.2":
-  version: 1.1.2
-  resolution: "@bitomic/wikiactivity-api@npm:1.1.2"
+"@bitomic/wikiactivity-api@npm:1.1.3":
+  version: 1.1.3
+  resolution: "@bitomic/wikiactivity-api@npm:1.1.3"
   dependencies:
     mw.js: ^2.4.1
     ts-dotenv: ^0.8.3
     undici: ^5.8.1
-  checksum: eebfb129b894eb48bf85ffc4e748837b4ff37a60b3ef37c3a5657a9e1563422091c572e06265af5e9f022396c172ff00def60ac744a408cb1fd00da7093b6ead
+  checksum: 8931381910013e9772dae13bb26d2e31b7d346a5d1363dabb235d5e9c15e0e1f99bd2aa2ab057183b1b4217a63737ea6724e2c9aaf2052290972b2241bf9b795
   languageName: node
   linkType: hard
 
@@ -4022,7 +4022,7 @@ __metadata:
   resolution: "wikiactivity@workspace:."
   dependencies:
     "@bitomic/eslint-config": ^1.0.0
-    "@bitomic/wikiactivity-api": 1.1.2
+    "@bitomic/wikiactivity-api": 1.1.3
     "@commitlint/cli": ^17.0.3
     "@commitlint/config-conventional": ^17.0.3
     "@sapphire/decorators": ^4.3.6

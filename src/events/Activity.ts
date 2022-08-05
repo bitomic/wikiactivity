@@ -168,6 +168,18 @@ export class ActivityEvent extends Event {
 
 				embed.fields ??= fields
 			}
+		} else if ( item.isDelete() ) {
+			let action = 'borró'
+			if ( item.isRestoring() ) action = 'restauró'
+
+			const articleUrl = this.getUrl( item.wiki, item.title )
+			const article = this.getDiscordLink( item.title, articleUrl )
+
+			embed.description = `🗑️ **${ user }** ${ action } **${ article }**.`
+
+			if ( item.comment.length > 0 ) {
+				embed.fields = [ { name: 'Motivo', value: item.comment } ]
+			}
 		} else if ( item.isMove() ) {
 			const fromUrl = this.getUrl( item.wiki, item.title )
 			const from = this.getDiscordLink( item.title, fromUrl )
@@ -259,13 +271,14 @@ export class ActivityEvent extends Event {
 
 		const pageUrl = this.getUrl( item.wiki, item.title )
 		const page = this.getDiscordLink( item.title, pageUrl )
+
 		const sizediff = item.sizediff < 0 ? `- ${ Math.abs( item.sizediff ) }` : `+ ${ item.sizediff }`
 		const diffUrl = `${ this.parseInterwiki( item.wiki ) }?diff=${ item.revid }`
 		const diff = this.getDiscordLink( sizediff, diffUrl )
 
 		const emoji = item.type === 'edit' ? '📝' : '☑'
 		const action = item.type === 'edit' ? 'editó' : 'creó'
-		embed.description = `${ emoji } **${ user }** ${ action } **${ page }. (${ diff })`
+		embed.description = `${ emoji } **${ user }** ${ action } **${ page }**. (${ diff })`
 
 		if ( item.comment ) {
 			embed.fields = [ { name: 'Resumen', value: item.comment } ]
