@@ -278,7 +278,7 @@ export class ActivityEvent extends Event {
 
 		const emoji = item.type === 'edit' ? '📝' : '☑'
 		const action = item.type === 'edit' ? 'editó' : 'creó'
-		embed.description = `${ emoji } **${ user }** ${ action } **${ page }**. (${ diff })`
+		embed.description = `${ emoji } **${ user }** ${ action } **${ page }** (${ diff })`
 
 		if ( item.comment ) {
 			embed.fields = [ { name: 'Resumen', value: item.comment } ]
