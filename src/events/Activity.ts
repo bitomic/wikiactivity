@@ -1,46 +1,21 @@
+import { type ActivityItem, createActivityItem } from '@bitomic/wikiactivity-api'
+import type { DiscussionsItem, DiscussionsPostResponse, LogEventsItem, LogEventsResponse, RecentChangesItem, RecentChangesResponse } from '@bitomic/wikiactivity-api'
 import { Event, type EventOptions } from '../framework'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Fandom } from 'mw.js'
+import type { FandomWiki } from 'mw.js'
+import { isIPv4 } from 'net'
 import type { MessageEmbedOptions } from 'discord.js'
-
-interface IDiscussionsItem {
-	author: {
-		avatar: string
-		badge: string
-		name: string
-	}
-	content: string
-	created: number
-	id: string
-	isReply: boolean
-	pageTitle?: string
-	threadId: string
-	title?: string
-	url: string
-	wiki: string
-}
-
-interface IRecentChangesItem {
-	oldRevid: number
-	revid: number
-	sizediff: number
-	summary: string
-	timestamp: number
-	title: string
-	type: string
-	user: string
-	wiki: string
-}
 
 @ApplyOptions<EventOptions>( {
 	event: 'activity',
 	name: 'activity'
 } )
 export class ActivityEvent extends Event {
-	public queue: Array<IDiscussionsItem | IRecentChangesItem> = []
+	public queue: ActivityItem[] = []
 
-	public run( item: IDiscussionsItem | IRecentChangesItem ) {
-		this.queue.push( item )
+	public run( item: DiscussionsPostResponse | LogEventsResponse | RecentChangesResponse ) {
+		this.queue.push( createActivityItem( item ) )
 	}
 
 	public async process(): Promise<void> {
@@ -48,7 +23,7 @@ export class ActivityEvent extends Event {
 		this.queue = []
 
 		const configurations = this.container.stores.get( 'models' ).get( 'configurations' )
-		const perWiki: Record<string, Array<IDiscussionsItem | IRecentChangesItem>> = {}
+		const perWiki: Record<string, ActivityItem[]> = {}
 		items.reduce( ( list, item ) => {
 			const { wiki } = item
 			const arr = list[ wiki ] ?? []
@@ -63,7 +38,7 @@ export class ActivityEvent extends Event {
 			const fandomwiki = await fandom.getWiki( wiki ).load()
 				.catch( () => null )
 			const exists = await fandomwiki?.exists()
-			if ( !exists ) {
+			if ( !fandomwiki || !exists ) {
 				this.container.pino.warn( `Couldn't access wiki ${ wiki }.` )
 				continue
 			}
@@ -85,7 +60,7 @@ export class ActivityEvent extends Event {
 				const webhook = guildWebhooks.find( w => w.owner?.id === client.id ) ?? await channel.createWebhook( 'Wiki Activity' )
 
 				for ( const item of items ) {
-					const embed = this.createEmbed( item )
+					const embed = this.createEmbed( item, fandomwiki )
 					await webhook.send( {
 						avatarURL: configuration.avatar ?? '',
 						embeds: [
@@ -93,7 +68,7 @@ export class ActivityEvent extends Event {
 								...embed,
 								color: configuration.color ?? 0x0088ff,
 								footer: {
-									text: fandomwiki?.sitename ?? 'Wiki desconocido'
+									text: fandomwiki.sitename
 								}
 							}
 						],
@@ -104,80 +79,199 @@ export class ActivityEvent extends Event {
 		}
 	}
 
-	protected createEmbed( item: IDiscussionsItem | IRecentChangesItem ): MessageEmbedOptions {
-		return 'type' in item
-			? this.createRecentChangesEmbed( item )
-			: this.createDiscussionsEmbed( item )
+	protected createEmbed( item: ActivityItem, wiki: Required<FandomWiki> ): MessageEmbedOptions | null {
+		if ( item.isRecentChanges() ) {
+			return this.createRecentChangesEmbed( item )
+		} else if ( item.isDiscussions() ) {
+			return this.createDiscussionsEmbed( item, wiki )
+		} else if ( item.isLogEvents() ) {
+			return this.createLogEventsEmbed( item )
+		}
+		return null
 	}
 
-	protected createDiscussionsEmbed( item: IDiscussionsItem ): MessageEmbedOptions {
-		let description: string
-		const { content } = item
-		const authorTarget = item.author.name.match( /^\d+(\.\d+){3}/ )
-			? `Special:Contributions/${ item.author.name }`
-			: `User:${ item.author.name }`
-		const author = this.getDiscordLink( item.author.name, this.getUrl( item.wiki, authorTarget ) )
+	protected createDiscussionsEmbed( item: DiscussionsItem, wiki: Required<FandomWiki> ): MessageEmbedOptions {
+		const embed: MessageEmbedOptions = {}
 
-		if ( item.pageTitle ) {
-			const pageUrl = this.getUrl( item.wiki, item.pageTitle )
-			const page = this.getDiscordLink( item.pageTitle, pageUrl )
-			const actionLabel = item.isReply ? 'una respuesta' : 'un comentario'
-			const actionLink = this.getDiscordLink( actionLabel, item.url )
-			const action = `dejó ${ actionLink }${ item.isReply ? ' a un comentario' : '' }`
-			description = `**${ author }** ${ action } en ${ page }`
-		} else if ( item.url.includes( '/wiki/' ) ) {
-			const actionLabel = item.isReply ? 'una respuesta' : 'un mensaje'
-			const actionLink = this.getDiscordLink( actionLabel, item.url )
-			const action = `dejó ${ actionLink } ${ item.isReply ? 'a un mensaje' : '' }`
-			const threadName = item.title
-				? `: **${ item.title }**`
-				: ''
-			description = `**${ author }** ${ action } en un muro${ threadName }`
-		} else {
-			const action = item.isReply
-				? `dejó ${ this.getDiscordLink( 'una respuesta', item.url ) } a una publicación`
-				: `creó ${ this.getDiscordLink( 'una publicación', item.url ) }`
-			const threadName = item.title
-				? `: **${ item.title }**`
-				: ''
-			description = `**${ author }** ${ action }${ threadName }`
+		const userUrl = this.getUrl( item.wiki, item.creatorIp.length > 0 ? `Special:Contributions/${ item.creatorIp }` : `User:${ item.createdBy.name }` )
+		const user = this.getDiscordLink( item.creatorIp.length > 0 ? item.creatorIp : item.createdBy.name, userUrl )
+
+		if ( item.isArticleComment() ) {
+			const title = item._embedded.thread[ 0 ].containerId
+			const article = this.getDiscordLink( title, this.getUrl( item.wiki, title ) )
+			if ( item.isReply ) {
+				const comment = this.getDiscordLink( 'una respuesta', item.getUrl( wiki ) )
+				embed.description = `💬 **${ user }** dejó ${ comment } a un comentario en ${ article }.`
+			} else {
+				const comment = this.getDiscordLink( 'un comentario', item.getUrl( wiki ) )
+				embed.description = `💬 **${ user }** dejó ${ comment } en ${ article }.`
+			}
+		} else if ( item.isMessageWall() ) {
+			const wall = this.getUrl( item.wiki, `Message Wall:${ item.wall }` )
+			const wallUrl = this.getDiscordLink( `muro de ${ item.wall }`, wall )
+			if ( item.isReply ) {
+				const reply = this.getDiscordLink( 'una respuesta', item.getUrl( wiki ) )
+				embed.description = `✉️ **${ user }** dejó ${ reply } a un mensaje en el ${ wallUrl }.`
+			} else {
+				const reply = this.getDiscordLink( 'un mensaje nuevo', item.getUrl( wiki ) )
+				embed.description = `✉️ **${ user }** dejó ${ reply } el ${ wallUrl }.`
+			}
+		} else if ( item.isPost() ) {
+			if ( item.isReply ) {
+				const reply = this.getDiscordLink( 'una respuesta', item.getUrl( wiki ) )
+				embed.description = `💭 **${ user }** dejó ${ reply } a una publicación.`
+			} else {
+				const reply = this.getDiscordLink( item.title, item.getUrl( wiki ) )
+				embed.description = `💭 **${ user }** creó una nueva publicación en ${ item.category }: ${ reply }`
+			}
 		}
 
-		const embed: MessageEmbedOptions = {
-			description,
-			timestamp: new Date( item.created )
+		if ( item.rawContent.length > 0 ) {
+			const content = item.rawContent.length > 1024 ? `${ item.rawContent.substring( 0, 1020 ) }...` : item.rawContent
+			embed.fields = [ { name: 'Contenido', value: content } ]
 		}
 
-		if ( content.length > 0 && content.length < 1000 ) {
-			embed.fields = [
-				{ name: 'Contenido', value: content }
-			]
-		}
+		embed.timestamp = item.creationDate.epochSecond * 1000
 
 		return embed
 	}
 
-	protected createRecentChangesEmbed( item: IRecentChangesItem ): MessageEmbedOptions {
-		const emoji = item.type === 'new' ? '☑' : '📝'
-		const userTitle = item.user.match( /^\d+(\.\d+){3}/ )
-			? `Special:Contributions/${ item.user }`
-			: `User:${ item.user }`
-		const user = this.getDiscordLink( item.user, this.getUrl( item.wiki, userTitle ) )
-		const action = item.type === 'new' ? 'creó' : 'editó'
-		const page = this.getDiscordLink( item.title, this.getUrl( item.wiki, item.title ) )
-		const diffSign = item.sizediff < 0 ? '-' : '+'
-		const diffUrl = `${ this.getUrl( item.wiki, '' ) }?diff=${ item.revid }`
-		const diff = this.getDiscordLink( `${ diffSign } ${ Math.abs( item.sizediff ) }`, diffUrl )
-		const description = `${ emoji } **${ user }** ${ action } **${ page }** (${ diff })`
-		const embed: MessageEmbedOptions = {
-			description,
-			timestamp: new Date( item.timestamp )
+	protected createLogEventsEmbed( item: LogEventsItem ): MessageEmbedOptions {
+		const embed: MessageEmbedOptions = {}
+
+		const isIp = isIPv4( item.user )
+		const userUrl = this.getUrl( item.wiki, isIp ? `Special:Contributions/${ item.user }` : `User:${ item.user }` )
+		const user = this.getDiscordLink( item.user, userUrl )
+
+		if ( item.isBlock() ) {
+			let action = 'bloqueó a'
+			if ( item.isReblocking() ) action = 'cambió el bloqueo de'
+			else if ( item.isUnblocking() ) action = 'desbloqueó a'
+
+			const targetUser = item.title.split( ':' ).slice( 1 )
+				.join( ':' )
+			const targetUrl = this.getUrl( item.wiki, `Special:Contributions/${ targetUser }` )
+			const target = this.getDiscordLink( targetUser, targetUrl )
+
+			embed.description = `🚫 **${ user }** ${ action } ${ target }.`
+			if ( item.comment.length > 0 ) {
+				embed.fields = [ { name: 'Motivo', value: item.comment } ]
+			}
+			if ( item.isBlocking() || item.isReblocking() ) {
+				const expiry = item.expiryDate
+
+				const fields = embed.fields ?? []
+				const duration = expiry
+					? `<t:${ Math.floor( expiry.getTime() / 1000 ) }:R>\n${ expiry.toISOString() }`
+					: 'Para siempre'
+				fields.push( { name: 'Duración', value: duration } )
+
+				embed.fields ??= fields
+			}
+		} else if ( item.isMove() ) {
+			const fromUrl = this.getUrl( item.wiki, item.title )
+			const from = this.getDiscordLink( item.title, fromUrl )
+			const toUrl = this.getUrl( item.wiki, item.params.target_title )
+			const to = this.getDiscordLink( item.params.target_title, toUrl )
+
+			const redirect = item.params.supressredirect ? ' sin dejar una redirección' : ''
+			embed.description = `📦 **${ user }** trasladó ${ from } a ${ to }${ redirect }.`
+		} else if ( item.isProtect() ) {
+			let action = 'protegió'
+			const articleUrl = this.getUrl( item.wiki, item.title )
+			const article = this.getDiscordLink( item.title, articleUrl )
+
+			if ( item.isModifying() ) action = 'modificó la protección de'
+			else if ( item.isUnprotecting() ) action = 'desprotegió'
+
+			const description = item.isProtecting() || item.isModifying() ? `(${ item.params.description })` : ''
+			embed.description = `🛡️ **${ user }** ${ action } ${ article }. ${ description }`
+
+			if ( item.comment.length > 0 ) {
+				embed.fields = [ { name: 'Motivo', value: item.comment } ]
+			}
+		} else if ( item.isRights() ) {
+			const targetUser = item.title.split( ':' ).slice( 1 )
+				.join( ':' )
+			const targetUrl = this.getUrl( item.wiki, `User:${ targetUser }` )
+			const target = this.getDiscordLink( targetUser, targetUrl )
+
+			embed.description = `🏅 **${ user }** cambió los grupos a los que pertenece **${ target }**.`
+			embed.fields = []
+			if ( item.comment.length > 0 ) {
+				embed.fields.push( { name: 'Motivo', value: item.comment } )
+			}
+
+			const oldgroups = new Set( item.params.oldgroups )
+			const newgroups = new Set( item.params.newgroups )
+
+			embed.fields.push( {
+				inline: true,
+				name: 'Grupos anteriores',
+				value: item.params.oldmetadata.length === 0
+					? 'Ninguno'
+					: item.params.oldmetadata.map( item => {
+						let response = newgroups.has( item.group ) ? item.group : `~~${ item.group }~~`
+						if ( item.expiry !== 'infinity' ) {
+							const ms = Math.floor( new Date( item.expiry ).getTime() / 1000 )
+							response += ` (hasta <t:${ ms }:R>)`
+						}
+						return response
+					} ).join( '\n' )
+			} )
+			embed.fields.push( {
+				inline: true,
+				name: 'Grupos actuales',
+				value: item.params.newmetadata.length === 0
+					? 'Ninguno'
+					: item.params.newmetadata.map( item => {
+						let response = oldgroups.has( item.group ) ? item.group : `**${ item.group }**`
+						if ( item.expiry !== 'infinity' ) {
+							const ms = Math.floor( new Date( item.expiry ).getTime() / 1000 )
+							response += ` (hasta <t:${ ms }:R>)`
+						}
+						return response
+					} ).join( '\n' )
+			} )
+		} else if ( item.isUpload() ) {
+			let action = 'subió'
+			if ( item.isOverwriting() ) action = 'subió una nueva versión de'
+			else if ( item.isReverting() ) action = 'revirtió'
+
+			const imageUrl = this.getUrl( item.wiki, item.title )
+			const image = this.getDiscordLink( item.title, imageUrl )
+			embed.description = `📷 **${ user }** ${ action } ${ image }.`
+			if ( item.comment.length > 0 ) {
+				embed.fields = [ { name: 'Comentarios', value: item.comment } ]
+			}
 		}
-		if ( item.summary.length > 0 ) {
-			embed.fields = [
-				{ name: 'Resumen', value: item.summary }
-			]
+
+		embed.timestamp = item.date
+
+		return embed
+	}
+
+	protected createRecentChangesEmbed( item: RecentChangesItem ): MessageEmbedOptions {
+		const embed: MessageEmbedOptions = {}
+
+		const userUrl = this.getUrl( item.wiki, item.anon ? `Special:Contributions/${ item.user }` : `User:${ item.user }` )
+		const user = this.getDiscordLink( item.user, userUrl )
+
+		const pageUrl = this.getUrl( item.wiki, item.title )
+		const page = this.getDiscordLink( item.title, pageUrl )
+		const sizediff = item.sizediff < 0 ? `- ${ Math.abs( item.sizediff ) }` : `+ ${ item.sizediff }`
+		const diffUrl = `${ this.parseInterwiki( item.wiki ) }?diff=${ item.revid }`
+		const diff = this.getDiscordLink( sizediff, diffUrl )
+
+		const emoji = item.type === 'edit' ? '📝' : '☑'
+		const action = item.type === 'edit' ? 'editó' : 'creó'
+		embed.description = `${ emoji } **${ user }** ${ action } **${ page }. (${ diff })`
+
+		if ( item.comment ) {
+			embed.fields = [ { name: 'Resumen', value: item.comment } ]
 		}
+
+		embed.timestamp = item.date
 
 		return embed
 	}
