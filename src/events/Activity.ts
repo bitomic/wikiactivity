@@ -164,7 +164,7 @@ export class ActivityEvent extends Event {
 				const duration = expiry
 					? `<t:${ Math.floor( expiry.getTime() / 1000 ) }:R>\n${ expiry.toISOString() }`
 					: 'Para siempre'
-				fields.push( { name: 'Duración', value: duration } )
+				fields.push( { name: 'Expira', value: duration } )
 
 				embed.fields ??= fields
 			}
