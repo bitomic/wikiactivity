@@ -93,7 +93,7 @@ export class ActivityEvent extends Event {
 	protected createDiscussionsEmbed( item: DiscussionsItem, wiki: Required<FandomWiki> ): MessageEmbedOptions {
 		const embed: MessageEmbedOptions = {}
 
-		const userUrl = this.getUrl( item.wiki, item.creatorIp.length > 0 ? `Special:Contributions/${ item.creatorIp }` : `User:${ item.createdBy.name }` )
+		const userUrl = this.getUrl( item.wiki, item.creatorIp.length > 0 ? `Special:Contributions${ item.creatorIp }` : `User:${ item.createdBy.name }` )
 		const user = this.getDiscordLink( item.creatorIp.length > 0 ? item.creatorIp : item.createdBy.name, userUrl )
 
 		if ( item.isArticleComment() ) {
