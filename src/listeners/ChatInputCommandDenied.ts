@@ -4,7 +4,7 @@ import { type CommandInteraction } from 'discord.js'
 
 @ApplyOptions<ListenerOptions>( {
 	event: Events.ChatInputCommandDenied
-} )
+	} )
 export class UserEvent extends Listener {
 	public run( _: unknown, { interaction }: { interaction: CommandInteraction } ): void {
 		void interaction[ interaction.deferred ? 'editReply' : 'reply' ]( {

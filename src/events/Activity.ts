@@ -4,13 +4,16 @@ import { Event, type EventOptions } from '../framework'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Fandom } from 'mw.js'
 import type { FandomWiki } from 'mw.js'
+import ico2png from 'ico-to-png'
 import { isIPv4 } from 'net'
+import { MessageAttachment } from 'discord.js'
 import type { MessageEmbedOptions } from 'discord.js'
+import { request } from 'undici'
 
 @ApplyOptions<EventOptions>( {
 	event: 'activity',
 	name: 'activity'
-} )
+	} )
 export class ActivityEvent extends Event {
 	public queue: ActivityItem[] = []
 
@@ -42,40 +45,74 @@ export class ActivityEvent extends Event {
 				this.container.pino.warn( `Couldn't access wiki ${ wiki }.` )
 				continue
 			}
-			const guilds = await configurations.getWikiGuilds( wiki )
-			for ( const configuration of guilds ) {
-				const guild = await client.guilds.fetch( configuration.guild )
-					.catch( () => null )
-				if ( !guild ) {
-					this.container.pino.warn( `Couldn't fetch guild ${ configuration.guild }.` )
-					continue
-				}
-				const channel = await guild.channels.fetch( configuration.channel )
-					.catch( () => null )
-				if ( !channel || channel.type !== 'GUILD_TEXT' ) {
-					this.container.pino.warn( `Couldn't fetch channel ${ configuration.channel } from guild ${ configuration.guild }.` )
-					continue
-				}
-				const guildWebhooks = await channel.fetchWebhooks()
-				const webhook = guildWebhooks.find( w => w.owner?.id === client.id ) ?? await channel.createWebhook( 'Wiki Activity' )
 
-				for ( const item of items ) {
-					const embed = this.createEmbed( item, fandomwiki )
-					await webhook.send( {
-						avatarURL: configuration.avatar ?? '',
-						embeds: [
-							{
-								...embed,
-								color: configuration.color ?? 0x0088ff,
-								footer: {
-									text: fandomwiki.sitename
+			try {
+				const guilds = await configurations.getWikiGuilds( wiki )
+				for ( const configuration of guilds ) {
+					const guild = await client.guilds.fetch( configuration.guild )
+						.catch( () => null )
+					if ( !guild ) {
+						this.container.pino.warn( `Couldn't fetch guild ${ configuration.guild }.` )
+						continue
+					}
+					const channel = await guild.channels.fetch( configuration.channel )
+						.catch( () => null )
+					if ( !channel || channel.type !== 'GUILD_TEXT' ) {
+						this.container.pino.warn( `Couldn't fetch channel ${ configuration.channel } from guild ${ configuration.guild }.` )
+						continue
+					}
+					const guildWebhooks = await channel.fetchWebhooks()
+					const webhook = guildWebhooks.find( w => w.owner?.id === client.id ) ?? await channel.createWebhook( 'Wiki Activity' )
+
+					const favicon = await this.getFavicon( wiki )
+					const attachment = favicon
+						? [ new MessageAttachment( favicon, 'favicon.png' ) ]
+						: []
+
+					for ( const item of items ) {
+						const embed = this.createEmbed( item, fandomwiki )
+						await webhook.send( {
+							avatarURL: configuration.avatar ?? '',
+							embeds: [
+								{
+									...embed,
+									color: configuration.color ?? 0x0088ff,
+									footer: {
+										icon_url: 'attachment://favicon.png',
+										text: fandomwiki.sitename
+									}
 								}
-							}
-						],
-						username: configuration.name ?? 'Wiki Activity'
-					} )
+							],
+							files: attachment,
+							username: configuration.name ?? 'Wiki Activity'
+						} )
+					}
 				}
+			} catch ( e ) {
+				this.container.logger.error( `An error occurred while processing ${ wiki }` )
+				this.container.logger.error( e )
 			}
+		}
+	}
+
+	protected async getFavicon( interwiki: string ): Promise<Buffer | null> {
+		let url = `${ Fandom.interwiki2url( interwiki ) }Special:Redirect/file/Site-favicon.ico`
+		let redirect: string | undefined = url
+
+		while ( redirect !== undefined ) {
+			url = redirect
+			const { headers, statusCode } = await request( url, { method: 'HEAD' } )
+			if ( statusCode >= 400 ) return null
+
+			redirect = headers.location
+		}
+
+		const { body, headers } = await request( url )
+		const favicon = Buffer.from( await body.arrayBuffer() )
+		if ( headers[ 'content-type' ] === 'image/x-icon' ) {
+			return ico2png( favicon, 32 )
+		} else {
+			return favicon
 		}
 	}
 

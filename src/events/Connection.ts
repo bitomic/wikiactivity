@@ -3,7 +3,7 @@ import { ApplyOptions } from '@sapphire/decorators'
 
 @ApplyOptions<EventOptions>( {
 	event: 'connection'
-} )
+	} )
 export class UserEvent extends Event {
 	public async run(): Promise<void> {
 		this.container.pino.info( 'WebSocket connected successfully!' )

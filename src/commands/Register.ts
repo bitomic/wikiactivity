@@ -7,7 +7,7 @@ import { env } from '../lib'
 	description: 'Test',
 	name: 'registrar',
 	preconditions: [ 'ManageServer' ]
-} )
+	} )
 export class UserCommand extends Command {
 	public override registerApplicationCommands( registry: ApplicationCommandRegistry ): void {
 		registry.registerChatInputCommand(

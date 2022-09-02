@@ -19,6 +19,7 @@
     "@sapphire/pieces": "^3.3.4",
     "colorette": "^2.0.19",
     "discord.js": "^13.9.1",
+    "ico-to-png": "^0.2.1",
     "mw.js": "^2.4.1",
     "mysql2": "^2.3.3",
     "pino": "^8.4.2",
