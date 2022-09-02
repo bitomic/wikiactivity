@@ -14,7 +14,13 @@ RUN apk add -u --no-cache \
 	fontconfig \
 	jq \
 	nodejs \
-    doppler
+    doppler \
+	build-base \
+	g++ \
+	cairo-dev \
+	jpeg-dev \
+	pango-dev \
+	giflib-dev
 
 COPY --chown=node:node yarn.lock .
 COPY --chown=node:node package.json .

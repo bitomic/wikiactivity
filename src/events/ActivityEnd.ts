@@ -4,7 +4,7 @@ import { ApplyOptions } from '@sapphire/decorators'
 
 @ApplyOptions<EventOptions>( {
 	event: 'activity-end'
-} )
+	} )
 export class UserEvent extends Event {
 	public async run(): Promise<void> {
 		const activity = this.container.stores.get( 'events' ).get( 'activity' ) as ActivityEvent
