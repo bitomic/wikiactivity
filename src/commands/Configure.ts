@@ -8,7 +8,7 @@ import { request } from 'undici'
 	description: 'Configura los mensajes de actividad de un wiki.',
 	name: 'configurar',
 	preconditions: [ 'ManageServer' ]
-	} )
+} )
 export class UserCommand extends Command {
 	public override registerApplicationCommands( registry: ApplicationCommandRegistry ): void {
 		registry.registerChatInputCommand(

@@ -9,7 +9,7 @@ import path from 'path'
 @ApplyOptions<ListenerOptions>( {
 	event: Constants.Events.CLIENT_READY,
 	once: true
-	} )
+} )
 export class UserEvent extends Listener {
 	public async run(): Promise<void> {
 		this.container.pino.info( 'Client is ready and running.' )

@@ -13,7 +13,7 @@ import { request } from 'undici'
 @ApplyOptions<EventOptions>( {
 	event: 'activity',
 	name: 'activity'
-	} )
+} )
 export class ActivityEvent extends Event {
 	public queue: ActivityItem[] = []
 
