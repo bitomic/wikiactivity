@@ -3882,9 +3882,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sequelize@npm:^6.21.6":
-  version: 6.21.6
-  resolution: "sequelize@npm:6.21.6"
+"sequelize@npm:^6.22.0":
+  version: 6.22.0
+  resolution: "sequelize@npm:6.22.0"
   dependencies:
     "@types/debug": ^4.1.7
     "@types/validator": ^13.7.1
@@ -3909,6 +3909,8 @@ __metadata:
       optional: true
     mysql2:
       optional: true
+    oracledb:
+      optional: true
     pg:
       optional: true
     pg-hstore:
@@ -3919,7 +3921,7 @@ __metadata:
       optional: true
     tedious:
       optional: true
-  checksum: 0e2c9e1141200464cf4a959396ea554668f1c4444afdfa16b81b253c6dd61da7dba635b1547d6833b4575ecda9395ea50b58e052fd6e05e5afff5f6d682355e4
+  checksum: f2aa3fc4fd2136f8d4d9649d343b47ed58f4f8da54a849678603f12393f39647436795a1f573e5230f649f57d15b41f25028a41d49d13956f8b32ee903de23bd
   languageName: node
   linkType: hard
 
@@ -4679,7 +4681,7 @@ __metadata:
     pino: ^8.5.0
     pino-pretty: ^9.1.0
     rimraf: ^3.0.2
-    sequelize: ^6.21.6
+    sequelize: ^6.22.0
     socket.io-client: ^4.5.2
     ts-dotenv: ^0.8.3
     typescript: ^4.8.3
