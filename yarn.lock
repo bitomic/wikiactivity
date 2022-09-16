@@ -39,14 +39,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bitomic/wikiactivity-api@npm:1.1.4":
-  version: 1.1.4
-  resolution: "@bitomic/wikiactivity-api@npm:1.1.4"
+"@bitomic/wikiactivity-api@npm:1.2.0":
+  version: 1.2.0
+  resolution: "@bitomic/wikiactivity-api@npm:1.2.0"
   dependencies:
     mw.js: ^2.4.1
     ts-dotenv: ^0.8.3
-    undici: ^5.9.1
-  checksum: cd1cc1c607ca604d835f3f72f8bf8da69e958a636e473efc420a38fc53e75b556b38f4dbdd3c7880b9f6b82c93a9e353d189e4c31358b803f9accdd321a561ef
+    undici: ^5.10.0
+  checksum: 533f34b46f5f865f843ae92c15869d7ee6bcd7522e7b5296ab72298c4ac80f02a5c94a4a33a65e3e6932c63dae92d5cc33c59cdbdce8fa02719b81cc75e5e79f
   languageName: node
   linkType: hard
 
@@ -4524,17 +4524,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici@npm:^5.10.0":
+  version: 5.10.0
+  resolution: "undici@npm:5.10.0"
+  checksum: 7ba2b71dccc74cd2bdf645b83e9aaef374ae04855943d0a2f42a3d0b9e5556f37cc9b5156fb5288277a2fa95fd46a56f3ae0d5cf73db3f008d75ec41104b136c
+  languageName: node
+  linkType: hard
+
 "undici@npm:^5.5.1":
   version: 5.5.1
   resolution: "undici@npm:5.5.1"
   checksum: c041c9093df7ec683479a9555581206a7c7bebfc1ed6e8669920e55618461fc4ce08938e2fbf8ef7d692c2813c44392b5ed25c58396ee4a72ffd1f1f953712c9
-  languageName: node
-  linkType: hard
-
-"undici@npm:^5.9.1":
-  version: 5.9.1
-  resolution: "undici@npm:5.9.1"
-  checksum: 8acabbac8e18943ff822574f831d03d65e697e66ef486a679763f7778f37b28980caf7097ededf4017b58c099809e8efd8509a6688f60638360fb86ef47a59df
   languageName: node
   linkType: hard
 
@@ -4661,7 +4661,7 @@ __metadata:
   resolution: "wikiactivity@workspace:."
   dependencies:
     "@bitomic/eslint-config": ^1.0.0
-    "@bitomic/wikiactivity-api": 1.1.4
+    "@bitomic/wikiactivity-api": 1.2.0
     "@commitlint/cli": ^17.1.2
     "@commitlint/config-conventional": ^17.1.0
     "@sapphire/decorators": ^5.0.0
