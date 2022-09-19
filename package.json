@@ -22,7 +22,7 @@
     "ico-to-png": "^0.2.1",
     "mw.js": "^2.4.1",
     "mysql2": "^2.3.3",
-    "pino": "^8.5.0",
+    "pino": "^8.6.0",
     "pino-pretty": "^9.1.0",
     "sequelize": "^6.23.0",
     "socket.io-client": "^4.5.2",
