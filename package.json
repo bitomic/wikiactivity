@@ -23,7 +23,7 @@
     "mw.js": "^2.4.1",
     "mysql2": "^2.3.3",
     "pino": "^8.6.1",
-    "pino-pretty": "^9.1.0",
+    "pino-pretty": "^9.1.1",
     "sequelize": "^6.24.0",
     "socket.io-client": "^4.5.2",
     "ts-dotenv": "^0.8.3",
