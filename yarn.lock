@@ -4372,6 +4372,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ts-dotenv@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "ts-dotenv@npm:0.9.0"
+  checksum: 4c1089d8416c7c6c74e526c7227387b68603436ca1ca01f175efdcef6dbbc66c71f251981c6a50fe2f4754a57e06b094e7b9c5814ad0c1a55328517db624dde6
+  languageName: node
+  linkType: hard
+
 "ts-mixer@npm:^6.0.1":
   version: 6.0.1
   resolution: "ts-mixer@npm:6.0.1"
@@ -4692,7 +4699,7 @@ __metadata:
     rimraf: ^3.0.2
     sequelize: ^6.25.5
     socket.io-client: ^4.5.3
-    ts-dotenv: ^0.8.3
+    ts-dotenv: ^0.9.0
     typescript: ^4.8.4
     undici: ^5.5.1
   languageName: unknown
