@@ -26,7 +26,7 @@
     "pino-pretty": "^9.1.1",
     "sequelize": "^6.28.0",
     "socket.io-client": "^4.5.4",
-    "ts-dotenv": "^0.9.0",
+    "ts-dotenv": "^0.9.1",
     "undici": "^5.5.1"
   },
   "devDependencies": {
