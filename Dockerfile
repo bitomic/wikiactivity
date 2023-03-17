@@ -1,5 +1,5 @@
 # Base Stage
-FROM node:18-alpine3.15 AS base
+FROM node:19-alpine3.15 AS base
 
 WORKDIR /home/node/app
 
