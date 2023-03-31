@@ -8,4 +8,4 @@ on:
 
 jobs:
   build:
-    uses: bitomic/utilities/.github/workflows/node.js.yml@487f6746617f753350d0e51fa9fd534199fca23c
+    uses: bitomic/utilities/.github/workflows/node.js.yml@da6721af18190d49451bf7c419cb852643b914cc
