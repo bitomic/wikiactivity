@@ -27,7 +27,7 @@
     "sequelize": "^6.31.0",
     "socket.io-client": "^4.6.1",
     "ts-dotenv": "^0.9.1",
-    "undici": "^5.5.1"
+    "undici": "^5.22.0"
   },
   "devDependencies": {
     "@bitomic/eslint-config": "^1.0.0",
