@@ -3674,9 +3674,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pino-pretty@npm:^9.4.0":
-  version: 9.4.0
-  resolution: "pino-pretty@npm:9.4.0"
+"pino-pretty@npm:^9.4.1":
+  version: 9.4.1
+  resolution: "pino-pretty@npm:9.4.1"
   dependencies:
     colorette: ^2.0.7
     dateformat: ^4.6.3
@@ -3694,7 +3694,7 @@ __metadata:
     strip-json-comments: ^3.1.1
   bin:
     pino-pretty: bin.js
-  checksum: 4870d44879048219003b0c6f28181ca871e62c1d9679b07b3f3d703e961284b5b0df495e4be95954a0e467ded34f2323bc9cf3280c3a143311b364a733a08e03
+  checksum: 0fa272382398afe0854f5cdd94263cb311a3bf038dfa1fad5c9ddff6612d7ec108f5e7e8b7ee070ed953354ab0c542f1f165f976a2229933c44c7f6a783f4990
   languageName: node
   linkType: hard
 
@@ -4946,7 +4946,7 @@ __metadata:
     mw.js: ^2.4.1
     mysql2: ^2.3.3
     pino: ^8.14.1
-    pino-pretty: ^9.4.0
+    pino-pretty: ^9.4.1
     rimraf: ^5.0.1
     sequelize: ^6.32.1
     socket.io-client: ^4.7.1
