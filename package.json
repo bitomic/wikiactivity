@@ -36,7 +36,7 @@
     "@types/node": "^18.17.4",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
-    "eslint": "^8.46.0",
+    "eslint": "^8.47.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "rimraf": "^5.0.1",
