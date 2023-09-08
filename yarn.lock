@@ -1621,7 +1621,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dottie@npm:^2.0.4":
+"dottie@npm:^2.0.6":
   version: 2.0.6
   resolution: "dottie@npm:2.0.6"
   checksum: 4c778df9dc631a1108a32ef390916836814999a7411d10883f4151bd49c9c6934dc329b3f50fc7692849aa75ba87dba880fd54be501a3b39a6b9c23d6f772a09
@@ -3631,10 +3631,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pg-connection-string@npm:^2.6.0":
-  version: 2.6.0
-  resolution: "pg-connection-string@npm:2.6.0"
-  checksum: 0262452638163c0b875495cfb82e363061cc8d560d3162143b1dfb63f70a666c7c52ba37e78054a3476de9a627faeec75f65445ba6fe065db068317ec84d3df8
+"pg-connection-string@npm:^2.6.1":
+  version: 2.6.2
+  resolution: "pg-connection-string@npm:2.6.2"
+  checksum: 22265882c3b6f2320785378d0760b051294a684989163d5a1cde4009e64e84448d7bf67d9a7b9e7f69440c3ee9e2212f9aa10dd17ad6773f6143c6020cebbcb5
   languageName: node
   linkType: hard
 
@@ -4061,7 +4061,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.5.4":
+"semver@npm:7.5.4, semver@npm:^7.5.4":
   version: 7.5.4
   resolution: "semver@npm:7.5.4"
   dependencies:
@@ -4094,17 +4094,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.5.1":
-  version: 7.5.2
-  resolution: "semver@npm:7.5.2"
-  dependencies:
-    lru-cache: ^6.0.0
-  bin:
-    semver: bin/semver.js
-  checksum: 3fdf5d1e6f170fe8bcc41669e31787649af91af7f54f05c71d0865bb7aa27e8b92f68b3e6b582483e2c1c648008bc84249d2cd86301771fe5cbf7621d1fe5375
-  languageName: node
-  linkType: hard
-
 "seq-queue@npm:^0.0.5":
   version: 0.0.5
   resolution: "seq-queue@npm:0.0.5"
@@ -4119,21 +4108,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sequelize@npm:^6.32.1":
-  version: 6.32.1
-  resolution: "sequelize@npm:6.32.1"
+"sequelize@npm:^6.33.0":
+  version: 6.33.0
+  resolution: "sequelize@npm:6.33.0"
   dependencies:
     "@types/debug": ^4.1.8
     "@types/validator": ^13.7.17
     debug: ^4.3.4
-    dottie: ^2.0.4
+    dottie: ^2.0.6
     inflection: ^1.13.4
     lodash: ^4.17.21
     moment: ^2.29.4
     moment-timezone: ^0.5.43
-    pg-connection-string: ^2.6.0
+    pg-connection-string: ^2.6.1
     retry-as-promised: ^7.0.4
-    semver: ^7.5.1
+    semver: ^7.5.4
     sequelize-pool: ^7.1.0
     toposort-class: ^1.0.1
     uuid: ^8.3.2
@@ -4158,7 +4147,7 @@ __metadata:
       optional: true
     tedious:
       optional: true
-  checksum: 5284fd7a8eb8dfa8340c50c119b31006dda0931714d3e5a72bbfef3a07838018f935cc1b789a46486298043f10d553dbf9cf9cf60c46c6646ecfc9e9623a8b4c
+  checksum: 16bb4423f749137ce155e4a104332716be8ba529e74c379f9316c9ab53210a3169e464ee46b1b21465a1b9c6c9cc4311a3203980ea8a7d9a3b102b1c63a45159
   languageName: node
   linkType: hard
 
@@ -4894,7 +4883,7 @@ __metadata:
     pino: ^8.15.1
     pino-pretty: ^9.4.1
     rimraf: ^5.0.1
-    sequelize: ^6.32.1
+    sequelize: ^6.33.0
     socket.io-client: ^4.7.2
     ts-dotenv: ^0.9.1
     typescript: ^5.1.6
