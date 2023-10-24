@@ -709,10 +709,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^18.11.9, @types/node@npm:^18.18.6":
+"@types/node@npm:^18.11.9":
   version: 18.18.6
   resolution: "@types/node@npm:18.18.6"
   checksum: a847639b8455fd3dfa6dbc2917274c82c9db789f1d41aaf69f94ac6c9e54c3c1dd29be6e1e1ccd7c17e54db3d78d7011bc4e70544c6447ceca253dccc0a187e1
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.8.8":
+  version: 20.8.8
+  resolution: "@types/node@npm:20.8.8"
+  dependencies:
+    undici-types: ~5.25.1
+  checksum: 028a9606e4ef594a4bc7b3310596499d7ce01b2e30f4d1d906ad8ec30c24cea7ec1b3dc181dd5df8d8d2bfe8de54bf3e28ae93be174b4c7d81c0db8326e4f35c
   languageName: node
   linkType: hard
 
@@ -4772,6 +4781,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici-types@npm:~5.25.1":
+  version: 5.25.3
+  resolution: "undici-types@npm:5.25.3"
+  checksum: ec9d2cc36520cbd9fbe3b3b6c682a87fe5be214699e1f57d1e3d9a2cb5be422e62735f06e0067dc325fd3dd7404c697e4d479f9147dc8a804e049e29f357f2ff
+  languageName: node
+  linkType: hard
+
 "undici@npm:^5.10.0":
   version: 5.10.0
   resolution: "undici@npm:5.10.0"
@@ -4915,7 +4931,7 @@ __metadata:
     "@sapphire/decorators": ^5.0.0
     "@sapphire/framework": 3.0.0-next.fd7be0b.0
     "@sapphire/pieces": ^3.3.4
-    "@types/node": ^18.18.6
+    "@types/node": ^20.8.8
     "@typescript-eslint/eslint-plugin": ^5.54.1
     "@typescript-eslint/parser": ^5.54.1
     colorette: ^2.0.20
