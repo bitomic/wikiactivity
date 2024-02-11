@@ -24,7 +24,7 @@
     "mysql2": "^2.3.3",
     "pino": "^8.18.0",
     "pino-pretty": "^9.4.1",
-    "sequelize": "^6.36.0",
+    "sequelize": "^6.37.0",
     "socket.io-client": "^4.7.4",
     "ts-dotenv": "^0.9.1",
     "undici": "^5.5.1"
