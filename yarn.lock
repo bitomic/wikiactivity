@@ -3614,9 +3614,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pino@npm:^8.18.0":
-  version: 8.18.0
-  resolution: "pino@npm:8.18.0"
+"pino@npm:^8.19.0":
+  version: 8.19.0
+  resolution: "pino@npm:8.19.0"
   dependencies:
     atomic-sleep: ^1.0.0
     fast-redact: ^3.1.1
@@ -3631,7 +3631,7 @@ __metadata:
     thread-stream: ^2.0.0
   bin:
     pino: bin.js
-  checksum: 202ccbf947513925615df8ff51c1ff35c841f601192d67dc36208ece6dc0332673383969c19cd01b2fad0d3823966bd6163e20a40b886c14105fefc8e4f46201
+  checksum: 4db9e4b74d57ce2c3b87502bf1c6f9233d199b1ee5be77815c917afc376e58d44d9f1ca22db9968687210835a0cc1ec2b4f70ddc911e107edcbd8f0d7ff073c1
   languageName: node
   linkType: hard
 
@@ -4770,7 +4770,7 @@ __metadata:
     lint-staged: ^15.2.2
     mw.js: ^2.4.1
     mysql2: ^2.3.3
-    pino: ^8.18.0
+    pino: ^8.19.0
     pino-pretty: ^9.4.1
     rimraf: ^5.0.5
     sequelize: ^6.37.0
