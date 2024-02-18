@@ -4010,9 +4010,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sequelize@npm:^6.37.0":
-  version: 6.37.0
-  resolution: "sequelize@npm:6.37.0"
+"sequelize@npm:^6.37.1":
+  version: 6.37.1
+  resolution: "sequelize@npm:6.37.1"
   dependencies:
     "@types/debug": ^4.1.8
     "@types/validator": ^13.7.17
@@ -4049,7 +4049,7 @@ __metadata:
       optional: true
     tedious:
       optional: true
-  checksum: a83eb5cc80bddbfab39087cd59d549c4e237871598b24bbb3ff51e43d9f8166cf84a636b30033adb669f33f96afbfcfcdd530c3ae77bc3da80f278490d3371e1
+  checksum: fe85c0fe0e21178ee1612e815821480ff8ae30843d4c5c401227ccfdd41409c02744e8196fa3efeaac748028ac8a43adf528593911006f302439cb378cc62fbe
   languageName: node
   linkType: hard
 
@@ -4773,7 +4773,7 @@ __metadata:
     pino: ^8.19.0
     pino-pretty: ^9.4.1
     rimraf: ^5.0.5
-    sequelize: ^6.37.0
+    sequelize: ^6.37.1
     socket.io-client: ^4.7.4
     ts-dotenv: ^0.9.1
     typescript: ^5.3.3
