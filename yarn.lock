@@ -64,30 +64,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:^19.0.3":
-  version: 19.0.3
-  resolution: "@commitlint/cli@npm:19.0.3"
+"@commitlint/cli@npm:^19.1.0":
+  version: 19.1.0
+  resolution: "@commitlint/cli@npm:19.1.0"
   dependencies:
     "@commitlint/format": ^19.0.3
-    "@commitlint/lint": ^19.0.3
-    "@commitlint/load": ^19.0.3
+    "@commitlint/lint": ^19.1.0
+    "@commitlint/load": ^19.1.0
     "@commitlint/read": ^19.0.3
     "@commitlint/types": ^19.0.3
     execa: ^8.0.1
     yargs: ^17.0.0
   bin:
     commitlint: cli.js
-  checksum: de2761ba19128247f5ab873b95631d7da0e55eba1b03996481a53eab67568c66ec832cf98c7769cfb5e2d202c8cb9b1dd0f1062892f35dd74a07db14d0e2558b
+  checksum: c0c05602f1c74337b9e789a85f46b98d373ae9636736233d6a04d225fc23cec24d2cb5d0f71db615daa51a5c4bc1d9e06d9b2273f0839fca82990ca0a5f64364
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:^19.0.3":
-  version: 19.0.3
-  resolution: "@commitlint/config-conventional@npm:19.0.3"
+"@commitlint/config-conventional@npm:^19.1.0":
+  version: 19.1.0
+  resolution: "@commitlint/config-conventional@npm:19.1.0"
   dependencies:
     "@commitlint/types": ^19.0.3
     conventional-changelog-conventionalcommits: ^7.0.2
-  checksum: 35fc2f8aba87196bf3a50f4d2c851ae462a5f993f0b2ea9baacd381d7db58dce07291874fa32b059ee6b88058acd44410ec7cf1b97519d9b2068f2cb532d0ed4
+  checksum: 34c3e2f87ac4ed2e0be454bfb3b3e2a4614131186136c8d5d09fe4f24dd2898d053d5855e888a5bd80c92c8ead906ca3335e968b263da1dfc1c504d68662e27a
   languageName: node
   linkType: hard
 
@@ -142,25 +142,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/lint@npm:^19.0.3":
-  version: 19.0.3
-  resolution: "@commitlint/lint@npm:19.0.3"
+"@commitlint/lint@npm:^19.1.0":
+  version: 19.1.0
+  resolution: "@commitlint/lint@npm:19.1.0"
   dependencies:
     "@commitlint/is-ignored": ^19.0.3
     "@commitlint/parse": ^19.0.3
     "@commitlint/rules": ^19.0.3
     "@commitlint/types": ^19.0.3
-  checksum: 74f8d68ba4cee081b7db4f2ad258c145caec970c1675a52247d803df86a41f632c394c53b2fdcec6c4ffcfa4662d49be0499d45ef2f252a8f922f296b5884777
+  checksum: 101d163e4d3e8b5cf7609a96fccc7af0d890ca049bf81fdf8c028d8b1cdb9b9c82d9b852acda8d14d3dc28dcd5b999ff638e9d51d8e16f88ae46920e56df9a2d
   languageName: node
   linkType: hard
 
-"@commitlint/load@npm:^19.0.3":
-  version: 19.0.3
-  resolution: "@commitlint/load@npm:19.0.3"
+"@commitlint/load@npm:^19.1.0":
+  version: 19.1.0
+  resolution: "@commitlint/load@npm:19.1.0"
   dependencies:
     "@commitlint/config-validator": ^19.0.3
     "@commitlint/execute-rule": ^19.0.0
-    "@commitlint/resolve-extends": ^19.0.3
+    "@commitlint/resolve-extends": ^19.1.0
     "@commitlint/types": ^19.0.3
     chalk: ^5.3.0
     cosmiconfig: ^8.3.6
@@ -168,7 +168,7 @@ __metadata:
     lodash.isplainobject: ^4.0.6
     lodash.merge: ^4.6.2
     lodash.uniq: ^4.5.0
-  checksum: 6827337fad156dc6e9daa0e0b55d0b2142cdaa0f9a31e06c048812e0af862334576441346bab89f7acf22c9ef794f1450dc92acc694a748c2234f4071cb0e3c2
+  checksum: d9dfe8a9ca13ae3ab4df7ce6211a0ad0cb6ade195333cc0b8a08b6bf4eb9c8723b91e29ee7e43326a31a33a2e0cbd0e18bb421c7e2a06c21fdd89daa436cb879
   languageName: node
   linkType: hard
 
@@ -202,9 +202,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/resolve-extends@npm:^19.0.3":
-  version: 19.0.3
-  resolution: "@commitlint/resolve-extends@npm:19.0.3"
+"@commitlint/resolve-extends@npm:^19.1.0":
+  version: 19.1.0
+  resolution: "@commitlint/resolve-extends@npm:19.1.0"
   dependencies:
     "@commitlint/config-validator": ^19.0.3
     "@commitlint/types": ^19.0.3
@@ -212,7 +212,7 @@ __metadata:
     import-meta-resolve: ^4.0.0
     lodash.mergewith: ^4.6.2
     resolve-from: ^5.0.0
-  checksum: f933018f91ec0bcc1286bba6ea8c85fffedfdb7ef74ea0f3112df76987567f56f3b8d027506205e8159a0a006dc98cba189e3115e3af3e13d854376ddff73439
+  checksum: 87df82cfad1e157e600d3bef486c84ab0706e6b21411c97770104f7d1f824524606d8d6493418f98a529ab6c10d3691b50d6a779b07ef6dca5c5fd69848f4951
   languageName: node
   linkType: hard
 
@@ -4329,8 +4329,8 @@ __metadata:
   dependencies:
     "@bitomic/eslint-config": ^1.0.0
     "@bitomic/wikiactivity-api": 1.2.0
-    "@commitlint/cli": ^19.0.3
-    "@commitlint/config-conventional": ^19.0.3
+    "@commitlint/cli": ^19.1.0
+    "@commitlint/config-conventional": ^19.1.0
     "@sapphire/decorators": ^5.0.0
     "@sapphire/framework": 3.0.0-next.fd7be0b.0
     "@sapphire/pieces": ^3.3.4
