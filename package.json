@@ -21,7 +21,7 @@
     "discord.js": "^13.9.1",
     "ico-to-png": "^0.2.1",
     "mw.js": "^2.4.1",
-    "mysql2": "^2.3.3",
+    "mysql2": "^3.9.4",
     "pino": "^8.20.0",
     "pino-pretty": "^9.4.1",
     "sequelize": "^6.37.2",
