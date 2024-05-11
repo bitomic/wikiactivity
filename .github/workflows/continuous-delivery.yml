@@ -31,7 +31,7 @@ jobs:
           
       - name: Extract version from package.json
         id: package_version
-        uses: saionaro/extract-package-version@fdb5b74adc1278ddb777dfed4c988b9d098bb48d # v1.2.1
+        uses: saionaro/extract-package-version@35ced6bfe3b1491af23de4db27c601697e6d8d17 # v1.3.0
         
       - name: Login to GitHub Container Registry
         uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2.2.0
