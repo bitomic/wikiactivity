@@ -2247,14 +2247,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ico-to-png@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "ico-to-png@npm:0.2.1"
+"ico-to-png@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "ico-to-png@npm:0.2.2"
   dependencies:
     decode-ico: ^0.4.0
     lodepng: ^2.0.0
     resize-image-data: ^0.3.0
-  checksum: 4886448aea5f4ca9a510dfe299af8b0e665cb68115d6b0f19f0beab059cb85cfe87787fbcfec955fbc1bc456b77c90b45386fba66420eba1bf3f67801863911b
+  checksum: d88aaba4b5f190da831e644066e73b9504cb76d73a78b46c935e2850055d462f5fbdd7bdcc438ff4e5fcd9315a5827ba7ab10a78e02b1758616a338607a6c634
   languageName: node
   linkType: hard
 
@@ -4363,7 +4363,7 @@ __metadata:
     discord.js: ^13.9.1
     eslint: ^8.57.1
     husky: ^9.1.6
-    ico-to-png: ^0.2.1
+    ico-to-png: ^0.2.2
     lint-staged: ^15.2.10
     mw.js: ^2.4.1
     mysql2: ^2.3.3
