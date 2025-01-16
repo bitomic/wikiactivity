@@ -2594,9 +2594,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^15.4.0":
-  version: 15.4.0
-  resolution: "lint-staged@npm:15.4.0"
+"lint-staged@npm:^15.4.1":
+  version: 15.4.1
+  resolution: "lint-staged@npm:15.4.1"
   dependencies:
     chalk: ~5.4.1
     commander: ~12.1.0
@@ -2610,7 +2610,7 @@ __metadata:
     yaml: ~2.6.1
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: b292d85c8946c2b148d4d512f895fc6a37ed5b68edefcb7423e15f0022a61687413d1da203e9bc5c0dba35fa1463ed426b26acf495b691c7352d95182f428644
+  checksum: 6c17747e9379a08ad3d15aab869a362c750d357182c76ca88121f01143910a2a2d5b1673536f3ba9db2331bf2102ffee115532736dd9c3fa2696344732a47d3d
   languageName: node
   linkType: hard
 
@@ -4371,7 +4371,7 @@ __metadata:
     eslint: ^8.57.1
     husky: ^9.1.7
     ico-to-png: ^0.2.2
-    lint-staged: ^15.4.0
+    lint-staged: ^15.4.1
     mw.js: ^2.4.1
     mysql2: ^2.3.3
     pino: ^8.21.0
