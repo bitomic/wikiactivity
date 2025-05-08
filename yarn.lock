@@ -655,12 +655,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.15.15":
-  version: 22.15.15
-  resolution: "@types/node@npm:22.15.15"
+"@types/node@npm:^22.15.17":
+  version: 22.15.17
+  resolution: "@types/node@npm:22.15.17"
   dependencies:
     undici-types: ~6.21.0
-  checksum: 6e1d1c55728a25dd4268aaac62d1a4a6dd3355a9cb76300a9d44f88a3894f39210a4eff471f6ef79c0ae759049a512582e5ca21fe344c6a02e553d02e8d43835
+  checksum: f83748c14c8ae3b7d1672af4009b892a5ae652c05c4b61c39e842711e232a0db37991611364aea9522fdf48290a8cc27403138bc479ef24ff0c9222319e7858b
   languageName: node
   linkType: hard
 
@@ -4363,7 +4363,7 @@ __metadata:
     "@sapphire/decorators": ^5.0.0
     "@sapphire/framework": 3.0.0-next.fd7be0b.0
     "@sapphire/pieces": ^3.3.4
-    "@types/node": ^22.15.15
+    "@types/node": ^22.15.17
     "@typescript-eslint/eslint-plugin": ^7.18.0
     "@typescript-eslint/parser": ^7.18.0
     colorette: ^2.0.20
