@@ -15,8 +15,8 @@
   "dependencies": {
     "@bitomic/wikiactivity-api": "1.2.0",
     "@sapphire/decorators": "^5.0.0",
-    "@sapphire/framework": "3.0.0-next.fd7be0b.0",
-    "@sapphire/pieces": "^3.3.4",
+    "@sapphire/framework": "3.2.0",
+    "@sapphire/pieces": "^3.10.0",
     "colorette": "^2.0.20",
     "discord.js": "^13.9.1",
     "ico-to-png": "^0.2.2",
