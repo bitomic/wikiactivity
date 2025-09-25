@@ -1218,7 +1218,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:14.0.1":
+"commander@npm:^14.0.1":
   version: 14.0.1
   resolution: "commander@npm:14.0.1"
   checksum: a072b714e73a69cc85e68f588a3c910f330e5b31861fe1f9abc9312e81bdca193676fc1fea99f739b4237ee903751fb20b4adcdd409ec4c4df0964792e9daa47
@@ -2523,24 +2523,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^16.2.0":
-  version: 16.2.0
-  resolution: "lint-staged@npm:16.2.0"
+"lint-staged@npm:^16.2.1":
+  version: 16.2.1
+  resolution: "lint-staged@npm:16.2.1"
   dependencies:
-    commander: 14.0.1
-    listr2: 9.0.4
-    micromatch: 4.0.8
-    nano-spawn: 1.0.3
-    pidtree: 0.6.0
-    string-argv: 0.3.2
-    yaml: 2.8.1
+    commander: ^14.0.1
+    listr2: ^9.0.4
+    micromatch: ^4.0.8
+    nano-spawn: ^1.0.3
+    pidtree: ^0.6.0
+    string-argv: ^0.3.2
+    yaml: ^2.8.1
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 58dad54e071356e9f6e0bf10db12cc70ced097d9ab77af4e18bfa3d44a719e1a0af1a1cecefcb8f0cb76a849f8e4e86dbdb5a4fe9f31b6d1619078fcf933e3cf
+  checksum: 95e44bbd28f6dd2d6377940044a3d9b6dccb3d820e641e9d14ccb4bca3bebf37bd33f051a07a652789a6d8c417697613beb6418be044c58f9b3c9e302d1c81a8
   languageName: node
   linkType: hard
 
-"listr2@npm:9.0.4":
+"listr2@npm:^9.0.4":
   version: 9.0.4
   resolution: "listr2@npm:9.0.4"
   dependencies:
@@ -2750,16 +2750,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromatch@npm:4.0.8":
-  version: 4.0.8
-  resolution: "micromatch@npm:4.0.8"
-  dependencies:
-    braces: ^3.0.3
-    picomatch: ^2.3.1
-  checksum: 79920eb634e6f400b464a954fcfa589c4e7c7143209488e44baf627f9affc8b1e306f41f4f0deedde97e69cb725920879462d3e750ab3bd3c1aed675bb3a8966
-  languageName: node
-  linkType: hard
-
 "micromatch@npm:^4.0.4":
   version: 4.0.4
   resolution: "micromatch@npm:4.0.4"
@@ -2767,6 +2757,16 @@ __metadata:
     braces: ^3.0.1
     picomatch: ^2.2.3
   checksum: ef3d1c88e79e0a68b0e94a03137676f3324ac18a908c245a9e5936f838079fcc108ac7170a5fadc265a9c2596963462e402841406bda1a4bb7b68805601d631c
+  languageName: node
+  linkType: hard
+
+"micromatch@npm:^4.0.8":
+  version: 4.0.8
+  resolution: "micromatch@npm:4.0.8"
+  dependencies:
+    braces: ^3.0.3
+    picomatch: ^2.3.1
+  checksum: 79920eb634e6f400b464a954fcfa589c4e7c7143209488e44baf627f9affc8b1e306f41f4f0deedde97e69cb725920879462d3e750ab3bd3c1aed675bb3a8966
   languageName: node
   linkType: hard
 
@@ -3006,7 +3006,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nano-spawn@npm:1.0.3":
+"nano-spawn@npm:^1.0.3":
   version: 1.0.3
   resolution: "nano-spawn@npm:1.0.3"
   checksum: 5b3ec4b459e9f015bef29c4fd69736567b775d8744faf6ab2b54907043839eaf15caf8e9f3180de06321224c47d8f67a2ba541c83ff2127af0d7353aa13e8ab2
@@ -3255,7 +3255,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pidtree@npm:0.6.0":
+"pidtree@npm:^0.6.0":
   version: 0.6.0
   resolution: "pidtree@npm:0.6.0"
   bin:
@@ -3816,7 +3816,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"string-argv@npm:0.3.2":
+"string-argv@npm:^0.3.2":
   version: 0.3.2
   resolution: "string-argv@npm:0.3.2"
   checksum: 8703ad3f3db0b2641ed2adbb15cf24d3945070d9a751f9e74a924966db9f325ac755169007233e8985a39a6a292f14d4fee20482989b89b96e473c4221508a0f
@@ -4258,7 +4258,7 @@ __metadata:
     eslint: ^8.57.1
     husky: ^9.1.7
     ico-to-png: ^0.2.2
-    lint-staged: ^16.2.0
+    lint-staged: ^16.2.1
     mw.js: ^2.4.1
     mysql2: ^2.3.3
     pino: ^8.21.0
@@ -4379,7 +4379,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:2.8.1":
+"yaml@npm:^2.8.1":
   version: 2.8.1
   resolution: "yaml@npm:2.8.1"
   bin:
