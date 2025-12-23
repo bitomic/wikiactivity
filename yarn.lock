@@ -3690,15 +3690,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"socket.io-client@npm:^4.8.2":
-  version: 4.8.2
-  resolution: "socket.io-client@npm:4.8.2"
+"socket.io-client@npm:^4.8.3":
+  version: 4.8.3
+  resolution: "socket.io-client@npm:4.8.3"
   dependencies:
     "@socket.io/component-emitter": ~3.1.0
     debug: ~4.4.1
     engine.io-client: ~6.6.1
     socket.io-parser: ~4.2.4
-  checksum: 8b83470d70ca906c309d55453dad946a3033cecb64db8974df733ed6bb7d8ab2e9faf579f0e7b7d113a82844b5d3ffa00c28dbfa7b5cca8ee732216b27bedb78
+  checksum: d5b4b5bf78e2196927103c4bbbafe5f426c6dc162a2d8ec8e5c53272abf4557613aa37fb95b294fe6a475971f2f60e8bbd22b12a5ce3ca6824848da664c7e528
   languageName: node
   linkType: hard
 
@@ -4203,7 +4203,7 @@ __metadata:
     pino-pretty: ^9.4.1
     rimraf: ^6.1.2
     sequelize: ^6.37.7
-    socket.io-client: ^4.8.2
+    socket.io-client: ^4.8.3
     ts-dotenv: ^0.9.1
     typescript: ^5.9.3
     undici: ^5.5.1
