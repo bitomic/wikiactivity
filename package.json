@@ -18,7 +18,7 @@
     "@sapphire/framework": "3.0.0-next.fd7be0b.0",
     "@sapphire/pieces": "^3.3.4",
     "colorette": "^2.0.20",
-    "discord.js": "^13.9.1",
+    "discord.js": "^14.25.1",
     "ico-to-png": "^0.2.2",
     "mw.js": "^2.4.1",
     "mysql2": "^2.3.3",
