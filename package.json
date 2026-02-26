@@ -33,7 +33,7 @@
     "@bitomic/eslint-config": "^1.0.0",
     "@commitlint/cli": "^20.4.2",
     "@commitlint/config-conventional": "^20.4.2",
-    "@types/node": "^24.10.13",
+    "@types/node": "^24.10.14",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "eslint": "^8.57.1",
