@@ -2461,20 +2461,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^16.3.0":
-  version: 16.3.0
-  resolution: "lint-staged@npm:16.3.0"
+"lint-staged@npm:^16.3.1":
+  version: 16.3.1
+  resolution: "lint-staged@npm:16.3.1"
   dependencies:
     commander: ^14.0.3
     listr2: ^9.0.5
     micromatch: ^4.0.8
-    nano-spawn: ^2.0.0
     string-argv: ^0.3.2
     tinyexec: ^1.0.2
     yaml: ^2.8.2
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 1c1dc765c7760d4e739d2606ba1624ced1092f9015c5de6baed16dc878c56c7166e607cbaaf956fb170db5ac1d46d1130262575d36c2b7c8fa67ef31d2f44ac0
+  checksum: 7dea0eeef5ac007114841773e1ea89b95d5c3ed27ffd3fb05ee37ec8b591b6907e88a33248b038d309f7ea96241d8568fe42e356a1cdcc75ce2a2a72c419114b
   languageName: node
   linkType: hard
 
@@ -2925,13 +2924,6 @@ __metadata:
   dependencies:
     lru-cache: ^4.1.3
   checksum: c9317d1b479d6733b3baedfde209c6c866cf387c2d625837f93355fdb6a9055b1e8180b883fe00bcb20edb3ba4dd21128ec2f1ed8cb884385cef7698cbcadcc4
-  languageName: node
-  linkType: hard
-
-"nano-spawn@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "nano-spawn@npm:2.0.0"
-  checksum: 48223f6f5b2ab3f7562d0e6e85abb9b9c4ee52f5c096bd50012c0776664ddc63cd2602c9e4dc3d6cd47ae5189e9c71b51afb2d44b2746d8ca80cb52fc8013904
   languageName: node
   linkType: hard
 
@@ -4112,7 +4104,7 @@ __metadata:
     eslint: ^8.57.1
     husky: ^9.1.7
     ico-to-png: ^0.2.2
-    lint-staged: ^16.3.0
+    lint-staged: ^16.3.1
     mw.js: ^2.4.1
     mysql2: ^2.3.3
     pino: ^8.21.0
