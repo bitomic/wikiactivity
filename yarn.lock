@@ -3986,10 +3986,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^5.5.1":
-  version: 5.5.1
-  resolution: "undici@npm:5.5.1"
-  checksum: c041c9093df7ec683479a9555581206a7c7bebfc1ed6e8669920e55618461fc4ce08938e2fbf8ef7d692c2813c44392b5ed25c58396ee4a72ffd1f1f953712c9
+"undici@npm:^7.24.6":
+  version: 7.24.6
+  resolution: "undici@npm:7.24.6"
+  checksum: 26e69ff8df5b29e2a026316bed74ef96f1e3a25de09ce8312912fbb663ac60b8a25d50238c4a29559edf52baae011bd0a8ca15d84e625232ddff84dc9cb31ac0
   languageName: node
   linkType: hard
 
@@ -4123,7 +4123,7 @@ __metadata:
     socket.io-client: ^4.8.3
     ts-dotenv: ^0.9.1
     typescript: ^5.9.3
-    undici: ^5.5.1
+    undici: ^7.24.6
   languageName: unknown
   linkType: soft
 
