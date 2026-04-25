@@ -64,20 +64,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:^20.5.0":
-  version: 20.5.0
-  resolution: "@commitlint/cli@npm:20.5.0"
+"@commitlint/cli@npm:^20.5.2":
+  version: 20.5.2
+  resolution: "@commitlint/cli@npm:20.5.2"
   dependencies:
     "@commitlint/format": ^20.5.0
     "@commitlint/lint": ^20.5.0
-    "@commitlint/load": ^20.5.0
+    "@commitlint/load": ^20.5.2
     "@commitlint/read": ^20.5.0
     "@commitlint/types": ^20.5.0
     tinyexec: ^1.0.0
     yargs: ^17.0.0
   bin:
     commitlint: ./cli.js
-  checksum: 05971a74ce382c1bb3fc4a07147ba9b1f47710776827ddfa1446d3edcb269f859b71adcd1eebc7f2ce608c9067c04eed12cd341fdecb313439b545c64a7d5f2c
+  checksum: b8cd57e0e4fbb65330f4d88d65bccb941aa260a8fe6d48097cf5c25b0f2248d5f7e6de5bfbab3688e3641ee02d5a73d9906a53648f7f1805695998573181bcd1
   languageName: node
   linkType: hard
 
@@ -154,20 +154,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/load@npm:^20.5.0":
-  version: 20.5.0
-  resolution: "@commitlint/load@npm:20.5.0"
+"@commitlint/load@npm:^20.5.2":
+  version: 20.5.2
+  resolution: "@commitlint/load@npm:20.5.2"
   dependencies:
     "@commitlint/config-validator": ^20.5.0
     "@commitlint/execute-rule": ^20.0.0
-    "@commitlint/resolve-extends": ^20.5.0
+    "@commitlint/resolve-extends": ^20.5.2
     "@commitlint/types": ^20.5.0
     cosmiconfig: ^9.0.1
     cosmiconfig-typescript-loader: ^6.1.0
     is-plain-obj: ^4.1.0
     lodash.mergewith: ^4.6.2
     picocolors: ^1.1.1
-  checksum: 74af7a353cd17099a51cbff27d6728f3745b01defd196c0976e8dfeb610f1887df3ed8dc8aa4d0067a876cda3334b874a16fe781f6a07cd81d97c2a49a8c3a47
+  checksum: a3a9fb21d0c7d39e7a3402bbb335506a91805aed3669d0977a28b3a7a2bb6493016418124e26caae5226391681d880b02ca961554aecdcde8f35c69f24cb2247
   languageName: node
   linkType: hard
 
@@ -202,17 +202,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/resolve-extends@npm:^20.5.0":
-  version: 20.5.0
-  resolution: "@commitlint/resolve-extends@npm:20.5.0"
+"@commitlint/resolve-extends@npm:^20.5.2":
+  version: 20.5.2
+  resolution: "@commitlint/resolve-extends@npm:20.5.2"
   dependencies:
     "@commitlint/config-validator": ^20.5.0
     "@commitlint/types": ^20.5.0
-    global-directory: ^4.0.1
+    global-directory: ^5.0.0
     import-meta-resolve: ^4.0.0
     lodash.mergewith: ^4.6.2
     resolve-from: ^5.0.0
-  checksum: 19e34c54364c1457cea1b4425e1a1c6adbbddca56bb0c468da3765811b3b44f7ef801dc6a4def4f1a6621e96add4d8f39e8bbfbe66544e95953f47ab6dceac91
+  checksum: e138b9735b9169b94e7fb010d9cec09c840380087008d378afee7b215b684ceca05bc2f34d22a259aee4c9c4e8b0a74af15a4e20441eed33f964592497789a6d
   languageName: node
   linkType: hard
 
@@ -2035,12 +2035,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"global-directory@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "global-directory@npm:4.0.1"
+"global-directory@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "global-directory@npm:5.0.0"
   dependencies:
-    ini: 4.1.1
-  checksum: 5b4df24438a4e5f21e43fbdd9e54f5e12bb48dce01a0a83b415d8052ce91be2d3a97e0c8f98a535e69649b2190036155e9f0f7d3c62f9318f31bdc3fd4f235f5
+    ini: 6.0.0
+  checksum: 90b61b09736a8c6fea010e87bf42cefefe534ce6d5c21c09ab9eb06edc0082dfc41edf0d31da5f7355e9a07eae9c5238d4ecc01ac425d8456cbce9bd1b292dc2
   languageName: node
   linkType: hard
 
@@ -2261,10 +2261,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ini@npm:4.1.1":
-  version: 4.1.1
-  resolution: "ini@npm:4.1.1"
-  checksum: 0e5909554074fbc31824fa5415b0f604de4a665514c96a897a77bf77353a7ad4743927321270e9d0610a9d510ccd1f3cd77422f7cc80d8f4542dbce75476fb6d
+"ini@npm:6.0.0":
+  version: 6.0.0
+  resolution: "ini@npm:6.0.0"
+  checksum: 82640ea788fac082fdf0a4d901654b0d4a32a62524cb9116206d2d66370fb12468af8bcdec0cafc2ceec71eb095919bf07410ce023e205383d3ae4d6c25b3626
   languageName: node
   linkType: hard
 
@@ -4100,7 +4100,7 @@ __metadata:
   dependencies:
     "@bitomic/eslint-config": ^1.0.0
     "@bitomic/wikiactivity-api": 1.2.0
-    "@commitlint/cli": ^20.5.0
+    "@commitlint/cli": ^20.5.2
     "@commitlint/config-conventional": ^20.5.0
     "@sapphire/decorators": ^5.0.0
     "@sapphire/framework": 3.0.0-next.fd7be0b.0
