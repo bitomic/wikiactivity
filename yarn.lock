@@ -2486,9 +2486,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^17.0.3":
-  version: 17.0.3
-  resolution: "lint-staged@npm:17.0.3"
+"lint-staged@npm:^17.0.4":
+  version: 17.0.4
+  resolution: "lint-staged@npm:17.0.4"
   dependencies:
     listr2: ^10.2.1
     picomatch: ^4.0.4
@@ -2500,7 +2500,7 @@ __metadata:
       optional: true
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 0f1dff4a5429f781867d398c71f56e590ed553271d6b57446486bb5c7917953476c13a3f6b732761e3ecd023a1cc347dc34c1a89780d201f5ad48bbd157a7c1d
+  checksum: 9da94a3b926d71c633aa73dc7de3d98c4fa0c3f91ab86a10fb5282f30e75932ffb158cbf74f500f2aa6e24dbe0ca960f6d6b3a24accdb1df5e4ef154156f77d0
   languageName: node
   linkType: hard
 
@@ -4103,7 +4103,7 @@ __metadata:
     eslint: ^8.57.1
     husky: ^9.1.7
     ico-to-png: ^0.2.2
-    lint-staged: ^17.0.3
+    lint-staged: ^17.0.4
     mw.js: ^2.4.1
     mysql2: ^2.3.3
     pino: ^8.21.0
