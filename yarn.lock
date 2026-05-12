@@ -64,187 +64,187 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/cli@npm:21.0.0"
+"@commitlint/cli@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/cli@npm:21.0.1"
   dependencies:
-    "@commitlint/format": ^21.0.0
-    "@commitlint/lint": ^21.0.0
-    "@commitlint/load": ^21.0.0
-    "@commitlint/read": ^21.0.0
-    "@commitlint/types": ^21.0.0
+    "@commitlint/format": ^21.0.1
+    "@commitlint/lint": ^21.0.1
+    "@commitlint/load": ^21.0.1
+    "@commitlint/read": ^21.0.1
+    "@commitlint/types": ^21.0.1
     tinyexec: ^1.0.0
     yargs: ^18.0.0
   bin:
-    commitlint: ./cli.js
-  checksum: 2daeb59f3eb9472580bce1b0a3e559fc28287cf1a246d1c43a50ec7d294c75273b2d27a8343f42fb3ae6585d87811ece6cbba9d95f41b09229014c6ead936c22
+    commitlint: cli.js
+  checksum: fd66cffeff1660cf0f4bd39a325ca3caf145e093ccd9814343f89d0edf6c576545e56afbd99841ac423bf442832be61046dd186499d3c3da03021996921cab20
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/config-conventional@npm:21.0.0"
+"@commitlint/config-conventional@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/config-conventional@npm:21.0.1"
   dependencies:
-    "@commitlint/types": ^21.0.0
+    "@commitlint/types": ^21.0.1
     conventional-changelog-conventionalcommits: ^9.2.0
-  checksum: 4f4dbe00f4b5d46465f5a45b51ada6c5deffa5ab46ed9fc43a2eb5cf0a913fbd220c0be16af3b4c1e7c8a41b11b5ac9e7f90417260e278650d29142ea168e541
+  checksum: decc5ac97cb686b4a7ab47eabb9c4b17fdf4dd032690abffc01fe4c927fbe4577566eea75f199abba4560ebbf251406f9b410a1c288e1ac9ec66ca0a01ffcedd
   languageName: node
   linkType: hard
 
-"@commitlint/config-validator@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/config-validator@npm:21.0.0"
+"@commitlint/config-validator@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/config-validator@npm:21.0.1"
   dependencies:
-    "@commitlint/types": ^21.0.0
+    "@commitlint/types": ^21.0.1
     ajv: ^8.11.0
-  checksum: 83d21b05957027a2de94fd833851eb7b01f0b1181d74df3ad0e9cdee0e67b7c46f3481dd2f0f304ad78b113ec550156badc940a6c309cfad2f96257a40e46760
+  checksum: 28347e5dbe73e1966b7fde96fe7e9aac5b09d2bba78848e00d537f7b5c9a7844536d51381f9fc3fdd0ab080d24d3deaf8a68c6f4cdf34c98cdbf5ecf6ece1505
   languageName: node
   linkType: hard
 
-"@commitlint/ensure@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/ensure@npm:21.0.0"
+"@commitlint/ensure@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/ensure@npm:21.0.1"
   dependencies:
-    "@commitlint/types": ^21.0.0
+    "@commitlint/types": ^21.0.1
     es-toolkit: ^1.46.0
-  checksum: 00943a4a1bd6a155f7809091ff315197e1316a1484ca9e4598a4e75c69a013553c5755c8f57e1b07815091c294c054934e7c83e9c95a1d1643079f89231dea28
+  checksum: 93996c5bc2bcd82dda83d9f45476111f15ccd60bb794af65e3fdfa7ef5adcbc60d5383f0b13687c7adb04e68097eedcb9fc3c68e28937f6ae4d8ab4f54c66156
   languageName: node
   linkType: hard
 
-"@commitlint/execute-rule@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/execute-rule@npm:21.0.0"
-  checksum: 6e0a825179afedb39aca826002267e69851b4df3f111254e8da29e887630fa6182c85d3485f124e76e4dce57bc0bb158e8602509616594ce929fd770f5ad8476
+"@commitlint/execute-rule@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/execute-rule@npm:21.0.1"
+  checksum: 95ac27ae4920db0bd6d3c403ba396ab8dec425ddd0f9c033de911f1702f8f6c1a4099cfc3684803120537826a89467e0ec615f577ab65cd7fad2d0fef3accde2
   languageName: node
   linkType: hard
 
-"@commitlint/format@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/format@npm:21.0.0"
+"@commitlint/format@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/format@npm:21.0.1"
   dependencies:
-    "@commitlint/types": ^21.0.0
+    "@commitlint/types": ^21.0.1
     picocolors: ^1.1.1
-  checksum: ed7a78481da66eff734daef5c313fac9cb06358cf8ecc60c237fe2e2e0d65dcfe73be3c530c0dbdf711522bc216ffedd925947e706191d148026a9cfb9d1057b
+  checksum: dafa8a1bc28fba4911ceef7ddd2e6c2291cc8c57cad8e6836f269ff86edc561d2add667fab3eee6855cf194bc31d26d0122f9d04007f7ed66bc5b4c7c913f037
   languageName: node
   linkType: hard
 
-"@commitlint/is-ignored@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/is-ignored@npm:21.0.0"
+"@commitlint/is-ignored@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/is-ignored@npm:21.0.1"
   dependencies:
-    "@commitlint/types": ^21.0.0
+    "@commitlint/types": ^21.0.1
     semver: ^7.6.0
-  checksum: 159c66807b0d2d24c48897b178b68392f7fd4795f2a2b8528b81153bc032ffa8c966fd11400b1874f48fd1242eebb5ba97e1a04d452f2dcaacfd408330d26cb8
+  checksum: 5ea1f2297bd15f1205a88fec5fd516c78d72afc082aeb2891b56a3032edc2f355b5a2994a9234fdfa686e501150871d982e2d6c5d332e69d029ecd271b87c881
   languageName: node
   linkType: hard
 
-"@commitlint/lint@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/lint@npm:21.0.0"
+"@commitlint/lint@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/lint@npm:21.0.1"
   dependencies:
-    "@commitlint/is-ignored": ^21.0.0
-    "@commitlint/parse": ^21.0.0
-    "@commitlint/rules": ^21.0.0
-    "@commitlint/types": ^21.0.0
-  checksum: f13e5522e90a1783559b166f9325b253583afe5076cc3120061e9391b1e7a71a953b52c19dd89b24dc0e7d7a5805329bba13545ea219259b3a540ae9bd2fcb50
+    "@commitlint/is-ignored": ^21.0.1
+    "@commitlint/parse": ^21.0.1
+    "@commitlint/rules": ^21.0.1
+    "@commitlint/types": ^21.0.1
+  checksum: e7020eece8d601093e4fa13398046e068a90475d2a992000cc2ba5c6b84e6266798bc5d37e20c7f570a964ef37e0516664bc9198b4b499d8c2bc890e8b1aaf55
   languageName: node
   linkType: hard
 
-"@commitlint/load@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/load@npm:21.0.0"
+"@commitlint/load@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/load@npm:21.0.1"
   dependencies:
-    "@commitlint/config-validator": ^21.0.0
-    "@commitlint/execute-rule": ^21.0.0
-    "@commitlint/resolve-extends": ^21.0.0
-    "@commitlint/types": ^21.0.0
+    "@commitlint/config-validator": ^21.0.1
+    "@commitlint/execute-rule": ^21.0.1
+    "@commitlint/resolve-extends": ^21.0.1
+    "@commitlint/types": ^21.0.1
     cosmiconfig: ^9.0.1
     cosmiconfig-typescript-loader: ^6.1.0
     es-toolkit: ^1.46.0
     is-plain-obj: ^4.1.0
     picocolors: ^1.1.1
-  checksum: 83f587651e6b7411d890a339a70ab281708844d6badd88632ef6f7414262de1ab7b0c4655f274cb624390607fb68874e764c589c77da7d6cf916f861f208f55b
+  checksum: f60e1779431fc54158c8da8bb63b9d13a2ae2d7ea5af1c225ea39a5bc27a1a045d126a2d79b02ae20a34b8621aa5da8d2c9fbdb1a11d85defa4d3e55ea17c23f
   languageName: node
   linkType: hard
 
-"@commitlint/message@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/message@npm:21.0.0"
-  checksum: 9899fb27f1666fbf6b304d97eb486002e0e2262f39cbfadd9ba4e07bf428b83b05ebe8d62b868edd4fa75762885483bbb7a3d8e8612eb48e7599bfdfdca7ca24
+"@commitlint/message@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/message@npm:21.0.1"
+  checksum: 271cd28a020a38c682ee438f16c713193f719180948d1dde0af7adcdd269b5a468bbdc67bfaa7d17f5701d94ecaf65fe502f934302eb85e7897c80173be86f07
   languageName: node
   linkType: hard
 
-"@commitlint/parse@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/parse@npm:21.0.0"
+"@commitlint/parse@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/parse@npm:21.0.1"
   dependencies:
-    "@commitlint/types": ^21.0.0
+    "@commitlint/types": ^21.0.1
     conventional-changelog-angular: ^8.2.0
     conventional-commits-parser: ^6.3.0
-  checksum: 7e0a7b39d2a28cff7b5d0dc9b6123c10bec71fe1ecbd4339e0ec3a03a4c2daf166dacc4ea358d5ca139ed30bdd5e686f8d73816d52cdcdea16d571ac8e949507
+  checksum: 8a2693022bff12c5ac0b8a53bd49b4b56f2b5451a0f42d0969f103aed2cab090f40b8f9408bba9b48168a7987b4568af4f311977f98305828834e09ba064d19d
   languageName: node
   linkType: hard
 
-"@commitlint/read@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/read@npm:21.0.0"
+"@commitlint/read@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/read@npm:21.0.1"
   dependencies:
-    "@commitlint/top-level": ^21.0.0
-    "@commitlint/types": ^21.0.0
+    "@commitlint/top-level": ^21.0.1
+    "@commitlint/types": ^21.0.1
     git-raw-commits: ^5.0.0
     tinyexec: ^1.0.0
-  checksum: e68e360bcbd61433e6ae111fe279c7118a0478a690a483a038745d49484af67f267d2173db137042068b665ad8a571b3043b6f7fc1fb6a1b9f0d6ea104e123a7
+  checksum: 69519e4f59e0abdb89892541bc271df66b4779402ffe1bd4906990f69ba6688b7e650ee0c3c7af47251a4eebe89af14bf4e0c96e20d3f72ab20a1402f2685976
   languageName: node
   linkType: hard
 
-"@commitlint/resolve-extends@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/resolve-extends@npm:21.0.0"
+"@commitlint/resolve-extends@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/resolve-extends@npm:21.0.1"
   dependencies:
-    "@commitlint/config-validator": ^21.0.0
-    "@commitlint/types": ^21.0.0
+    "@commitlint/config-validator": ^21.0.1
+    "@commitlint/types": ^21.0.1
     es-toolkit: ^1.46.0
     global-directory: ^5.0.0
     resolve-from: ^5.0.0
-  checksum: d6ee4b48ce5d84f2f3abb5cf2a7b70a332e3ed1c598fb8c80771180d0f5ad1d4c61d7d1c2a89ccf1fc4b1d073b9924af2df9224641d554eca5e5289587d02e5d
+  checksum: 6bb9321008421cc75ee7db2dab6698760f878889927dd8379699e6a711c67cf073c9478a9c3d035063f1850e9ce30174b5a6720c5ed923d30080874d1c289571
   languageName: node
   linkType: hard
 
-"@commitlint/rules@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/rules@npm:21.0.0"
+"@commitlint/rules@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/rules@npm:21.0.1"
   dependencies:
-    "@commitlint/ensure": ^21.0.0
-    "@commitlint/message": ^21.0.0
-    "@commitlint/to-lines": ^21.0.0
-    "@commitlint/types": ^21.0.0
-  checksum: 6796cd7d8dfafd0b13433184c9536703945765e8f869703e18ba0c27b502e7aca6c24d8da73f548a7b1a0de1d95a60454077229e92a87b1aa848879858c5d74b
+    "@commitlint/ensure": ^21.0.1
+    "@commitlint/message": ^21.0.1
+    "@commitlint/to-lines": ^21.0.1
+    "@commitlint/types": ^21.0.1
+  checksum: cc66e07468f859b0a9d15ca155cd753bc68f15f7f3b98a53731a965254e5a823280d9a594e2bd97b9832e90b7fd061a88972926bdf4b8a5d1d0dd7dc36777bc9
   languageName: node
   linkType: hard
 
-"@commitlint/to-lines@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/to-lines@npm:21.0.0"
-  checksum: c0589d59272bdd73af2749ba1205ea82ba7d6d3aded22eb1623c6741c3297eca21a6827e39463e4868d16f8ea4b004a50a244c531579310260d3531557c8e1f4
+"@commitlint/to-lines@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/to-lines@npm:21.0.1"
+  checksum: 4b4c432e547e687735d853ab23c629c03926311d3b1ae21d289e54d05ba4677123ccc5e382c94d289044d24d3c789e2cf56cf98e3458475524473b887f0a1f2c
   languageName: node
   linkType: hard
 
-"@commitlint/top-level@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/top-level@npm:21.0.0"
+"@commitlint/top-level@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/top-level@npm:21.0.1"
   dependencies:
     escalade: ^3.2.0
-  checksum: 81d0b415ba1431c25b2aa0a4f9d8c8905e3131f6feb8c5d36d97e5a2bdce6c6c83e7b8d8594d2d62ffe35a6447ee784ceb7809e6f2d464edc7d4223743798344
+  checksum: bb829ca8f98b824d8f7eca5aea763b63daae6fb566e2d310a5d342f27e1f008be1f815e0d8365dbe56b9945cc2c05a7870bde46429333165ce94ee43edb86e4b
   languageName: node
   linkType: hard
 
-"@commitlint/types@npm:^21.0.0":
-  version: 21.0.0
-  resolution: "@commitlint/types@npm:21.0.0"
+"@commitlint/types@npm:^21.0.1":
+  version: 21.0.1
+  resolution: "@commitlint/types@npm:21.0.1"
   dependencies:
     conventional-commits-parser: ^6.3.0
     picocolors: ^1.1.1
-  checksum: 7464bd3113fb2933a4e1df02c8594970a15206a00a0746a3b3253bd9225b5615fdf9d8c776e2e2c9919435495bd07bb11b415a3cb88eb04533f386182414dbdb
+  checksum: b82574ce2bf6455f8857e5df412170c9abd9bea4d0980f939ea5b762901fbb888fb51486a897e16f210d39edaa51c5b581dafd179f4519bc95178603bf4401d8
   languageName: node
   linkType: hard
 
@@ -4090,8 +4090,8 @@ __metadata:
   dependencies:
     "@bitomic/eslint-config": ^1.0.0
     "@bitomic/wikiactivity-api": 1.2.0
-    "@commitlint/cli": ^21.0.0
-    "@commitlint/config-conventional": ^21.0.0
+    "@commitlint/cli": ^21.0.1
+    "@commitlint/config-conventional": ^21.0.1
     "@sapphire/decorators": ^5.0.0
     "@sapphire/framework": 3.0.0-next.fd7be0b.0
     "@sapphire/pieces": ^3.3.4
