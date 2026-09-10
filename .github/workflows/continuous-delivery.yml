@@ -25,7 +25,7 @@ jobs:
       deploy_tag: ${{ steps.save_tag.outputs.tag }}
     steps:
       - name: Checkout Project
-        uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           submodules: true
           
@@ -69,7 +69,7 @@ jobs:
     needs: [Publish]
     steps:
       - name: Checkout Project
-        uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           submodules: true
           
