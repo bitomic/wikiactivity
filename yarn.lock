@@ -2368,20 +2368,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^17.5.1":
-  version: 17.5.1
-  resolution: "lint-staged@npm:17.5.1"
+"lint-staged@npm:^17.6.0":
+  version: 17.6.0
+  resolution: "lint-staged@npm:17.6.0"
   dependencies:
     picomatch: ^4.0.7
     string-argv: ^0.3.2
     tinyexec: ^1.3.1
-    yaml: ^2.9.0
+    yaml: ^2.9.1
   dependenciesMeta:
     yaml:
       optional: true
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 90bd4c2bb76e71844164d5534067341a20cf9fddb032828c212f0a36a9b2ea5923de1cdaa293f448cec035f06abd6b0df2a9d3d21bd0577e15118f8bd1c57631
+  checksum: 271f171f917245749abad0ec62b7fab433e79bee2585fa7d30163abfe43fc4aefa03b4b47bfedb62415256ff42a413619d94b7cb47fcbd9119d990540aa00d88
   languageName: node
   linkType: hard
 
@@ -3879,7 +3879,7 @@ __metadata:
     eslint: ^8.57.1
     husky: ^9.1.7
     ico-to-png: ^0.2.2
-    lint-staged: ^17.5.1
+    lint-staged: ^17.6.0
     mw.js: ^2.4.1
     mysql2: ^2.3.3
     pino: ^8.21.0
@@ -3978,12 +3978,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yaml@npm:^2.9.0":
-  version: 2.9.0
-  resolution: "yaml@npm:2.9.0"
+"yaml@npm:^2.9.1":
+  version: 2.9.1
+  resolution: "yaml@npm:2.9.1"
   bin:
     yaml: bin.mjs
-  checksum: f0f74b349c126bb9acf649be1e7efaec5869b1567bdc047e43b176bcdd7730a9bc7ab8fc9c6b1c358e611fab0fe0a0d8933393f1af383a7dc0b4755a1d5f31f9
+  checksum: 583253ce0075cc1b7a4328116380ae2a97d6feb62677ba5d52f7cb774de6e34f1d9e655aaa536347ced55fcaede020253212d1c60c98fc672d43be23ebfcd862
   languageName: node
   linkType: hard
 
