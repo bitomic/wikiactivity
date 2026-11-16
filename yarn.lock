@@ -2355,12 +2355,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^17.6.0":
-  version: 17.6.0
-  resolution: "lint-staged@npm:17.6.0"
+"lint-staged@npm:^17.6.1":
+  version: 17.6.1
+  resolution: "lint-staged@npm:17.6.1"
   dependencies:
     picomatch: ^4.0.7
-    string-argv: ^0.3.2
+    string-argv: ^0.4.0
     tinyexec: ^1.3.1
     yaml: ^2.9.1
   dependenciesMeta:
@@ -2368,7 +2368,7 @@ __metadata:
       optional: true
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 271f171f917245749abad0ec62b7fab433e79bee2585fa7d30163abfe43fc4aefa03b4b47bfedb62415256ff42a413619d94b7cb47fcbd9119d990540aa00d88
+  checksum: d6bc144b94708c93440c972ea409c3ff02fec13d06b49308958f8087e8901d8d9a2e15f444e56c7b8add87527290330643d0fbdd5f08c3cda05f5198efe69216
   languageName: node
   linkType: hard
 
@@ -3457,10 +3457,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"string-argv@npm:^0.3.2":
-  version: 0.3.2
-  resolution: "string-argv@npm:0.3.2"
-  checksum: 8703ad3f3db0b2641ed2adbb15cf24d3945070d9a751f9e74a924966db9f325ac755169007233e8985a39a6a292f14d4fee20482989b89b96e473c4221508a0f
+"string-argv@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "string-argv@npm:0.4.0"
+  checksum: d65ffb40b81cdc8085b5a57ee3ba8ada90804b83e3c0c7f21922c93734852a0f32802e78649e3d7cc6579e30623b259bdce7eb203c64c1a86c5a2b2fb657cfc1
   languageName: node
   linkType: hard
 
@@ -3866,7 +3866,7 @@ __metadata:
     eslint: ^8.57.1
     husky: ^9.1.7
     ico-to-png: ^0.2.2
-    lint-staged: ^17.6.0
+    lint-staged: ^17.6.1
     mw.js: ^2.4.1
     mysql2: ^2.3.3
     pino: ^8.21.0
