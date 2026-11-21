@@ -309,6 +309,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@discordjs/collection@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "@discordjs/collection@npm:2.1.1"
+  checksum: 8c4cd75061b378a35dfa50c4403828b8e6d5d32934047d1d26e5a4fcc2c1b8135ebf74a6dd9ec61afcb4ec030d596b85da5463dc28cad084635cd184eb69c453
+  languageName: node
+  linkType: hard
+
 "@eslint-community/eslint-utils@npm:^4.2.0":
   version: 4.2.0
   resolution: "@eslint-community/eslint-utils@npm:4.2.0"
@@ -547,6 +554,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sapphire/pieces@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "@sapphire/pieces@npm:5.0.1"
+  dependencies:
+    "@discordjs/collection": ^2.1.1
+    "@sapphire/utilities": ^3.18.3
+  checksum: 0a2dc4107556565f5357c1d274d274af3cf652a733f971625d5a087c5bc409a28acf01684af0ff8623476279c9ce49d849080c6b3da1075882e3037cba861b4f
+  languageName: node
+  linkType: hard
+
 "@sapphire/ratelimits@npm:^2.3.0, @sapphire/ratelimits@npm:^2.4.4":
   version: 2.4.4
   resolution: "@sapphire/ratelimits@npm:2.4.4"
@@ -588,6 +605,13 @@ __metadata:
   dependencies:
     "@sapphire/utilities": ^3.6.2
   checksum: fb4a32d81fd99966297912cd41c751a8bb792f401e92d538c2611922c535da79683d1918ed897e7daf0880f7c139a03100922fb128ca27a596163e6c5bcead8c
+  languageName: node
+  linkType: hard
+
+"@sapphire/utilities@npm:^3.18.3":
+  version: 3.18.3
+  resolution: "@sapphire/utilities@npm:3.18.3"
+  checksum: e42db0305a074e8c20d676d3cd380caf7d44ca43c8a2faa923b453839955295b6a8c4083a98dd89a9b29b154608948e9df6bb0d3ecaffbcaff21a7e47f3f7ee6
   languageName: node
   linkType: hard
 
@@ -3872,7 +3896,7 @@ __metadata:
     "@commitlint/config-conventional": ^21.2.4
     "@sapphire/decorators": ^5.0.0
     "@sapphire/framework": 3.0.0-next.fd7be0b.0
-    "@sapphire/pieces": ^3.3.4
+    "@sapphire/pieces": ^5.0.1
     "@types/node": ^26.6.6
     "@typescript-eslint/eslint-plugin": ^7.18.0
     "@typescript-eslint/parser": ^7.18.0
