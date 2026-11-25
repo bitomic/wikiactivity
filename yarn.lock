@@ -469,12 +469,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/decorators@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "@sapphire/decorators@npm:5.0.0"
+"@sapphire/decorators@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "@sapphire/decorators@npm:6.2.0"
   dependencies:
-    tslib: ^2.4.0
-  checksum: 18f33669e287df45e7805862c16a6e9c1813c7836985270c0c5867db6e9f724879a228fd19d82fd567f4108d671b9fa862d02ef0010e7f21bfcbc87af05d9ff4
+    tslib: ^2.8.1
+  checksum: 7bc0149178c41327b4b3b2b0d90c565d13f9622a69b7ced5a2a04db5ca834c30817dfa58d79def1c3a4e5c6972cbedee87d8ace41d1d53b2d7dcd31e411d58e7
   languageName: node
   linkType: hard
 
@@ -3704,6 +3704,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:^2.8.1":
+  version: 2.9.1
+  resolution: "tslib@npm:2.9.1"
+  checksum: 40f590cef617a6ad220ac521a0dd8b8c48faf1494468c195c792dc212b293260b7606ffd505aa52328a07954304e5c2631eb8f884034db2286a98efd1aa1686f
+  languageName: node
+  linkType: hard
+
 "type-check@npm:^0.4.0, type-check@npm:~0.4.0":
   version: 0.4.0
   resolution: "type-check@npm:0.4.0"
@@ -3870,7 +3877,7 @@ __metadata:
     "@bitomic/wikiactivity-api": 1.2.0
     "@commitlint/cli": ^21.2.4
     "@commitlint/config-conventional": ^21.2.4
-    "@sapphire/decorators": ^5.0.0
+    "@sapphire/decorators": ^6.2.0
     "@sapphire/framework": 3.0.0-next.fd7be0b.0
     "@sapphire/pieces": ^3.3.4
     "@types/node": ^26.6.7
